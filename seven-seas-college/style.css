@@ -151,8 +151,8 @@ nav .btn{padding:8px 20px;font-size:1rem;margin-left:6px}
 .parrot-perch{position:absolute;z-index:9;top:86px;right:26px;width:104px;pointer-events:none}
 .parrot-svg{width:100%;animation:bob 3.2s ease-in-out infinite;transform-origin:50% 90%}
 @keyframes bob{0%,100%{transform:rotate(0) translateY(0)}30%{transform:rotate(-3deg) translateY(-4px)}60%{transform:rotate(2deg) translateY(1px)}}
-.parrot-bubble{position:absolute;right:106px;top:-8px;width:230px;background:var(--parchment);color:var(--ink);font-size:.92rem;
-  padding:12px 14px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.5);opacity:0;transform:translateY(6px) scale(.96);
+.parrot-bubble{position:absolute;right:106px;top:-8px;min-width:200px;max-width:320px;width:max-content;box-sizing:border-box;word-wrap:break-word;overflow-wrap:break-word;background:var(--parchment);color:var(--ink);font-size:.92rem;
+  padding:12px 16px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.5);opacity:0;transform:translateY(6px) scale(.96);
   transform-origin:bottom right;transition:all .4s}
 .parrot-bubble::after{content:"";position:absolute;right:-8px;bottom:14px;border:9px solid transparent;border-left-color:var(--parchment);border-right-width:0}
 .parrot-bubble.show{opacity:1;transform:translateY(0) scale(1)}

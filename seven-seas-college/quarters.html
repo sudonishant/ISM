@@ -68,7 +68,6 @@
 </g>
 </defs>
 </svg>
-<div class="ticker" aria-label="Announcements"><div class="ticker-inner"><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span></div></div>
 <nav>
   <div class="nav-logo" id="navLogo" title="Fire the signal flare">
     <span class="logo-medal"><img src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest"></span>
@@ -114,21 +113,49 @@
   </div>
 </div>
 <section>
-  <div class="wrap" style="max-width:560px">
-    <div class="quarters-card reveal">
-      <svg viewBox="0 0 100 100" style="width:70px;margin:0 auto 14px" aria-hidden="true"><use href="#skullMark" color="#e6b34a"/></svg>
-      <h3 style="color:var(--gold-bright);font-size:1.9rem;margin-bottom:6px">Board the Quarters</h3>
-      <p class="sub" style="color:#cbb88f;font-size:.92rem;font-style:italic;margin-bottom:22px">Student portal. Berth number in, parrot’s name up, in you go.</p>
-      <form data-quarters novalidate>
-        <div class="field"><label for="qName">Your name</label><input id="qName" type="text" placeholder="e.g. Nadia Okafor"></div>
-        <div class="field"><label for="qId">Berth number (student ID)</label><input id="qId" type="text" placeholder="e.g. 113"></div>
-        <div class="field"><label for="qPass">Passphrase (your parrot’s name)</label><input id="qPass" type="password" placeholder="whisper it"></div>
-        <div class="field" style="display:flex;align-items:center;gap:10px"><label for="qRem" style="margin:0;letter-spacing:.1em">Remember me on this deck</label><input id="qRem" type="checkbox" style="width:auto"></div>
-        <button class="btn" type="submit" style="width:100%">Board the Quarters ⚓</button>
-      </form>
-      <div style="margin-top:18px;font-size:.9rem;color:#b9c9d6">
-        Lost your passphrase? <a href="raven.html">Send a raven</a> to the Quartermaster.<br>
-        Not enrolled yet? <a href="enlist.html">Join the Crew</a> first.
+  <div class="wrap login-scroll-wrap">
+    <div class="ancient-scroll-container reveal">
+      <div class="scroll-roller top">
+        <div class="scroll-finial"></div>
+        <div class="scroll-finial"></div>
+      </div>
+
+      <div class="ancient-scroll-body">
+        <div class="scroll-curled-edge"></div>
+
+        <div style="text-align:center;margin-bottom:20px">
+          <svg viewBox="0 0 100 100" style="width:64px;margin:0 auto 8px" aria-hidden="true"><use href="#skullMark" color="#8e2f1e"/></svg>
+          <div style="font-family:'Pirata One',cursive;font-size:1.1rem;letter-spacing:0.18em;color:#8a4212;text-transform:uppercase">
+            ⚓ Official Cadet Registry · Berth Access ⚓
+          </div>
+          <h2 class="scroll-decree-title" style="font-size:2.2rem;margin:4px 0">Board the Quarters</h2>
+          <p class="scroll-decree-sub" style="font-size:0.96rem">
+            Berth number in, parrot’s secret whisper up, in you go.
+          </p>
+        </div>
+
+        <form data-quarters novalidate>
+          <div class="field"><label for="qName">Cadet Name</label><input id="qName" type="text" placeholder="e.g. Nadia Okafor"></div>
+          <div class="field"><label for="qId">Berth Number (Student ID)</label><input id="qId" type="text" placeholder="e.g. 113"></div>
+          <div class="field"><label for="qPass">Passphrase (Your Parrot’s Name)</label><input id="qPass" type="password" placeholder="whisper it softly"></div>
+          <div class="field" style="display:flex;align-items:center;gap:10px">
+            <label for="qRem" style="margin:0;letter-spacing:.06em;color:#4a2b10">Remember me on this deck</label>
+            <input id="qRem" type="checkbox" style="width:auto">
+          </div>
+          <button class="btn" type="submit" style="width:100%;font-size:1.1rem;padding:14px 20px">Board the Quarters ⚓</button>
+        </form>
+
+        <div style="margin-top:20px;font-size:.9rem;color:#5a3716;text-align:center;border-top:1px dashed rgba(140,80,20,0.35);padding-top:14px">
+          Lost your passphrase? <a href="raven.html" style="color:#8e2f1e;font-weight:700">Send a raven</a> to the Quartermaster.<br>
+          Not enrolled yet? <a href="enlist.html" style="color:#8e2f1e;font-weight:700">Join the Crew</a> first.
+        </div>
+
+        <div class="scroll-curled-edge bottom"></div>
+      </div>
+
+      <div class="scroll-roller bottom">
+        <div class="scroll-finial"></div>
+        <div class="scroll-finial"></div>
       </div>
     </div>
   </div>

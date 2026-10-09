@@ -77,15 +77,7 @@ ${SPRITE}`;
 }
 
 function ticker(){
-  const items = [
-    '<span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span>',
-    '<span class="ticker-item">Cannon practice postponed — wind too good</span>',
-    '<span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span>',
-    '<span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span>',
-    '<span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span>',
-    '<span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span>',
-  ];
-  return `<div class="ticker" aria-label="Announcements"><div class="ticker-inner">${items.join('')}${items.join('')}</div></div>`;
+  return '';
 }
 
 function nav(active){
@@ -245,6 +237,141 @@ const INDEX = `
     <a class="btn ghost" href="wanted.html" style="padding:6px 16px;font-size:.85rem">View Bounties →</a>
   </div>
 </div>
+
+<!-- ANIMATED UNDERWATER SEA CREATURES & REEF -->
+<section class="underwater-lagoon" aria-label="Underwater Reef and Sea Creatures">
+  <div class="lagoon-sunbeams"></div>
+  
+  <!-- School of Fish -->
+  <div class="school-of-fish" aria-hidden="true">
+    <svg viewBox="0 0 200 90" width="100%" height="100%">
+      <g fill="#4fd1c5" opacity="0.9">
+        <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
+        <polygon points="25,30 15,20 18,30 15,40" fill="#319795"/>
+        <circle cx="72" cy="24" r="2" fill="#0d3838"/>
+      </g>
+      <g fill="#ecc94b" opacity="0.85" transform="translate(50, 25) scale(0.8)">
+        <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
+        <polygon points="25,30 15,20 18,30 15,40" fill="#d69e2e"/>
+        <circle cx="72" cy="24" r="2" fill="#3a2707"/>
+      </g>
+      <g fill="#ed8936" opacity="0.85" transform="translate(10, 35) scale(0.7)">
+        <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
+        <polygon points="25,30 15,20 18,30 15,40" fill="#c05621"/>
+        <circle cx="72" cy="24" r="2" fill="#2d1205"/>
+      </g>
+      <g fill="#63b3ed" opacity="0.8" transform="translate(70, -5) scale(0.65)">
+        <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
+        <polygon points="25,30 15,20 18,30 15,40" fill="#3182ce"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Swimming Shark -->
+  <div class="swimming-shark" aria-hidden="true">
+    <svg viewBox="0 0 220 70" width="100%" height="100%">
+      <g fill="#1a365d" stroke="#2b6cb0" stroke-width="1.5">
+        <path d="M190 32 C170 18 120 15 90 22 C60 28 30 32 15 28 C2 26 0 35 15 37 C35 39 60 42 90 44 C125 46 170 44 190 36 C195 35 198 33 190 32 Z" fill="#234e70"/>
+        <path d="M120 18 C115 5 105 2 100 0 C102 10 105 18 108 20 Z" fill="#1d3d58"/>
+        <path d="M15 28 C5 10 0 5 0 2 C2 15 8 26 12 30 C8 36 2 45 0 55 C5 50 10 42 16 36 Z" fill="#1d3d58"/>
+        <path d="M140 42 C125 58 110 65 105 68 C112 58 122 48 128 44 Z" fill="#183248"/>
+        <circle cx="178" cy="28" r="2.5" fill="#ffd873"/>
+        <line x1="145" y1="28" x2="142" y2="38" stroke="#4299e1" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="150" y1="28" x2="147" y2="38" stroke="#4299e1" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="155" y1="29" x2="152" y2="37" stroke="#4299e1" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Sea Turtle -->
+  <div class="swimming-turtle" aria-hidden="true">
+    <svg viewBox="0 0 140 90" width="100%" height="100%">
+      <g fill="#276749" stroke="#38a169" stroke-width="1.5">
+        <ellipse cx="65" cy="45" rx="36" ry="24" fill="#22543d"/>
+        <ellipse cx="65" cy="45" rx="26" ry="16" fill="#276749" stroke="#48bb78" stroke-dasharray="4,3"/>
+        <ellipse cx="110" cy="45" rx="12" ry="9" fill="#2f855a"/>
+        <circle cx="114" cy="42" r="2" fill="#ffd873"/>
+        <path d="M85 30 C95 10 115 0 120 2 C115 15 95 32 80 36 Z" fill="#2f855a"/>
+        <path d="M85 60 C95 80 115 90 120 88 C115 75 95 58 80 54 Z" fill="#2f855a"/>
+        <path d="M35 34 C25 24 15 22 12 25 C18 32 25 38 32 40 Z" fill="#22543d"/>
+        <path d="M35 56 C25 66 15 68 12 65 C18 58 25 52 32 50 Z" fill="#22543d"/>
+        <polygon points="28,45 20,43 20,47" fill="#22543d"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Bioluminescent Jellyfish 1 -->
+  <div class="glowing-jellyfish j1" aria-hidden="true">
+    <svg viewBox="0 0 70 110" width="100%" height="100%">
+      <defs>
+        <radialGradient id="jellyGlow1" cx="50%" cy="40%" r="50%">
+          <stop offset="0%" stop-color="#81e6d9" stop-opacity="0.9"/>
+          <stop offset="70%" stop-color="#319795" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#234e52" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="35" cy="30" rx="26" ry="22" fill="url(#jellyGlow1)"/>
+      <path d="M12 36 Q35 44 58 36" stroke="#4fd1c5" stroke-width="2.5" fill="none"/>
+      <path d="M22 40 Q18 65 24 95 Q26 102 22 108" stroke="#4fd1c5" stroke-width="1.8" fill="none" opacity="0.8"/>
+      <path d="M30 42 Q36 68 32 98 Q30 104 35 110" stroke="#81e6d9" stroke-width="2" fill="none" opacity="0.9"/>
+      <path d="M40 42 Q44 68 38 98 Q36 104 42 110" stroke="#81e6d9" stroke-width="2" fill="none" opacity="0.9"/>
+      <path d="M48 40 Q52 65 46 95 Q44 102 48 108" stroke="#4fd1c5" stroke-width="1.8" fill="none" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <!-- Bioluminescent Jellyfish 2 -->
+  <div class="glowing-jellyfish j2" aria-hidden="true">
+    <svg viewBox="0 0 70 110" width="100%" height="100%">
+      <defs>
+        <radialGradient id="jellyGlow2" cx="50%" cy="40%" r="50%">
+          <stop offset="0%" stop-color="#fbb6ce" stop-opacity="0.9"/>
+          <stop offset="70%" stop-color="#b83280" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#702459" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="35" cy="30" rx="24" ry="20" fill="url(#jellyGlow2)"/>
+      <path d="M14 34 Q35 42 56 34" stroke="#f687b3" stroke-width="2.2" fill="none"/>
+      <path d="M24 38 Q20 62 26 90" stroke="#f687b3" stroke-width="1.8" fill="none" opacity="0.8"/>
+      <path d="M32 40 Q38 65 34 95" stroke="#fbb6ce" stroke-width="2" fill="none" opacity="0.9"/>
+      <path d="M38 40 Q42 65 36 95" stroke="#fbb6ce" stroke-width="2" fill="none" opacity="0.9"/>
+      <path d="M46 38 Q50 62 44 90" stroke="#f687b3" stroke-width="1.8" fill="none" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <!-- Rising Bubbles -->
+  <div class="lagoon-bubbles" aria-hidden="true">
+    <div class="lagoon-bubble" style="--b-left:14%;--b-sz:16px;--b-dur:7s;--b-del:0.5s;--b-drift:30px"></div>
+    <div class="lagoon-bubble" style="--b-left:28%;--b-sz:10px;--b-dur:9s;--b-del:2s;--b-drift:-20px"></div>
+    <div class="lagoon-bubble" style="--b-left:42%;--b-sz:20px;--b-dur:6.5s;--b-del:1.2s;--b-drift:25px"></div>
+    <div class="lagoon-bubble" style="--b-left:58%;--b-sz:12px;--b-dur:8s;--b-del:3s;--b-drift:-15px"></div>
+    <div class="lagoon-bubble" style="--b-left:72%;--b-sz:18px;--b-dur:7.5s;--b-del:0.8s;--b-drift:35px"></div>
+    <div class="lagoon-bubble" style="--b-left:86%;--b-sz:14px;--b-dur:8.5s;--b-del:2.5s;--b-drift:-25px"></div>
+  </div>
+
+  <!-- Deep Sea Floor & Coral Reef Formations -->
+  <div class="sea-floor" aria-hidden="true">
+    <svg class="coral-formation" style="left:4%;width:180px;height:95px" viewBox="0 0 180 95">
+      <path d="M10 95 Q15 60 25 45 Q15 35 10 20 Q20 25 30 38 Q38 20 45 5 Q48 20 40 42 Q55 35 68 25 Q62 42 48 55 Q60 62 75 58 Q65 72 45 80 Q35 95 10 95 Z" fill="#dd6b20" opacity="0.9"/>
+      <path d="M60 95 Q70 65 85 50 Q80 35 75 15 Q88 28 92 45 Q105 35 118 20 Q112 40 98 55 Q115 65 130 60 Q118 75 92 82 Q78 95 60 95 Z" fill="#e53e3e" opacity="0.85"/>
+      <ellipse cx="140" cy="80" rx="30" ry="18" fill="#d69e2e" opacity="0.8"/>
+    </svg>
+    <svg class="coral-formation" style="right:5%;width:190px;height:95px" viewBox="0 0 190 95">
+      <path d="M170 95 Q160 55 145 40 Q155 25 160 8 Q148 20 140 35 Q130 18 122 2 Q120 18 128 38 Q115 32 102 20 Q108 38 122 52 Q105 60 90 55 Q102 70 125 78 Q138 95 170 95 Z" fill="#9f7aea" opacity="0.9"/>
+      <path d="M90 95 Q80 70 65 52 Q50 38 42 18 Q55 30 62 48 Q75 40 88 28 Q82 48 72 62 Q85 70 102 65 Q90 78 72 85 Q60 95 40 95 Z" fill="#319795" opacity="0.85"/>
+      <ellipse cx="40" cy="82" rx="28" ry="16" fill="#b83280" opacity="0.85"/>
+    </svg>
+  </div>
+
+  <div class="underwater-banner-copy reveal">
+    <div style="font-family:'Pirata One',cursive;letter-spacing:0.22em;color:#ffd873;font-size:1.1rem;text-transform:uppercase;margin-bottom:6px">
+      🌊 Beneath The Collegiate Sound 🌊
+    </div>
+    <h2>The Living Lagoon &amp; Abyssal Trench</h2>
+    <p>
+      Patrolled by reef sharks, ancient sea turtles, and bioluminescent deep-sea jellyfish. Here our marine cartographers and beast masters train in genuine open water.
+    </p>
+  </div>
+</section>
 
 <div class="stats">
   <div class="wrap stats-grid">
@@ -778,26 +905,131 @@ const SKILLS = `
 ${pageHero('Courses · 38 Skills','Skills of the Seven Seas','No exams. Just skills, graded the way the sea grades everything: by what you bring back.','Skills')}
 <section>
   <div class="wrap">
-    <div class="table-wrap reveal">
-      <table class="course-table">
-        <thead><tr><th>Code</th><th>Skill</th><th>Ship (Dept.)</th><th>Sea State</th><th>Sails</th><th>Graded By</th></tr></thead>
-        <tbody>
-          <tr><td class="code">NAV-101</td><td>Astrolabe Theory &amp; Practice</td><td>Educate &amp; Plunder</td><td>☠</td><td>2</td><td>Find Polaris in fog</td></tr>
-          <tr><td class="code">NAV-210</td><td>Reading Storms with Your Face</td><td>Educate &amp; Plunder</td><td>☠☠</td><td>2</td><td>Oral exam, outdoors, in wind</td></tr>
-          <tr><td class="code">NAV-400</td><td>Capstone: Cross an Ocean, Solo</td><td>Educate &amp; Plunder</td><td>☠☠☠</td><td>4</td><td>Arriving. That’s the whole rubric</td></tr>
-          <tr><td class="code">ART-110</td><td>Ballistics of Big Metal</td><td>The Broadside</td><td>☠☠</td><td>2</td><td>The range. Nerve not provided</td></tr>
-          <tr><td class="code">ART-240</td><td>Ethics of the Broadside</td><td>The Broadside</td><td>☠</td><td>1</td><td>Essay, on a plank, one hand</td></tr>
-          <tr><td class="code">TRE-105</td><td>Charting Islands That Lie</td><td>Buried Alive</td><td>☠☠</td><td>2</td><td>Your X must be right</td></tr>
-          <tr><td class="code">TRE-300</td><td>Diving, Dredging &amp; Digs</td><td>Buried Alive</td><td>☠☠</td><td>3</td><td>Bring back a genuine find</td></tr>
-          <tr><td class="code">ROP-112</td><td>The 34 Essential Knots</td><td>The Tightrope</td><td>☠</td><td>1</td><td>Blindfolded. Yes, really</td></tr>
-          <tr><td class="code">ROP-330</td><td>Mast Climbing: Fear Management</td><td>The Tightrope</td><td>☠☠☠</td><td>2</td><td>Forty fathoms, on schedule</td></tr>
-          <tr><td class="code">PAR-101</td><td>Avian Communication</td><td>Feather’s Folly</td><td>☠</td><td>1</td><td>Your parrot claps, exactly once</td></tr>
-          <tr><td class="code">ARC-210</td><td>Hull Design: Art vs. Physics</td><td>The Anvil’s Wake</td><td>☠☠</td><td>2</td><td>It must float</td></tr>
-          <tr><td class="code">ARC-400</td><td>Capstone: Build a Boat</td><td>The Anvil’s Wake</td><td>☠☠</td><td>4</td><td>It must survive a storm</td></tr>
-        </tbody>
-      </table>
+    <!-- Ancient Pale Coffee Brown Rolled Scroll -->
+    <div class="ancient-scroll-container reveal">
+      <div class="scroll-roller top">
+        <div class="scroll-finial"></div>
+        <div class="scroll-finial"></div>
+      </div>
+
+      <div class="ancient-scroll-body">
+        <div class="scroll-curled-edge"></div>
+        
+        <div class="scroll-header-decree">
+          <div style="font-family:'Pirata One',cursive;font-size:1.15rem;letter-spacing:0.18em;color:#8a4212;text-transform:uppercase;margin-bottom:6px">
+            ⚓ Official Collegiate Decree · Est. 1654 ⚓
+          </div>
+          <h2 class="scroll-decree-title">The 38 Skills of the Seven Seas</h2>
+          <p class="scroll-decree-sub">
+            "No paper exams. Graded solely the way the ocean grades: by what you bring back alive."
+          </p>
+        </div>
+
+        <div class="scroll-skills-grid">
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">NAV-101 <span class="skulls">☠</span></div>
+            <div class="scroll-skill-name">Astrolabe Theory &amp; Practice</div>
+            <span class="scroll-skill-dept">Ship: H.M.S. Educate &amp; Plunder · 2 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Find Polaris in dense fog before midnight.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">NAV-210 <span class="skulls">☠☠</span></div>
+            <div class="scroll-skill-name">Reading Storms with Your Face</div>
+            <span class="scroll-skill-dept">Ship: H.M.S. Educate &amp; Plunder · 2 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Oral exam outdoors in 45-knot gale winds.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">NAV-400 <span class="skulls">☠☠☠</span></div>
+            <div class="scroll-skill-name">Capstone: Cross an Ocean, Solo</div>
+            <span class="scroll-skill-dept">Ship: H.M.S. Educate &amp; Plunder · 4 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Arriving. That is the entire rubric.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">ART-110 <span class="skulls">☠☠</span></div>
+            <div class="scroll-skill-name">Ballistics of Big Metal</div>
+            <span class="scroll-skill-dept">Ship: The Broadside · 2 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> 32-pounder accuracy on moving target. Nerve not provided.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">ART-240 <span class="skulls">☠</span></div>
+            <div class="scroll-skill-name">Ethics of the Broadside</div>
+            <span class="scroll-skill-dept">Ship: The Broadside · 1 Sail</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> 500-word essay written on a plank with one hand.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">TRE-105 <span class="skulls">☠☠</span></div>
+            <div class="scroll-skill-name">Charting Islands That Lie</div>
+            <span class="scroll-skill-dept">Ship: Buried Alive · 2 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Your red X must pinpoint real buried gold.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">TRE-300 <span class="skulls">☠☠</span></div>
+            <div class="scroll-skill-name">Diving, Dredging &amp; Digs</div>
+            <span class="scroll-skill-dept">Ship: Buried Alive · 3 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Retrieve genuine sunken loot from 20 fathoms.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">ROP-112 <span class="skulls">☠</span></div>
+            <div class="scroll-skill-name">The 34 Essential Knots</div>
+            <span class="scroll-skill-dept">Ship: The Tightrope · 1 Sail</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Tied blindfolded while hanging upside-down.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">ROP-330 <span class="skulls">☠☠☠</span></div>
+            <div class="scroll-skill-name">Mast Climbing: Fear Management</div>
+            <span class="scroll-skill-dept">Ship: The Tightrope · 2 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Reach topgallant spar in a squall, 40 fathoms up.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">PAR-101 <span class="skulls">☠</span></div>
+            <div class="scroll-skill-name">Avian Communication</div>
+            <span class="scroll-skill-dept">Ship: Feather’s Folly · 1 Sail</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Your parrot claps exactly once on command.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">ARC-210 <span class="skulls">☠☠</span></div>
+            <div class="scroll-skill-name">Hull Design: Art vs. Physics</div>
+            <span class="scroll-skill-dept">Ship: The Anvil’s Wake · 2 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> It must float with 4 tons of cannonballs aboard.</div>
+          </div>
+
+          <div class="scroll-skill-item">
+            <div class="scroll-skill-code">ARC-400 <span class="skulls">☠☠</span></div>
+            <div class="scroll-skill-name">Capstone: Build a Boat</div>
+            <span class="scroll-skill-dept">Ship: The Anvil’s Wake · 4 Sails</span>
+            <div class="scroll-skill-rubric"><b>Rubric:</b> Must survive a 3-mile voyage through breaker reefs.</div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:32px;display:flex;align-items:center;justify-content:center;gap:14px">
+          <div class="seal" style="position:static" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><use href="#skullMark" color="#f5e9c9"/></svg>
+          </div>
+          <div style="text-align:left;font-family:'Pirata One',cursive;font-size:1.15rem;color:#6b320d">
+            Sealed by the Board of Captains<br>
+            <span style="font-family:'IM Fell English',serif;font-size:0.88rem;color:#7a4b22;font-style:italic">Academic Committee · Port Ravenspire</span>
+          </div>
+        </div>
+
+        <div class="scroll-curled-edge bottom"></div>
+      </div>
+
+      <div class="scroll-roller bottom">
+        <div class="scroll-finial"></div>
+        <div class="scroll-finial"></div>
+      </div>
     </div>
-    <p class="center reveal" style="margin-top:18px;color:#8fa5b5;font-size:.92rem">Sea state = difficulty. ☠ = calm seas. ☠☠☠☠ = bring a will. Sails = credit. Full catalogue at the Crow’s Nest, subject to the parrot’s mood.</p>
+    <p class="center reveal" style="margin-top:18px;color:#8fa5b5;font-size:.92rem">Sea state = difficulty. ☠ = calm seas. ☠☠☠ = bring a will. Sails = credit. Full catalogue at the Crow’s Nest, subject to the parrot’s mood.</p>
   </div>
 </section>
 
@@ -827,33 +1059,126 @@ const QUARTERMASTERS = `
 ${pageHero('Faculty','Quartermasters','Every professor holds a captain’s license, at least one scar, and a strong opinion about rope.','Quartermasters')}
 <section>
   <div class="wrap">
-    <div class="grid-4">
-      <div class="person reveal" data-tilt>
-        <div class="portrait" style="height:170px"><img src="img/captain-crane.jpg" alt="Portrait of Fleetmaster Aldric Grimtide Crane" loading="lazy"></div>
-        <h3>Fleetmaster Aldric "Grimtide" Crane</h3>
-        <div class="role">Dean of the Fleet</div>
-        <p>Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won.</p>
-        <span class="photo-tag">Verified by the Fleet</span>
+    <div class="qm-passport-grid">
+      <!-- 1. Fleetmaster Aldric "Grimtide" Crane -->
+      <div class="qm-passport-card reveal" data-tilt style="--qm-tilt:-1.8deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Aldric "Grimtide" Crane</h3>
+        </div>
+        <div class="qm-role-ribbon">Dean of the Fleet · Flagship Master</div>
+        <p class="qm-bio-text">Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won.</p>
+        <span class="qm-verified-stamp">Verified by Admiralty</span>
       </div>
-      <div class="person reveal d1" data-tilt>
-        <div class="portrait" style="height:170px"><img src="img/parrot.jpg" alt="Professor Feather, the college parrot" loading="lazy"></div>
-        <h3>Professor Feather, III</h3>
-        <div class="role">Chair of Parrot Linguistics</div>
-        <p>Grades, supervises, and occasionally eats the answer sheets. Salaried in sunflower seeds since 1848.</p>
-        <span class="photo-tag">Verified by Everyone</span>
+
+      <!-- 2. Professor Feather, III -->
+      <div class="qm-passport-card reveal d1" data-tilt style="--qm-tilt:1.5deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/parrot.jpg" alt="Professor Feather III" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Prof. Feather, III</h3>
+        </div>
+        <div class="qm-role-ribbon">Chair of Parrot Linguistics</div>
+        <p class="qm-bio-text">Grades, supervises, and occasionally eats the answer sheets. Salaried in sunflower seeds and red chilies since 1848.</p>
+        <span class="qm-verified-stamp">Certified by The Crew</span>
       </div>
-      <div class="person reveal d2" data-tilt style="--ptint:#7a4a2a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#241408"/></svg></div>
-        <h3>Prof. Marlow "One-Leg" Vance</h3><div class="role">Navigation (Educate &amp; Plunder)</div><p>Lost a leg to a cannonball in 1698. Teaches with the other one, mostly.</p></div>
-      <div class="person reveal d3" data-tilt style="--ptint:#2f5d63"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#101d20"/></svg></div>
-        <h3>Prof. Isla Blackbeard</h3><div class="role">Artillery (The Broadside)</div><p>Has never missed a target. Has also never missed a deadline.</p></div>
-      <div class="person reveal" data-tilt style="--ptint:#6e3a3a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#20100c"/></svg></div>
-        <h3>Dr. Corvus Quill</h3><div class="role">Cartography (Buried Alive)</div><p>Maps places that don’t exist yet. The Crew call them "promises."</p></div>
-      <div class="person reveal d1" data-tilt style="--ptint:#5a5230"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#15130a"/></svg></div>
-        <h3>Capt. (ret.) Rosa Flint</h3><div class="role">Rigging (The Tightrope)</div><p>Her parrot, Professor Feather, is officially on the faculty too. He grades.</p></div>
-      <div class="person reveal d2" data-tilt style="--ptint:#6a4a2a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#1c1208"/></svg></div>
-        <h3>Mrs. Marigold Oat</h3><div class="role">The Galley (Food &amp; Grog)</div><p>Cook of record. Salt beef three ways. Her grog recipe is a college secret with 372 holders.</p></div>
-      <div class="person reveal d3" data-tilt style="--ptint:#44506a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#11141c"/></svg></div>
-        <h3>Brother Anchor</h3><div class="role">Keeper of the Vault (Bursar)</div><p>Counts the doubloons. Has counted them. Will count them again. Do not stand in front of the safe.</p></div>
+
+      <!-- 3. Prof. Marlow "One-Leg" Vance -->
+      <div class="qm-passport-card reveal d2" data-tilt style="--qm-tilt:-2.2deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/qm-marlow-pass.jpg" alt="Prof. Marlow One-Leg Vance" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Marlow "One-Leg" Vance</h3>
+        </div>
+        <div class="qm-role-ribbon">Navigation · Educate &amp; Plunder</div>
+        <p class="qm-bio-text">Lost a leg to a broadside in 1698. Teaches astrolabe calculations in squalls with the remaining one, mostly.</p>
+        <span class="qm-verified-stamp">Compass Master</span>
+      </div>
+
+      <!-- 4. Prof. Isla Blackbeard -->
+      <div class="qm-passport-card reveal d3" data-tilt style="--qm-tilt:2deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/qm-isla-pass.jpg" alt="Prof. Isla Blackbeard" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Prof. Isla Blackbeard</h3>
+        </div>
+        <div class="qm-role-ribbon">Heavy Artillery · The Broadside</div>
+        <p class="qm-bio-text">Has never missed a naval target at 400 fathoms. Has also never missed a grade deadline in 34 seasons.</p>
+        <span class="qm-verified-stamp">Master Gunner</span>
+      </div>
+
+      <!-- 5. Dr. Corvus Quill -->
+      <div class="qm-passport-card reveal" data-tilt style="--qm-tilt:-1.4deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/qm-corvus-pass.jpg" alt="Dr. Corvus Quill" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Dr. Corvus Quill</h3>
+        </div>
+        <div class="qm-role-ribbon">Cartography · Buried Alive</div>
+        <p class="qm-bio-text">Maps uncharted islands that lie, shift, or disappear at low tide. The Crew calls his sea routes "promises."</p>
+        <span class="qm-verified-stamp">Grand Cartographer</span>
+      </div>
+
+      <!-- 6. Capt. (ret.) Rosa Flint -->
+      <div class="qm-passport-card reveal d1" data-tilt style="--qm-tilt:2.4deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/qm-flint-pass.jpg" alt="Capt. (ret.) Rosa Flint" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Capt. Rosa Flint</h3>
+        </div>
+        <div class="qm-role-ribbon">Rigging &amp; Spars · The Tightrope</div>
+        <p class="qm-bio-text">Veteran of sixty typhoons. Commands forty fathoms of hemp rope in gale winds blindfolded. Professor Feather's handler.</p>
+        <span class="qm-verified-stamp">Rigging Admiral</span>
+      </div>
+
+      <!-- 7. Mrs. Marigold Oat -->
+      <div class="qm-passport-card reveal d2" data-tilt style="--qm-tilt:-2deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/qm-marigold-pass.jpg" alt="Mrs. Marigold Oat" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Mrs. Marigold Oat</h3>
+        </div>
+        <div class="qm-role-ribbon">The Galley · Food, Provisions &amp; Grog</div>
+        <p class="qm-bio-text">Cook of record. Salt beef served three ways. Her grog recipe and spicy chili stew are collegiate secrets with 372 holders.</p>
+        <span class="qm-verified-stamp">Galley Commander</span>
+      </div>
+
+      <!-- 8. Brother Anchor -->
+      <div class="qm-passport-card reveal d3" data-tilt style="--qm-tilt:1.6deg">
+        <div class="qm-passport-frame">
+          <div class="qm-passport-corner tl"></div><div class="qm-passport-corner tr"></div>
+          <div class="qm-passport-corner bl"></div><div class="qm-passport-corner br"></div>
+          <img src="img/qm-anchor-pass.jpg" alt="Brother Anchor" loading="lazy">
+        </div>
+        <div class="qm-brass-plaque">
+          <h3>Brother Anchor</h3>
+        </div>
+        <div class="qm-role-ribbon">Keeper of the Vault · High Bursar</div>
+        <p class="qm-bio-text">Counts 37,000 doubloons nightly behind triple iron portcullises. Has counted them. Will count them again. Stand back from the safe.</p>
+        <span class="qm-verified-stamp">Bursar Seal</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1323,23 +1648,13 @@ const ISLAND_SVG = `
 </svg>`;
 
 const ISLAND = `
-${pageHero('Campus / Facilities','The Island','Official Nautical Chart of Ravenspire Blacktide Collegium. Tap any glowing pin to chart your course.','The Island')}
+${pageHero('Campus / Facilities','The Island','Official Nautical Chart of Ravenspire Blacktide Collegium. Tap any landmark pin to sail directly to that deck.','The Island')}
 <section>
   <div class="wrap">
-    <div class="map-grid">
-      <div class="map-stage reveal">
-        ${ISLAND_SVG}
-        <div class="map-beam" aria-hidden="true"></div>
-      </div>
-      <aside class="map-panel reveal d1" id="mapPanel">
-        <div class="mp-kicker" id="mapKicker">The Treasure Map · chartvault</div>
-        <h3 class="mp-name" id="mapName">The Chart Vault</h3>
-        <div class="mp-sub" id="mapSub">Cartography, Secret Routes &amp; Celestial Archive</div>
-        <p class="mp-desc" id="mapDesc">Houses 12,000 maritime charts, celestial navigational globes, and sealed imperial sea routes. Hidden high in the red cliffs above the lagoon, where master cartographers calculate safe passage through treacherous waters.</p>
-        <div class="mp-hours" id="mapHours">Hours: Open at high tide; whisper the password to Brother Anchor.</div>
-        <a class="btn mp-link" id="mapLink" href="skills.html">Browse Cartography Skills →</a>
-        <div class="mp-bunk">Your berth: <b>Crew Quarters, Berth #<span id="bunkNum">113</span></b> — assigned by lottery, then by seniority, then by who asked nicer.</div>
-      </aside>
+    <div class="map-stage-single reveal">
+      ${ISLAND_SVG}
+      <div class="map-beam" aria-hidden="true"></div>
+      <div class="map-quick-hint">☠ Tap any glowing pin on the chart to sail directly to that collegiate deck ⛵</div>
     </div>
 
     <!-- Quick Landmark Filter / Navigation Chips -->
@@ -1896,21 +2211,49 @@ ${cta('Don’t Just Read the Chart. Set Sail.','The fleet is patient. Your doubl
 const QUARTERS = `
 ${pageHero('Student Portal','Shipman’s Quarters','Fees, timetables, bunks, and the portal. One key. No, two. One key and a parrot’s name.','Quarters')}
 <section>
-  <div class="wrap" style="max-width:560px">
-    <div class="quarters-card reveal">
-      <svg viewBox="0 0 100 100" style="width:70px;margin:0 auto 14px" aria-hidden="true"><use href="#skullMark" color="#e6b34a"/></svg>
-      <h3 style="color:var(--gold-bright);font-size:1.9rem;margin-bottom:6px">Board the Quarters</h3>
-      <p class="sub" style="color:#cbb88f;font-size:.92rem;font-style:italic;margin-bottom:22px">Student portal. Berth number in, parrot’s name up, in you go.</p>
-      <form data-quarters novalidate>
-        <div class="field"><label for="qName">Your name</label><input id="qName" type="text" placeholder="e.g. Nadia Okafor"></div>
-        <div class="field"><label for="qId">Berth number (student ID)</label><input id="qId" type="text" placeholder="e.g. 113"></div>
-        <div class="field"><label for="qPass">Passphrase (your parrot’s name)</label><input id="qPass" type="password" placeholder="whisper it"></div>
-        <div class="field" style="display:flex;align-items:center;gap:10px"><label for="qRem" style="margin:0;letter-spacing:.1em">Remember me on this deck</label><input id="qRem" type="checkbox" style="width:auto"></div>
-        <button class="btn" type="submit" style="width:100%">Board the Quarters ⚓</button>
-      </form>
-      <div style="margin-top:18px;font-size:.9rem;color:#b9c9d6">
-        Lost your passphrase? <a href="raven.html">Send a raven</a> to the Quartermaster.<br>
-        Not enrolled yet? <a href="enlist.html">Join the Crew</a> first.
+  <div class="wrap login-scroll-wrap">
+    <div class="ancient-scroll-container reveal">
+      <div class="scroll-roller top">
+        <div class="scroll-finial"></div>
+        <div class="scroll-finial"></div>
+      </div>
+
+      <div class="ancient-scroll-body">
+        <div class="scroll-curled-edge"></div>
+
+        <div style="text-align:center;margin-bottom:20px">
+          <svg viewBox="0 0 100 100" style="width:64px;margin:0 auto 8px" aria-hidden="true"><use href="#skullMark" color="#8e2f1e"/></svg>
+          <div style="font-family:'Pirata One',cursive;font-size:1.1rem;letter-spacing:0.18em;color:#8a4212;text-transform:uppercase">
+            ⚓ Official Cadet Registry · Berth Access ⚓
+          </div>
+          <h2 class="scroll-decree-title" style="font-size:2.2rem;margin:4px 0">Board the Quarters</h2>
+          <p class="scroll-decree-sub" style="font-size:0.96rem">
+            Berth number in, parrot’s secret whisper up, in you go.
+          </p>
+        </div>
+
+        <form data-quarters novalidate>
+          <div class="field"><label for="qName">Cadet Name</label><input id="qName" type="text" placeholder="e.g. Nadia Okafor"></div>
+          <div class="field"><label for="qId">Berth Number (Student ID)</label><input id="qId" type="text" placeholder="e.g. 113"></div>
+          <div class="field"><label for="qPass">Passphrase (Your Parrot’s Name)</label><input id="qPass" type="password" placeholder="whisper it softly"></div>
+          <div class="field" style="display:flex;align-items:center;gap:10px">
+            <label for="qRem" style="margin:0;letter-spacing:.06em;color:#4a2b10">Remember me on this deck</label>
+            <input id="qRem" type="checkbox" style="width:auto">
+          </div>
+          <button class="btn" type="submit" style="width:100%;font-size:1.1rem;padding:14px 20px">Board the Quarters ⚓</button>
+        </form>
+
+        <div style="margin-top:20px;font-size:.9rem;color:#5a3716;text-align:center;border-top:1px dashed rgba(140,80,20,0.35);padding-top:14px">
+          Lost your passphrase? <a href="raven.html" style="color:#8e2f1e;font-weight:700">Send a raven</a> to the Quartermaster.<br>
+          Not enrolled yet? <a href="enlist.html" style="color:#8e2f1e;font-weight:700">Join the Crew</a> first.
+        </div>
+
+        <div class="scroll-curled-edge bottom"></div>
+      </div>
+
+      <div class="scroll-roller bottom">
+        <div class="scroll-finial"></div>
+        <div class="scroll-finial"></div>
       </div>
     </div>
   </div>
@@ -2089,8 +2432,8 @@ const BODIES = {
 for (const [file, [title, , desc]] of Object.entries(PAGES)) {
   const key = file.replace('.html','');
   const active = {'index':'home','scroll':'scroll','fleet':'fleet','quartermasters':'qm','island':'island','wanted':'wanted'}[key] || '';
-  const tickerHtml = file === 'index.html' ? '' : (ticker() + '\n');
-  const html = head(title, desc) + '\n' + tickerHtml + nav(active) + '\n' + BODIES[file] + '\n' + foot();
+  const tickerHtml = '';
+  const html = head(title, desc) + '\n' + nav(active) + '\n' + BODIES[file] + '\n' + foot();
   fs.writeFileSync(file, html);
   console.log('wrote', file, html.length);
 }

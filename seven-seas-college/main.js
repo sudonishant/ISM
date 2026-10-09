@@ -369,15 +369,24 @@ if(spots.length){
     var d=MAPDATA[k]; if(!d) return;
     spots.forEach(function(o){ o.classList.toggle('active', o.dataset.spot===k); });
     $$('.map-chip').forEach(function(c){ c.classList.toggle('active', c.dataset.spot===k); });
-    showSpot(k);
     if(e && e.clientX){
-      burst(e.clientX, e.clientY, 8);
+      burst(e.clientX, e.clientY, 10);
       spawnSpark(e.clientX, e.clientY);
     }
-    toast('Charting: '+d.n+' — marked in gold! ⚓');
+    toast('⚓ Setting sail to ' + d.n + '... ⛵');
+    setTimeout(function(){
+      if(d.l) window.location.href = d.l;
+    }, 280);
   }
 
   spots.forEach(function(s){
+    var k = s.dataset.spot;
+    var d = MAPDATA[k];
+    if(d){
+      s.setAttribute('title', d.n + ' (' + d.s + ') — Tap to Sail! ⛵');
+      s.setAttribute('aria-label', d.n + ' — Tap to Sail to ' + d.l);
+      s.style.cursor = 'pointer';
+    }
     s.addEventListener('click',function(e){
       selectMapSpot(s.dataset.spot, e);
     });
@@ -391,6 +400,11 @@ if(spots.length){
   });
 
   $$('.map-chip').forEach(function(chip){
+    var k = chip.dataset.spot;
+    var d = MAPDATA[k];
+    if(d){
+      chip.setAttribute('title', 'Sail to ' + d.n);
+    }
     chip.addEventListener('click',function(e){
       selectMapSpot(chip.dataset.spot, e);
     });
@@ -399,18 +413,12 @@ if(spots.length){
   $$('.spot-jump-btn').forEach(function(btn){
     btn.addEventListener('click',function(e){
       var k = btn.dataset.chartSpot;
-      var stage = document.querySelector('.map-stage');
-      if(stage){
-        stage.scrollIntoView({behavior:'smooth', block:'center'});
+      var d = MAPDATA[k];
+      if(d && d.l){
+        window.location.href = d.l;
       }
-      setTimeout(function(){
-        selectMapSpot(k, e);
-      }, 350);
     });
   });
-
-  var bn=document.getElementById('bunkNum');
-  if(bn){ bn.textContent=[113,27,402,511,68,9][Math.floor(Math.random()*6)]; }
 }
 
 /* ============ PROFESSOR FEATHER — 3D FLIGHT, WHITE POOP, SECRET UNLOCK ============ */
@@ -620,6 +628,15 @@ if(spots.length){
     'May thy Wi-Fi perish, thou pecking knave!'
   ];
 
+  const SPICY_QUIPS = [
+    '<b>SQUAWK!! YAAARRR!</b> THAT\u2019S VOLCANIC GALLOWS PEPPER! Me beak is sizzlin\u2019! 🌶️🔥',
+    '<b>AWWWK!</b> ME GIZZARD IS ON FIRE! Mrs. Oat put gunpowder in this chili! 🔥🦜',
+    '<b>PIECES OF EIGHT!</b> Spicier than a 32-pounder broadside to the brisket! 💥',
+    '<b>SQUAWK!</b> Grog! Bring the Galley grog! Me tongue is walking the plank! 🌊',
+    '<b>AWWWK!</b> One peck of that and I\u2019m breathing dragon fire across the Quarterdeck! 🐉🔥',
+    '<b>ZOUNDS!</b> That pepper woke all seven generations of me parrot ancestors! 🦜✨'
+  ];
+
   let state;
   try { state = (localStorage.getItem('featherWoken') === '1') ? 'woken' : 'sleepy'; } catch(e){ state = 'sleepy'; }
   let peckIdx = 0, grabbed = false;
@@ -636,8 +653,8 @@ if(spots.length){
     bowl.id = 'chilliBowl';
     bowl.setAttribute('tabindex', '0');
     bowl.setAttribute('role', 'button');
-    bowl.setAttribute('aria-label', 'Chilli bowl. Drag it onto the parrot, or press Enter to grab it and then press Enter on the parrot to drop it.');
-    bowl.innerHTML = '<span class="chilli">\u{1F336}</span><span class="bowl"></span><span class="b-label">chilli bowl \u00b7 drag or tap me</span>';
+    bowl.setAttribute('aria-label', 'Pirate chili pepper. Drag it near Professor Feather to feed him spicy fire!');
+    bowl.innerHTML = '<img src="img/chili.png" class="chilli-real" alt="Pirate Chili"><span class="chilli-sparks">🔥</span><span class="bowl"></span><span class="b-label">pirate chilli · drag near me!</span>';
     document.body.appendChild(bowl);
     let pid = null, startX = 0, startY = 0, offX = 0, offY = 0, moved = false;
     bowl.addEventListener('pointerdown', (e) => {
@@ -656,6 +673,13 @@ if(spots.length){
       bowl.style.left = (e.clientX - offX) + 'px';
       bowl.style.top = (e.clientY - offY) + 'px';
       bowl.style.right = 'auto'; bowl.style.bottom = 'auto';
+
+      const pr = rig.getBoundingClientRect();
+      const dist = Math.hypot(e.clientX - (pr.left + pr.width/2), e.clientY - (pr.top + pr.height/2));
+      if (dist < 200) {
+        rig.classList.add('waking');
+        say('<b>AWWWK!!</b> I smell red-hot chili! Bring it closer to me beak! 🌶️🔥', 4000);
+      }
     });
     bowl.addEventListener('pointerup', (e) => {
       if (pid === null || e.pointerId !== pid) return;
@@ -664,11 +688,11 @@ if(spots.length){
       if (!moved) {
         grabbed = !grabbed;
         bowl.classList.toggle('grabbed', grabbed);
-        if (grabbed) say('Got the chilli! <b>Now tap the parrot</b> to drop it on him.', 9000);
+        if (grabbed) say('Got the red-hot chili! <b>Now bring it to the parrot</b> to feed him! 🌶️', 9000);
         return;
       }
       const pr = rig.getBoundingClientRect();
-      if (e.clientX >= pr.left - 12 && e.clientX <= pr.right + 12 && e.clientY >= pr.top - 12 && e.clientY <= pr.bottom + 30) {
+      if (e.clientX >= pr.left - 30 && e.clientX <= pr.right + 30 && e.clientY >= pr.top - 30 && e.clientY <= pr.bottom + 45) {
         wakeUp();
       }
     });
@@ -677,37 +701,33 @@ if(spots.length){
         e.preventDefault();
         grabbed = !grabbed;
         bowl.classList.toggle('grabbed', grabbed);
-        if (grabbed) say('Got the chilli! <b>Now press Enter on the parrot</b> to drop it on him.', 9000);
+        if (grabbed) say('Got the red-hot chili! <b>Now press Enter on the parrot</b> to feed him! 🌶️', 9000);
       }
     });
   }
 
+  // Show the chili pepper automatically after 1.5s
+  setTimeout(showBowl, 1500);
+
   function strike(){
     state = 'strike';
     rig.classList.add('zzz');
-    if (bowl) say('The bowl is over there \u2014 <b>red, spicy, draggable</b>. Or tap it, then tap me.', 10000);
-    else { say('My squawks are on strike! <b>Drag the chilli bowl</b> here to wake me. (Or tap the bowl, then tap me.)', 12000); showBowl(); }
+    if (bowl) say('The chili bowl is over there \u2014 <b>red, spicy, draggable</b>! Feed me! 🌶️', 10000);
+    else { say('My squawks are on strike! <b>Drag the chilli bowl</b> here to wake me. 🌶️', 12000); showBowl(); }
   }
 
   function wakeUp(){
-    if (state === 'woken') return;
     state = 'woken';
     try { localStorage.setItem('featherWoken', '1'); } catch(e) {}
     rig.classList.remove('zzz', 'zzz-idle');
     grabbed = false;
-    if (bowl){
-      const pr = rig.getBoundingClientRect();
-      bowl.style.left = (pr.left + pr.width/2 - 37) + 'px';
-      bowl.style.top = (pr.top + pr.height*0.3) + 'px';
-      bowl.style.right = 'auto'; bowl.style.bottom = 'auto';
-      setTimeout(() => { if (bowl) { bowl.remove(); bowl = null; } }, 450);
-    }
     rig.classList.add('waking');
     const b = document.createElement('span'); b.className = 'burst';
     rig.appendChild(b);
     setTimeout(() => b.remove(), 800);
     setTimeout(() => rig.classList.remove('waking'), 950);
-    say('<b>Zounds!</b> I\u2019m fired up\u2014ask me for a clue! Click me.', 9000);
+    const quip = SPICY_QUIPS[Math.floor(Math.random() * SPICY_QUIPS.length)];
+    say(quip, 11000);
   }
 
   function parrotTap(){
