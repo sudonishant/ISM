@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipman’s Quarters — Ravenspire Blacktide Collegium</title>
+<meta name="description" content="Student portal.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="extra.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="hullG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2d15"/><stop offset="1" stop-color="#241407"/></linearGradient>
+<linearGradient id="sailG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5e9c9"/><stop offset="1" stop-color="#d3bd8a"/></linearGradient>
+<linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd873"/><stop offset="1" stop-color="#c9922e"/></linearGradient>
+<radialGradient id="coinFaceG" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".55" stop-color="#e6b34a"/><stop offset="1" stop-color="#a5701f"/></radialGradient>
+<g id="skullMark">
+  <g transform="rotate(45 50 55)" fill="currentColor"><rect x="8" y="49" width="84" height="11" rx="5.5"/><rect x="8" y="60" width="84" height="11" rx="5.5"/></g>
+  <path fill="currentColor" d="M50 16c-15.5 0-26 10.6-26 24 0 8.6 4.6 14.8 9.6 17.8v8.4a4.4 4.4 0 0 0 4.4 4.4h24a4.4 4.4 0 0 0 4.4-4.4v-8.4c5-3 9.6-9.2 9.6-17.8 0-13.4-10.5-24-26-24Z"/>
+  <circle cx="40.5" cy="44" r="6.4" fill="#0a1f38"/><circle cx="59.5" cy="44" r="6.4" fill="#0a1f38"/>
+  <path d="M50 51l-4.4 7h8.8Z" fill="#0a1f38"/>
+  <rect x="42.4" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/><rect x="48.3" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/><rect x="54.2" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/>
+</g>
+<path id="wavePath" d="M0 60 C150 100 350 20 600 60 C850 100 1050 20 1200 60 L1200 130 L0 130 Z"/>
+<g id="parrotArt">
+  <path d="M44 138C34 156 20 166 8 170c16 2 36-6 48-22Z" fill="#2e8b57"/>
+  <path d="M60 58c30 14 36 60 14 84-24 4-40-20-38-46 2-20 10-32 24-38Z" fill="#c94b32"/>
+  <path d="M56 84c24 6 30 34 12 52-12-8-20-32-12-52Z" fill="#1f5f8b"/>
+  <circle cx="46" cy="46" r="22" fill="#c94b32"/>
+  <path d="M27 44c-13 2-15 14-2 16-4-6 0-12 8-13Z" fill="#e8a13c"/>
+  <circle cx="42" cy="42" r="4.6" fill="#fff8e0"/><circle cx="41" cy="42" r="2.2" fill="#1a120b"/>
+  <path d="M56 138l-4 12M68 138l4 12" stroke="#e8a13c" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g id="pirateSil" fill="currentColor">
+  <path d="M20 74Q100 18 180 74Q100 56 20 74Z"/>
+  <path d="M52 66Q100 6 148 66Q100 50 52 66Z"/>
+  <circle cx="100" cy="106" r="42"/>
+  <path d="M58 112c-4 60 22 84 42 84s46-24 42-84c-12 38-28 48-42 48s-30-10-42-48Z"/>
+  <path d="M20 220Q42 166 100 162q58 4 80 58Z"/>
+  <circle cx="122" cy="104" r="11" fill="#0d0704"/>
+  <path d="M78 96q22-16 44 0" stroke="#0d0704" stroke-width="5" fill="none"/>
+</g>
+<g id="coinArt">
+  <circle cx="100" cy="100" r="96" fill="url(#coinFaceG)" stroke="#8a5a1f" stroke-width="4"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#a5701f" stroke-width="3" stroke-dasharray="6 5"/>
+  <path id="coinArc" d="M100 100 m -62 0 a 62 62 0 1 1 124 0 a 62 62 0 1 1 -124 0" fill="none"/>
+  <text font-size="15" letter-spacing="2.5" fill="#6b4413" font-family="Georgia,serif" font-weight="bold"><textPath href="#coinArc" startOffset="8%">COLLEGE OF THE SEVEN SEAS ★ EST. 1654 ★</textPath></text>
+  <use href="#skullMark" transform="translate(72 62) scale(.56)" color="#6b4413"/>
+  <text x="100" y="158" text-anchor="middle" font-size="24" fill="#6b4413" font-family="Georgia,serif" font-weight="bold">1654</text>
+</g>
+<g id="compassArt">
+  <circle cx="100" cy="100" r="96" fill="#3a2410" stroke="#8a5a1f" stroke-width="5"/>
+  <circle cx="100" cy="100" r="82" fill="#ead9b0"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#b98a3f" stroke-width="2"/>
+  <path d="M100 22 L112 88 L178 100 L112 112 L100 178 L88 112 L22 100 L88 88 Z" fill="#c94b32"/>
+  <path d="M100 44 L109 91 L156 100 L109 109 L100 156 L91 109 L44 100 L91 91 Z" fill="#f5e9c9" transform="rotate(45 100 100)" opacity=".9"/>
+  <circle cx="100" cy="100" r="9" fill="#3a2410" stroke="#e6b34a" stroke-width="3"/>
+  <text x="100" y="18" text-anchor="middle" font-size="17" fill="#5a3413" font-family="Georgia,serif" font-weight="bold">N</text>
+  <text x="100" y="196" text-anchor="middle" font-size="15" fill="#5a3413" font-family="Georgia,serif">S</text>
+  <text x="14" y="106" font-size="15" fill="#5a3413" font-family="Georgia,serif">W</text>
+  <text x="176" y="106" font-size="15" fill="#5a3413" font-family="Georgia,serif">E</text>
+</g>
+</defs>
+</svg>
+<div class="ticker" aria-label="Announcements"><div class="ticker-inner"><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span></div></div>
+<nav>
+  <div class="nav-logo" id="navLogo" title="Fire the signal flare">
+    <span class="logo-medal"><img src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest"></span>
+    <span class="name">Ravenspire<small>Blacktide Collegium</small></span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">The Harbor</a>
+    <a href="scroll.html">The Scroll</a>
+    <a href="fleet.html">The Fleet</a>
+    <a href="quartermasters.html">Quartermasters</a>
+    <a href="island.html">The Island</a>
+    <a href="wanted.html">The Wanted Board</a>
+    <div class="nav-more">
+      <a href="#" class="more-btn">☠ More Charts</a>
+      <div class="drop">
+        <a href="crew.html">The Crew (Students)</a>
+        <a href="skills.html">Skills of the Seven Seas (Courses)</a>
+        <a href="treasure-hauled.html">Treasure Hauled (Placements)</a>
+        <a href="feasts.html">Feasts &amp; Raids (Events)</a>
+        <a href="legends.html">Legends of the Seven Seas (Alumni)</a>
+        <a href="doubloons.html">Gold Doubloons / Bounties (Fees)</a>
+        <a href="raven.html">Send a Raven (Contact)</a>
+        <a href="forge.html">The Forge (Built by Pirates)</a>
+      </div>
+    </div>
+  </div>
+  <button class="storm-btn" id="stormBtn" type="button" aria-pressed="false">⛈ Storm</button>
+  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (Student Portal)">⚓ Quarters</a>
+  <a class="btn" href="enlist.html">Join the Crew</a>
+  </nav>
+
+<div class="page-hero">
+  <div class="sky" id="sky"></div>
+  <div class="moon"></div>
+  <div class="wave w-far" data-speed="0.05"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg></div></div>
+  <div class="wave w-mid" data-speed="0.1"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg></div></div>
+  <div class="wave w-near" data-speed="0.18"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg></div></div>
+  <div class="ph-copy">
+    <div class="over">Student Portal</div>
+    <h1>Shipman’s Quarters</h1>
+    <p>Fees, timetables, bunks, and the portal. One key. No, two. One key and a parrot’s name.</p>
+    <div class="crumbs"><a href="index.html">The Harbor</a> ☠ Quarters</div>
+  </div>
+</div>
+<section>
+  <div class="wrap" style="max-width:560px">
+    <div class="quarters-card reveal">
+      <svg viewBox="0 0 100 100" style="width:70px;margin:0 auto 14px" aria-hidden="true"><use href="#skullMark" color="#e6b34a"/></svg>
+      <h3 style="color:var(--gold-bright);font-size:1.9rem;margin-bottom:6px">Board the Quarters</h3>
+      <p class="sub" style="color:#cbb88f;font-size:.92rem;font-style:italic;margin-bottom:22px">Student portal. Berth number in, parrot’s name up, in you go.</p>
+      <form data-quarters novalidate>
+        <div class="field"><label for="qName">Your name</label><input id="qName" type="text" placeholder="e.g. Nadia Okafor"></div>
+        <div class="field"><label for="qId">Berth number (student ID)</label><input id="qId" type="text" placeholder="e.g. 113"></div>
+        <div class="field"><label for="qPass">Passphrase (your parrot’s name)</label><input id="qPass" type="password" placeholder="whisper it"></div>
+        <div class="field" style="display:flex;align-items:center;gap:10px"><label for="qRem" style="margin:0;letter-spacing:.1em">Remember me on this deck</label><input id="qRem" type="checkbox" style="width:auto"></div>
+        <button class="btn" type="submit" style="width:100%">Board the Quarters ⚓</button>
+      </form>
+      <div style="margin-top:18px;font-size:.9rem;color:#b9c9d6">
+        Lost your passphrase? <a href="raven.html">Send a raven</a> to the Quartermaster.<br>
+        Not enrolled yet? <a href="enlist.html">Join the Crew</a> first.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#08182c,#0e2b47)">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">Inside the Quarters</div><h2>What You’ll Find In There</h2><p>The portal is a brass tablet. It is faster than it looks and twice as smug.</p></div>
+    <div class="grid-4">
+      <div class="card-life reveal" data-tilt><h3>Tide Tables</h3><p>Your timetable, printed on water-resistant paper. "Lecture, 0900, foredeck" is a real line in your real life.</p></div>
+      <div class="card-life reveal d1" data-tilt><h3>Fees &amp; Bounties</h3><p>What you owe, what you’ve won, and the running total of the one coin Mrs. Oat has collected from you. (It is 0.)</p></div>
+      <div class="card-life reveal d2" data-tilt><h3>Bunk &amp; Provisions</h3><p>Your berth, your hammock status, and the Galley’s menu for the tide. Complaints are read aloud at the evening meal.</p></div>
+      <div class="card-life reveal d3" data-tilt><h3>Grade Ledger</h3><p>Your grades, as recorded by the parrot. Appeals go to the parrot. The parrot has a policy on appeals. The policy is a ruff.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band"><div class="wrap reveal"><h2>The Door Is Open. The Parrot Is Watching.</h2><p>Log in, sort your tide, and get back to the sea.</p><div class="hero-ctas"><a class="btn" href="index.html">Back to The Harbor</a><a class="btn ghost" href="doubloons.html">Check Your Doubloons</a></div></div></div>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-medal" src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest">
+    <div class="fname">Ravenspire Blacktide Collegium</div>
+    <div class="fsub">Est. 1654 · Built, designed &amp; managed entirely by pirates · No land, no problem. The crew still calls it the Seven Seas.</div>
+    <div class="foot-links">
+      <a href="index.html">The Harbor</a>
+      <a href="scroll.html">The Scroll</a>
+      <a href="fleet.html">The Fleet</a>
+      <a href="skills.html">Skills</a>
+      <a href="quartermasters.html">Quartermasters</a>
+      <a href="crew.html">The Crew</a>
+      <a href="treasure-hauled.html">Treasure Hauled</a>
+      <a href="island.html">The Island</a>
+      <a href="feasts.html">Feasts &amp; Raids</a>
+      <a href="doubloons.html">Gold Doubloons</a>
+      <a href="legends.html">Legends</a>
+      <a href="wanted.html">The Wanted Board</a>
+      <a href="enlist.html">Join the Crew</a>
+      <a href="raven.html">Send a Raven</a>
+      <a href="quarters.html">Shipman’s Quarters</a>
+      <a href="forge.html">The Forge</a>
+    </div>
+    <p class="fine">This website was forged by hand by the pirate web crew — see <a href="forge.html">The Forge</a> for the full crew. Powered by 100% renewable grog. © 1654–2026. All doubloons reserved.</p>
+  </div>
+</footer>
+<div id="parrotRig">
+  <div class="parrot-bob"><div class="parrot-body" id="parrotBody" tabindex="0" role="button" aria-label="Professor Feather, the college parrot. Click for a clue.">
+    <model-viewer id="parrot3d" tabindex="-1" src="img/parrot.glb" alt="Professor Feather, the college pirate parrot, in real 3D"
+      camera-controls="false" interaction-prompt="none" touch-action="none" loading="eager"
+      exposure="1.15" environment-image="neutral" auto-rotate auto-rotate-delay="1500" rotation-per-second="0.5rad"></model-viewer>
+    <img id="parrot2d" src="img/parrot.jpg" alt="">
+  </div></div>
+  <span class="zzz" id="parrotZzz" aria-hidden="true">z&thinsp;z&thinsp;Z</span>
+  <div class="parrot-bubble" id="parrotBubble" role="status" aria-live="polite"></div>
+  <div class="parrot-tag">Professor Feather<small>Chief QA Officer · peck for a clue</small></div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

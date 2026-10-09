@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Harbor — Ravenspire Blacktide Collegium</title>
+<meta name="description" content="A college on an island, run entirely by pirates. Join the crew.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="extra.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="hullG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2d15"/><stop offset="1" stop-color="#241407"/></linearGradient>
+<linearGradient id="sailG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5e9c9"/><stop offset="1" stop-color="#d3bd8a"/></linearGradient>
+<linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd873"/><stop offset="1" stop-color="#c9922e"/></linearGradient>
+<radialGradient id="coinFaceG" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".55" stop-color="#e6b34a"/><stop offset="1" stop-color="#a5701f"/></radialGradient>
+<g id="skullMark">
+  <g transform="rotate(45 50 55)" fill="currentColor"><rect x="8" y="49" width="84" height="11" rx="5.5"/><rect x="8" y="60" width="84" height="11" rx="5.5"/></g>
+  <path fill="currentColor" d="M50 16c-15.5 0-26 10.6-26 24 0 8.6 4.6 14.8 9.6 17.8v8.4a4.4 4.4 0 0 0 4.4 4.4h24a4.4 4.4 0 0 0 4.4-4.4v-8.4c5-3 9.6-9.2 9.6-17.8 0-13.4-10.5-24-26-24Z"/>
+  <circle cx="40.5" cy="44" r="6.4" fill="#0a1f38"/><circle cx="59.5" cy="44" r="6.4" fill="#0a1f38"/>
+  <path d="M50 51l-4.4 7h8.8Z" fill="#0a1f38"/>
+  <rect x="42.4" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/><rect x="48.3" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/><rect x="54.2" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/>
+</g>
+<path id="wavePath" d="M0 60 C150 100 350 20 600 60 C850 100 1050 20 1200 60 L1200 130 L0 130 Z"/>
+<g id="parrotArt">
+  <path d="M44 138C34 156 20 166 8 170c16 2 36-6 48-22Z" fill="#2e8b57"/>
+  <path d="M60 58c30 14 36 60 14 84-24 4-40-20-38-46 2-20 10-32 24-38Z" fill="#c94b32"/>
+  <path d="M56 84c24 6 30 34 12 52-12-8-20-32-12-52Z" fill="#1f5f8b"/>
+  <circle cx="46" cy="46" r="22" fill="#c94b32"/>
+  <path d="M27 44c-13 2-15 14-2 16-4-6 0-12 8-13Z" fill="#e8a13c"/>
+  <circle cx="42" cy="42" r="4.6" fill="#fff8e0"/><circle cx="41" cy="42" r="2.2" fill="#1a120b"/>
+  <path d="M56 138l-4 12M68 138l4 12" stroke="#e8a13c" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g id="pirateSil" fill="currentColor">
+  <path d="M20 74Q100 18 180 74Q100 56 20 74Z"/>
+  <path d="M52 66Q100 6 148 66Q100 50 52 66Z"/>
+  <circle cx="100" cy="106" r="42"/>
+  <path d="M58 112c-4 60 22 84 42 84s46-24 42-84c-12 38-28 48-42 48s-30-10-42-48Z"/>
+  <path d="M20 220Q42 166 100 162q58 4 80 58Z"/>
+  <circle cx="122" cy="104" r="11" fill="#0d0704"/>
+  <path d="M78 96q22-16 44 0" stroke="#0d0704" stroke-width="5" fill="none"/>
+</g>
+<g id="coinArt">
+  <circle cx="100" cy="100" r="96" fill="url(#coinFaceG)" stroke="#8a5a1f" stroke-width="4"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#a5701f" stroke-width="3" stroke-dasharray="6 5"/>
+  <path id="coinArc" d="M100 100 m -62 0 a 62 62 0 1 1 124 0 a 62 62 0 1 1 -124 0" fill="none"/>
+  <text font-size="15" letter-spacing="2.5" fill="#6b4413" font-family="Georgia,serif" font-weight="bold"><textPath href="#coinArc" startOffset="8%">COLLEGE OF THE SEVEN SEAS ★ EST. 1654 ★</textPath></text>
+  <use href="#skullMark" transform="translate(72 62) scale(.56)" color="#6b4413"/>
+  <text x="100" y="158" text-anchor="middle" font-size="24" fill="#6b4413" font-family="Georgia,serif" font-weight="bold">1654</text>
+</g>
+<g id="compassArt">
+  <circle cx="100" cy="100" r="96" fill="#3a2410" stroke="#8a5a1f" stroke-width="5"/>
+  <circle cx="100" cy="100" r="82" fill="#ead9b0"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#b98a3f" stroke-width="2"/>
+  <path d="M100 22 L112 88 L178 100 L112 112 L100 178 L88 112 L22 100 L88 88 Z" fill="#c94b32"/>
+  <path d="M100 44 L109 91 L156 100 L109 109 L100 156 L91 109 L44 100 L91 91 Z" fill="#f5e9c9" transform="rotate(45 100 100)" opacity=".9"/>
+  <circle cx="100" cy="100" r="9" fill="#3a2410" stroke="#e6b34a" stroke-width="3"/>
+  <text x="100" y="18" text-anchor="middle" font-size="17" fill="#5a3413" font-family="Georgia,serif" font-weight="bold">N</text>
+  <text x="100" y="196" text-anchor="middle" font-size="15" fill="#5a3413" font-family="Georgia,serif">S</text>
+  <text x="14" y="106" font-size="15" fill="#5a3413" font-family="Georgia,serif">W</text>
+  <text x="176" y="106" font-size="15" fill="#5a3413" font-family="Georgia,serif">E</text>
+</g>
+</defs>
+</svg>
+<div class="ticker" aria-label="Announcements"><div class="ticker-inner"><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span></div></div>
+<nav>
+  <div class="nav-logo" id="navLogo" title="Fire the signal flare">
+    <span class="logo-medal"><img src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest"></span>
+    <span class="name">Ravenspire<small>Blacktide Collegium</small></span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="active">The Harbor</a>
+    <a href="scroll.html">The Scroll</a>
+    <a href="fleet.html">The Fleet</a>
+    <a href="quartermasters.html">Quartermasters</a>
+    <a href="island.html">The Island</a>
+    <a href="wanted.html">The Wanted Board</a>
+    <div class="nav-more">
+      <a href="#" class="more-btn">☠ More Charts</a>
+      <div class="drop">
+        <a href="crew.html">The Crew (Students)</a>
+        <a href="skills.html">Skills of the Seven Seas (Courses)</a>
+        <a href="treasure-hauled.html">Treasure Hauled (Placements)</a>
+        <a href="feasts.html">Feasts &amp; Raids (Events)</a>
+        <a href="legends.html">Legends of the Seven Seas (Alumni)</a>
+        <a href="doubloons.html">Gold Doubloons / Bounties (Fees)</a>
+        <a href="raven.html">Send a Raven (Contact)</a>
+        <a href="forge.html">The Forge (Built by Pirates)</a>
+      </div>
+    </div>
+  </div>
+  <button class="storm-btn" id="stormBtn" type="button" aria-pressed="false">⛈ Storm</button>
+  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (Student Portal)">⚓ Quarters</a>
+  <a class="btn" href="enlist.html">Join the Crew</a>
+  </nav>
+
+<header class="island-video" id="islandVideo">
+  <img class="iv-img" src="img/island-hero.jpg" alt="The College of the Seven Seas — a gothic pirate island campus at night">
+  <video class="iv-video" id="shipReel" src="img/ship-reel.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="metadata"></video>
+  <div class="iv-mist iv-m1"></div>
+  <div class="iv-mist iv-m2"></div>
+  <div class="map-beam iv-beam" aria-hidden="true"></div>
+  <div class="sea-scene" aria-hidden="true">
+    <div class="wave w-far" data-speed="0.06"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg></div></div>
+    <div class="wave w-mid" data-speed="0.14"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg></div></div>
+    <div class="wave w-near" data-speed="0.24"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg></div></div>
+  </div>
+  <div class="iv-scrim" aria-hidden="true"></div>
+  <div class="iv-vignette" aria-hidden="true"></div>
+  <div class="gull g1" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div><div class="gull g2" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div>
+  <div class="reel-badge"><span class="reel-dot"></span> Ship’s Reel — filmed by the Night Watch</div>
+  <button class="reel-pause" id="reelPause" type="button">⏸ Pause the Reel</button>
+  <div class="coin-stage" aria-hidden="true">
+    <div class="coin-bob"><div class="coin3d" id="coin3d">
+      <div class="cface front"><svg viewBox="0 0 200 200" width="100%" height="100%"><use href="#coinArt"/></svg></div>
+      <div class="cface back"><svg viewBox="0 0 200 200" width="100%" height="100%"><use href="#coinArt" transform="rotate(180 100 100)"/></svg></div>
+      <div id="coinEdge"></div>
+    </div></div>
+  </div>
+  <div class="parrot-perch" aria-hidden="true">
+    <div class="parrot-bubble show" id="parrotSay"><b>Feather</b> Welcome to the only college that sails to class.</div>
+    <svg class="parrot-svg" viewBox="0 0 120 180"><use href="#parrotArt"/></svg>
+  </div>
+  <div class="island-hero-copy">
+    <div class="hero-logo"><img src="img/logo.jpg" alt="Ravenspire Blacktide Collegium — the golden raven crest"></div>
+    <div class="hero-kicker">Ravenspire Blacktide Collegium · Est. 1654</div>
+    <h1 class="hero-title">The Harbor</h1>
+    <p class="hero-sub">A full campus. One island. No roads, no rickshaws, no "the office is on the third floor" — the office is on the third deck. Built, run and over-thought entirely by pirates.</p>
+    <div class="hero-est">☠ The island is the campus. The campus is the legend. ☠</div>
+    <div class="hero-ctas">
+      <a class="btn" href="enlist.html">Join the Crew</a>
+      <a class="btn ghost" href="island.html">Chart the Island</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat reveal" data-tilt><div class="num">1,200</div><div class="lbl">The Crew, enrolled &amp; slightly sea-sick</div></div>
+    <div class="stat reveal d1" data-tilt><div class="num">38</div><div class="lbl">Skills of the Seven Seas (courses)</div></div>
+    <div class="stat reveal d2" data-tilt><div class="num">6 + 1</div><div class="lbl">Ships in The Fleet (departments) + one sloop</div></div>
+    <div class="stat reveal d3" data-tilt><div class="num">0</div><div class="lbl">Exams. Assessment is treasure-based. Always.</div></div>
+  </div>
+</div>
+
+<section id="wanted-teaser">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">The Wanted Board</div><h2>Fresh Off the Board</h2><p>Everything the college says, pinned and slightly crooked. Claim rewards before Thursday.</p></div>
+    <div class="grid-posters">
+      <div class="poster reveal" data-tilt style="--rot:-2deg"><span class="ptype">Bounty</span><h3>Doubloons Found</h3><div class="reward">Reward: 2,400 doubloons</div><p>Found in the library, under a chart of "somewhere lovely". Claim before Thursday or forfeit to the college.</p><div class="pdate"><span>The Board</span><span>every tide</span></div></div>
+      <div class="poster reveal d1" data-tilt style="--rot:1.6deg"><span class="ptype">Raid</span><h3>Storm Week Drills</h3><div class="reward">Bring a towel + fear of whales</div><p>Advanced Navigation practicum. We sail into the storm. The syllabus means it.</p><div class="pdate"><span>Dept. of Navigation</span><span>Nov 20</span></div></div>
+      <div class="poster reveal d2" data-tilt style="--rot:-1.4deg"><span class="ptype">Notice</span><h3>New Bird on Faculty</h3><div class="reward">Reward: none. It’s a parrot.</div><p>Professor Feather III now grades. Do not feed him forms. Do not feed him anything but seeds.</p><div class="pdate"><span>The Aviary</span><span>this tide</span></div></div>
+    </div>
+    <div class="center mt reveal"><a class="btn ghost" href="wanted.html">The Full Wanted Board →</a></div>
+  </div>
+</section>
+
+<section id="fleet-teaser" style="background:linear-gradient(180deg,#0a1f38,#0e2b47)">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">The Fleet</div><h2>Departments, But They Sail</h2><p>Six departments. Six ships. Every department moors at its own berth and sails its own curriculum.</p></div>
+    <div class="grid-3">
+      <div class="ship-card reveal" data-tilt><div class="sname">H.M.S. Educate &amp; Plunder</div><div class="sdept">Navigation &amp; Wayfinding</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1654</b></div><div class="stat-row"><span>Crew</span><b>210</b></div><div class="stat-row"><span>Sails (courses)</span><b>9</b></div><div class="stat-row"><span>Top speed</span><b>14 kn</b></div></div><div class="squip">"The campus itself. The Great Hall is her wheelhouse."</div></div>
+      <div class="ship-card reveal d1" data-tilt><div class="sname">The Broadside</div><div class="sdept">Artillery &amp; Cannon Science</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1671</b></div><div class="stat-row"><span>Crew</span><b>140</b></div><div class="stat-row"><span>Sails (courses)</span><b>7</b></div><div class="stat-row"><span>Top speed</span><b>12 kn</b></div></div><div class="squip">"Has never missed a deadline or a target."</div></div>
+      <div class="ship-card reveal d2" data-tilt><div class="sname">Buried Alive</div><div class="sdept">Treasure Recovery &amp; Cartography</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1688</b></div><div class="stat-row"><span>Crew</span><b>185</b></div><div class="stat-row"><span>Sails (courses)</span><b>11</b></div><div class="stat-row"><span>Top speed</span><b>10 kn</b></div></div><div class="squip">"Her hold smells of wet sand and good maps."</div></div>
+    </div>
+    <div class="center mt reveal"><a class="btn ghost" href="fleet.html">Meet the Whole Fleet →</a></div>
+  </div>
+</section>
+
+<section id="island-teaser">
+  <div class="wrap">
+    <div class="duo">
+      <figure class="frame reveal" data-tilt style="--rot:-1.6deg">
+        <img src="img/island-top.jpg" alt="Top-down view of the gothic pirate island campus" loading="lazy">
+        <figcaption>The island, as charted (Dr. Quill’s "honest" edition)</figcaption>
+      </figure>
+      <div class="reveal d2">
+        <div class="over" style="font-family:var(--font-display);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-size:1rem;margin-bottom:10px">Campus / Facilities</div>
+        <h2 style="font-size:clamp(2rem,4.5vw,3rem);color:var(--cream)">The Island</h2>
+        <p style="color:#bcd0dd;margin:14px 0;font-size:1.05rem">Lighthouse, Great Hall, Crow’s Nest library, the Vault, the Galley, the Plank — everything you need, and nothing you can’t swim back from. The campus map is <strong>interactive</strong>: tap a pin, read the post, plan your tide.</p>
+        <p style="color:#bcd0dd;margin-bottom:26px;font-style:italic">Yes, there is a treasure vault on campus. No, you cannot open it. Yes, it is the most-visited landmark. All three of those are true.</p>
+        <a class="btn" href="island.html">Open the Treasure Map</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills-teaser" style="background:linear-gradient(180deg,#08182c,#0e2b47)">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">Skills of the Seven Seas</div><h2>Courses, Graded by the Sea</h2><p>No exams. Just skills, assessed the way the sea assesses everything: by what you bring back.</p></div>
+    <div class="table-wrap reveal">
+      <table class="course-table">
+        <thead><tr><th>Code</th><th>Skill</th><th>Ship</th><th>Sea State</th></tr></thead>
+        <tbody>
+          <tr><td class="code">NAV-101</td><td>Astrolabe Theory &amp; Practice</td><td>Educate &amp; Plunder</td><td>☠</td></tr>
+          <tr><td class="code">TRE-105</td><td>Charting Islands That Lie</td><td>Buried Alive</td><td>☠☠</td></tr>
+          <tr><td class="code">ROP-112</td><td>The 34 Essential Knots</td><td>The Tightrope</td><td>☠ <em>(blindfolded)</em></td></tr>
+          <tr><td class="code">NAV-400</td><td>Capstone: Cross an Ocean, Solo</td><td>Educate &amp; Plunder</td><td>☠☠☠☠</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="center mt reveal"><a class="btn ghost" href="skills.html">All 38 Skills →</a></div>
+  </div>
+</section>
+
+<section id="crew-teaser">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">The Crew</div><h2>Word On The Deck</h2><p>Not students. Students don’t navigate. The Crew does.</p></div>
+    <div class="grid-3">
+      <div class="quote-card reveal" data-tilt>"I came for the navigation. I stayed because the Wi-Fi (the wind) never lags in a storm. 10/10 would drown again."<span class="who">— Nadia "North" Okafor, Class of 2026</span></div>
+      <div class="quote-card reveal d1" data-tilt>"My parrot failed me on purpose. Still my favorite professor."<span class="who">— T. "Two-Fathoms" Marsh, Class of 2025</span></div>
+      <div class="quote-card reveal d2" data-tilt>"POV: your capstone is an ocean and you’re solo. No cap. Well. A hat."<span class="who">— Isla Reyes, Class of 2024</span></div>
+    </div>
+    <div class="center mt reveal"><a class="btn ghost" href="crew.html">Meet The Crew →</a></div>
+  </div>
+</section>
+
+<section id="haul-teaser" style="background:linear-gradient(180deg,#08182c,#0a1f38)">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">Treasure Hauled</div><h2>Placements, But Make It Loot</h2><p>Where our crews end up — and what they bring back for the island.</p></div>
+    <div class="grid-3">
+      <div class="recruit reveal" data-tilt><div class="rname">East India Plunder Co.</div><div class="rline">Offers: 9-to-5 and a boat</div><div class="rstat">Hauled 31 crews last term</div></div>
+      <div class="recruit reveal d1" data-tilt><div class="rname">Kraken Logistics</div><div class="rline">Offers: infinite tentacles, zero commute</div><div class="rstat">Hauled 24 crews last term</div></div>
+      <div class="recruit reveal d2" data-tilt><div class="rname">Gull-Back Airlines</div><div class="rline">Offers: free gull lessons, window seat (the island)</div><div class="rstat">Hauled 19 crews last term</div></div>
+    </div>
+    <div class="center mt reveal"><a class="btn ghost" href="treasure-hauled.html">The Full Haul Report →</a></div>
+  </div>
+</section>
+
+<section id="feasts-teaser">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">Feasts &amp; Raids</div><h2>Events &amp; Fests</h2><p>All events sail regardless of weather. The weather has been informed.</p></div>
+    <div class="event-row reveal" data-tilt>
+      <div class="e-date"><div class="d">21</div><div class="m">OCT</div></div>
+      <div><h3>The Great Regatta</h3><p>Inter-ship racing, three laps, one cannon of confetti. Bring goggles.</p></div>
+      <div class="e-tag">All Fleet</div>
+    </div>
+    <div class="event-row reveal d1" data-tilt>
+      <div class="e-date"><div class="d">12</div><div class="m">NOV</div></div>
+      <div><h3>Full Moon Cannon Gala</h3><p>Fireworks over the water, music from the deck, absolutely no fire (one fire).</p></div>
+      <div class="e-tag">By Invitation</div>
+    </div>
+    <div class="event-row reveal d2" data-tilt>
+      <div class="e-date"><div class="d">05</div><div class="m">NOV</div></div>
+      <div><h3>Treasure Fair &amp; Marketplace</h3><p>The Crew sells finds, maps, and one suspiciously glowing stone. No refunds on the stone.</p></div>
+      <div class="e-tag">Open Port</div>
+    </div>
+    <div class="center mt reveal"><a class="btn ghost" href="feasts.html">Full Deck Calendar →</a></div>
+  </div>
+</section>
+
+<div class="cta-band"><div class="wrap reveal"><h2>The Tide Is Good. The Doubloons Are Shiny.</h2><p>What are you waiting for? The tide does not wait for the undecided.</p><div class="hero-ctas"><a class="btn" href="enlist.html">Join the Crew</a><a class="btn ghost" href="scroll.html">Read The Scroll</a></div></div></div>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-medal" src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest">
+    <div class="fname">Ravenspire Blacktide Collegium</div>
+    <div class="fsub">Est. 1654 · Built, designed &amp; managed entirely by pirates · No land, no problem. The crew still calls it the Seven Seas.</div>
+    <div class="foot-links">
+      <a href="index.html">The Harbor</a>
+      <a href="scroll.html">The Scroll</a>
+      <a href="fleet.html">The Fleet</a>
+      <a href="skills.html">Skills</a>
+      <a href="quartermasters.html">Quartermasters</a>
+      <a href="crew.html">The Crew</a>
+      <a href="treasure-hauled.html">Treasure Hauled</a>
+      <a href="island.html">The Island</a>
+      <a href="feasts.html">Feasts &amp; Raids</a>
+      <a href="doubloons.html">Gold Doubloons</a>
+      <a href="legends.html">Legends</a>
+      <a href="wanted.html">The Wanted Board</a>
+      <a href="enlist.html">Join the Crew</a>
+      <a href="raven.html">Send a Raven</a>
+      <a href="quarters.html">Shipman’s Quarters</a>
+      <a href="forge.html">The Forge</a>
+    </div>
+    <p class="fine">This website was forged by hand by the pirate web crew — see <a href="forge.html">The Forge</a> for the full crew. Powered by 100% renewable grog. © 1654–2026. All doubloons reserved.</p>
+  </div>
+</footer>
+<div id="parrotRig">
+  <div class="parrot-bob"><div class="parrot-body" id="parrotBody" tabindex="0" role="button" aria-label="Professor Feather, the college parrot. Click for a clue.">
+    <model-viewer id="parrot3d" tabindex="-1" src="img/parrot.glb" alt="Professor Feather, the college pirate parrot, in real 3D"
+      camera-controls="false" interaction-prompt="none" touch-action="none" loading="eager"
+      exposure="1.15" environment-image="neutral" auto-rotate auto-rotate-delay="1500" rotation-per-second="0.5rad"></model-viewer>
+    <img id="parrot2d" src="img/parrot.jpg" alt="">
+  </div></div>
+  <span class="zzz" id="parrotZzz" aria-hidden="true">z&thinsp;z&thinsp;Z</span>
+  <div class="parrot-bubble" id="parrotBubble" role="status" aria-live="polite"></div>
+  <div class="parrot-tag">Professor Feather<small>Chief QA Officer · peck for a clue</small></div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

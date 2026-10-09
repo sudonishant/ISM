@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Island — Ravenspire Blacktide Collegium</title>
+<meta name="description" content="Interactive treasure map of the island campus.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="extra.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<linearGradient id="hullG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2d15"/><stop offset="1" stop-color="#241407"/></linearGradient>
+<linearGradient id="sailG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5e9c9"/><stop offset="1" stop-color="#d3bd8a"/></linearGradient>
+<linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd873"/><stop offset="1" stop-color="#c9922e"/></linearGradient>
+<radialGradient id="coinFaceG" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".55" stop-color="#e6b34a"/><stop offset="1" stop-color="#a5701f"/></radialGradient>
+<g id="skullMark">
+  <g transform="rotate(45 50 55)" fill="currentColor"><rect x="8" y="49" width="84" height="11" rx="5.5"/><rect x="8" y="60" width="84" height="11" rx="5.5"/></g>
+  <path fill="currentColor" d="M50 16c-15.5 0-26 10.6-26 24 0 8.6 4.6 14.8 9.6 17.8v8.4a4.4 4.4 0 0 0 4.4 4.4h24a4.4 4.4 0 0 0 4.4-4.4v-8.4c5-3 9.6-9.2 9.6-17.8 0-13.4-10.5-24-26-24Z"/>
+  <circle cx="40.5" cy="44" r="6.4" fill="#0a1f38"/><circle cx="59.5" cy="44" r="6.4" fill="#0a1f38"/>
+  <path d="M50 51l-4.4 7h8.8Z" fill="#0a1f38"/>
+  <rect x="42.4" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/><rect x="48.3" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/><rect x="54.2" y="66" width="3.4" height="7" rx="1.4" fill="#0a1f38"/>
+</g>
+<path id="wavePath" d="M0 60 C150 100 350 20 600 60 C850 100 1050 20 1200 60 L1200 130 L0 130 Z"/>
+<g id="parrotArt">
+  <path d="M44 138C34 156 20 166 8 170c16 2 36-6 48-22Z" fill="#2e8b57"/>
+  <path d="M60 58c30 14 36 60 14 84-24 4-40-20-38-46 2-20 10-32 24-38Z" fill="#c94b32"/>
+  <path d="M56 84c24 6 30 34 12 52-12-8-20-32-12-52Z" fill="#1f5f8b"/>
+  <circle cx="46" cy="46" r="22" fill="#c94b32"/>
+  <path d="M27 44c-13 2-15 14-2 16-4-6 0-12 8-13Z" fill="#e8a13c"/>
+  <circle cx="42" cy="42" r="4.6" fill="#fff8e0"/><circle cx="41" cy="42" r="2.2" fill="#1a120b"/>
+  <path d="M56 138l-4 12M68 138l4 12" stroke="#e8a13c" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g id="pirateSil" fill="currentColor">
+  <path d="M20 74Q100 18 180 74Q100 56 20 74Z"/>
+  <path d="M52 66Q100 6 148 66Q100 50 52 66Z"/>
+  <circle cx="100" cy="106" r="42"/>
+  <path d="M58 112c-4 60 22 84 42 84s46-24 42-84c-12 38-28 48-42 48s-30-10-42-48Z"/>
+  <path d="M20 220Q42 166 100 162q58 4 80 58Z"/>
+  <circle cx="122" cy="104" r="11" fill="#0d0704"/>
+  <path d="M78 96q22-16 44 0" stroke="#0d0704" stroke-width="5" fill="none"/>
+</g>
+<g id="coinArt">
+  <circle cx="100" cy="100" r="96" fill="url(#coinFaceG)" stroke="#8a5a1f" stroke-width="4"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#a5701f" stroke-width="3" stroke-dasharray="6 5"/>
+  <path id="coinArc" d="M100 100 m -62 0 a 62 62 0 1 1 124 0 a 62 62 0 1 1 -124 0" fill="none"/>
+  <text font-size="15" letter-spacing="2.5" fill="#6b4413" font-family="Georgia,serif" font-weight="bold"><textPath href="#coinArc" startOffset="8%">COLLEGE OF THE SEVEN SEAS ★ EST. 1654 ★</textPath></text>
+  <use href="#skullMark" transform="translate(72 62) scale(.56)" color="#6b4413"/>
+  <text x="100" y="158" text-anchor="middle" font-size="24" fill="#6b4413" font-family="Georgia,serif" font-weight="bold">1654</text>
+</g>
+<g id="compassArt">
+  <circle cx="100" cy="100" r="96" fill="#3a2410" stroke="#8a5a1f" stroke-width="5"/>
+  <circle cx="100" cy="100" r="82" fill="#ead9b0"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#b98a3f" stroke-width="2"/>
+  <path d="M100 22 L112 88 L178 100 L112 112 L100 178 L88 112 L22 100 L88 88 Z" fill="#c94b32"/>
+  <path d="M100 44 L109 91 L156 100 L109 109 L100 156 L91 109 L44 100 L91 91 Z" fill="#f5e9c9" transform="rotate(45 100 100)" opacity=".9"/>
+  <circle cx="100" cy="100" r="9" fill="#3a2410" stroke="#e6b34a" stroke-width="3"/>
+  <text x="100" y="18" text-anchor="middle" font-size="17" fill="#5a3413" font-family="Georgia,serif" font-weight="bold">N</text>
+  <text x="100" y="196" text-anchor="middle" font-size="15" fill="#5a3413" font-family="Georgia,serif">S</text>
+  <text x="14" y="106" font-size="15" fill="#5a3413" font-family="Georgia,serif">W</text>
+  <text x="176" y="106" font-size="15" fill="#5a3413" font-family="Georgia,serif">E</text>
+</g>
+</defs>
+</svg>
+<div class="ticker" aria-label="Announcements"><div class="ticker-inner"><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span><span class="ticker-item"><b>☠ The Wanted Board</b> — Tide tables updated. The old ones are now art.</span><span class="ticker-item">Cannon practice postponed — wind too good</span><span class="ticker-item">2,400 doubloons found in the library. Claim before Thursday, or forfeit to the college.</span><span class="ticker-item">The Crew votes: Grog-Free Week is now Grog-Reduced Week. The galley has questions.</span><span class="ticker-item"><b>☠ The Forge</b> — This website was built by pirates, in tar, by hand. See the credits before you sue us.</span><span class="ticker-item">The Great Regatta — Nov 21. Bets prohibited, bragging encouraged.</span></div></div>
+<nav>
+  <div class="nav-logo" id="navLogo" title="Fire the signal flare">
+    <span class="logo-medal"><img src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest"></span>
+    <span class="name">Ravenspire<small>Blacktide Collegium</small></span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">The Harbor</a>
+    <a href="scroll.html">The Scroll</a>
+    <a href="fleet.html">The Fleet</a>
+    <a href="quartermasters.html">Quartermasters</a>
+    <a href="island.html" class="active">The Island</a>
+    <a href="wanted.html">The Wanted Board</a>
+    <div class="nav-more">
+      <a href="#" class="more-btn">☠ More Charts</a>
+      <div class="drop">
+        <a href="crew.html">The Crew (Students)</a>
+        <a href="skills.html">Skills of the Seven Seas (Courses)</a>
+        <a href="treasure-hauled.html">Treasure Hauled (Placements)</a>
+        <a href="feasts.html">Feasts &amp; Raids (Events)</a>
+        <a href="legends.html">Legends of the Seven Seas (Alumni)</a>
+        <a href="doubloons.html">Gold Doubloons / Bounties (Fees)</a>
+        <a href="raven.html">Send a Raven (Contact)</a>
+        <a href="forge.html">The Forge (Built by Pirates)</a>
+      </div>
+    </div>
+  </div>
+  <button class="storm-btn" id="stormBtn" type="button" aria-pressed="false">⛈ Storm</button>
+  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (Student Portal)">⚓ Quarters</a>
+  <a class="btn" href="enlist.html">Join the Crew</a>
+  </nav>
+
+<div class="page-hero">
+  <div class="sky" id="sky"></div>
+  <div class="moon"></div>
+  <div class="wave w-far" data-speed="0.05"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg></div></div>
+  <div class="wave w-mid" data-speed="0.1"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg></div></div>
+  <div class="wave w-near" data-speed="0.18"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg></div></div>
+  <div class="ph-copy">
+    <div class="over">Campus / Facilities</div>
+    <h1>The Island</h1>
+    <p>Official Nautical Chart of Ravenspire Blacktide Collegium. Tap any glowing pin to chart your course.</p>
+    <div class="crumbs"><a href="index.html">The Harbor</a> ☠ The Island</div>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    <div class="map-grid">
+      <div class="map-stage reveal">
+        
+<svg viewBox="0 0 1024 804" class="island-svg" role="img" aria-label="Authentic treasure map of Ravenspire Blacktide Collegium">
+  <defs>
+    <filter id="spotGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Authentic Hand-Illustrated Pirate Parchment Map -->
+  <image href="img/island-map.jpg" x="0" y="0" width="1024" height="804" preserveAspectRatio="none"/>
+
+  <!-- Nautical Chart Trails -->
+  <g class="chart-routes" stroke="#ffd873" stroke-width="2.5" stroke-dasharray="6 7" fill="none" opacity=".55">
+    <path d="M 228 255 Q 340 220 512 235"/>
+    <path d="M 512 235 Q 680 230 825 275"/>
+    <path d="M 512 235 L 485 345 L 595 385"/>
+    <path d="M 595 385 L 565 502 L 472 665 L 635 640 Q 730 680 835 700"/>
+    <path d="M 228 255 Q 210 380 242 515 Q 350 600 472 665"/>
+  </g>
+
+  <!-- Interactive Landmarks From Map -->
+  <!-- 1. Chart Vault -->
+  <g class="imap-spot" data-spot="chartvault" transform="translate(512 215)" tabindex="0" role="button" aria-label="Chart Vault">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">📜 Chart Vault</text>
+  </g>
+
+  <!-- 2. Crow's Nest -->
+  <g class="imap-spot" data-spot="crowsnest" transform="translate(228 240)" tabindex="0" role="button" aria-label="Crow's Nest">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">🔭 Crow's Nest</text>
+  </g>
+
+  <!-- 3. Krakenarium -->
+  <g class="imap-spot" data-spot="krakenarium" transform="translate(825 255)" tabindex="0" role="button" aria-label="Krakenarium">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">🦑 Krakenarium</text>
+  </g>
+
+  <!-- 4. The Harbor -->
+  <g class="imap-spot" data-spot="harbor" transform="translate(595 375)" tabindex="0" role="button" aria-label="The Harbor">
+    <circle class="spot-pulse" r="18"/>
+    <circle class="spot-halo" r="11"/>
+    <circle class="spot-pin" r="6.5"/>
+    <text class="spot-label" y="-17">⚓ Harbor</text>
+  </g>
+
+  <!-- 5. The Quarterdeck -->
+  <g class="imap-spot" data-spot="quarterdeck" transform="translate(242 505)" tabindex="0" role="button" aria-label="The Quarterdeck">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">⚔️ Quarterdeck</text>
+  </g>
+
+  <!-- 6. Drydock -->
+  <g class="imap-spot" data-spot="drydock" transform="translate(565 495)" tabindex="0" role="button" aria-label="Drydock">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">🔨 Drydock</text>
+  </g>
+
+  <!-- 7. Crew Quarters -->
+  <g class="imap-spot" data-spot="crewquarters" transform="translate(472 650)" tabindex="0" role="button" aria-label="Crew Quarters">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">🛏️ Crew Quarters</text>
+  </g>
+
+  <!-- 8. The Galley -->
+  <g class="imap-spot" data-spot="galley" transform="translate(635 630)" tabindex="0" role="button" aria-label="The Galley">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">🍖 Galley</text>
+  </g>
+
+  <!-- 9. Treasure Vault -->
+  <g class="imap-spot" data-spot="treasurevault" transform="translate(835 685)" tabindex="0" role="button" aria-label="Treasure Vault">
+    <circle class="spot-pulse" r="18"/>
+    <circle class="spot-halo" r="11"/>
+    <circle class="spot-pin" r="6.5"/>
+    <text class="spot-label" y="-17">💰 Treasure Vault</text>
+  </g>
+
+  <!-- 10. X Marks the Spot -->
+  <g class="imap-spot spot-special" data-spot="xmark" transform="translate(485 345)" tabindex="0" role="button" aria-label="X Marks The Spot">
+    <circle class="spot-pulse red-pulse" r="22"/>
+    <circle class="spot-halo red-halo" r="14"/>
+    <path d="M -9 -9 L 9 9 M 9 -9 L -9 9" stroke="#ff3838" stroke-width="4.5" stroke-linecap="round"/>
+    <text class="spot-label" y="-18">❌ X Marks The Spot</text>
+  </g>
+
+  <!-- 11. King's Bounty Chest -->
+  <g class="imap-spot spot-gold" data-spot="goldenchest" transform="translate(548 298)" tabindex="0" role="button" aria-label="King's Bounty Chest">
+    <circle class="spot-pulse gold-pulse" r="18"/>
+    <circle class="spot-halo gold-halo" r="11"/>
+    <circle class="spot-pin" r="6" fill="#ffd873"/>
+    <text class="spot-label" y="-16">👑 Bounty Chest</text>
+  </g>
+
+  <!-- 12. Siren's Boneyard -->
+  <g class="imap-spot" data-spot="bonesgraveyard" transform="translate(828 525)" tabindex="0" role="button" aria-label="Siren's Boneyard">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="5.5"/>
+    <text class="spot-label" y="-15">💀 Siren's Boneyard</text>
+  </g>
+
+  <!-- 13. Old Barnaby (Whale) -->
+  <g class="imap-spot" data-spot="whale" transform="translate(502 455)" tabindex="0" role="button" aria-label="Old Barnaby">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="5.5"/>
+    <text class="spot-label" y="-15">🐋 Old Barnaby</text>
+  </g>
+
+  <!-- 14. Ancient Sea Serpent -->
+  <g class="imap-spot" data-spot="seaserpent" transform="translate(315 655)" tabindex="0" role="button" aria-label="Ancient Sea Serpent">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="5.5"/>
+    <text class="spot-label" y="-15">🐉 Sea Serpent</text>
+  </g>
+
+  <!-- 15. Flagship Galleon -->
+  <g class="imap-spot" data-spot="ghostship" transform="translate(342 220)" tabindex="0" role="button" aria-label="Flagship Galleon">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="5.5"/>
+    <text class="spot-label" y="-15">⛵ Flagship Galleon</text>
+  </g>
+
+  <!-- 16. Compass Rose -->
+  <g class="imap-spot" data-spot="compass" transform="translate(128 685)" tabindex="0" role="button" aria-label="Grand Compass Rose">
+    <circle class="spot-pulse" r="18"/>
+    <circle class="spot-halo" r="11"/>
+    <circle class="spot-pin" r="6"/>
+    <text class="spot-label" y="-16">🧭 Compass Rose</text>
+  </g>
+
+  <!-- 17. The Shrouded Atoll -->
+  <g class="imap-spot" data-spot="darkisle" transform="translate(384 405)" tabindex="0" role="button" aria-label="The Shrouded Atoll">
+    <circle class="spot-pulse" r="16"/>
+    <circle class="spot-halo" r="10"/>
+    <circle class="spot-pin" r="5.5"/>
+    <text class="spot-label" y="-15">🏝️ Shrouded Atoll</text>
+  </g>
+</svg>
+        <div class="map-beam" aria-hidden="true"></div>
+      </div>
+      <aside class="map-panel reveal d1" id="mapPanel">
+        <div class="mp-kicker" id="mapKicker">The Treasure Map · chartvault</div>
+        <h3 class="mp-name" id="mapName">The Chart Vault</h3>
+        <div class="mp-sub" id="mapSub">Cartography, Secret Routes &amp; Celestial Archive</div>
+        <p class="mp-desc" id="mapDesc">Houses 12,000 maritime charts, celestial navigational globes, and sealed imperial sea routes. Hidden high in the red cliffs above the lagoon, where master cartographers calculate safe passage through treacherous waters.</p>
+        <div class="mp-hours" id="mapHours">Hours: Open at high tide; whisper the password to Brother Anchor.</div>
+        <a class="btn mp-link" id="mapLink" href="skills.html">Browse Cartography Skills →</a>
+        <div class="mp-bunk">Your berth: <b>Crew Quarters, Berth #<span id="bunkNum">113</span></b> — assigned by lottery, then by seniority, then by who asked nicer.</div>
+      </aside>
+    </div>
+
+    <!-- Quick Landmark Filter / Navigation Chips -->
+    <div class="map-chips-bar reveal">
+      <span class="chips-title">☠ Chart By Landmark:</span>
+      <button type="button" class="map-chip active" data-spot="chartvault">📜 Chart Vault</button>
+      <button type="button" class="map-chip" data-spot="crowsnest">🔭 Crow's Nest</button>
+      <button type="button" class="map-chip" data-spot="krakenarium">🦑 Krakenarium</button>
+      <button type="button" class="map-chip" data-spot="harbor">⚓ Harbor</button>
+      <button type="button" class="map-chip" data-spot="quarterdeck">⚔️ Quarterdeck</button>
+      <button type="button" class="map-chip" data-spot="drydock">🔨 Drydock</button>
+      <button type="button" class="map-chip" data-spot="crewquarters">🛏️ Crew Quarters</button>
+      <button type="button" class="map-chip" data-spot="galley">🍖 Galley</button>
+      <button type="button" class="map-chip" data-spot="treasurevault">💰 Treasure Vault</button>
+      <button type="button" class="map-chip" data-spot="xmark">❌ X Marks The Spot</button>
+      <button type="button" class="map-chip" data-spot="goldenchest">👑 Bounty Chest</button>
+      <button type="button" class="map-chip" data-spot="bonesgraveyard">💀 Siren's Boneyard</button>
+      <button type="button" class="map-chip" data-spot="whale">🐋 Old Barnaby</button>
+      <button type="button" class="map-chip" data-spot="seaserpent">🐉 Sea Serpent</button>
+      <button type="button" class="map-chip" data-spot="ghostship">⛵ Flagship Galleon</button>
+      <button type="button" class="map-chip" data-spot="compass">🧭 Compass Rose</button>
+      <button type="button" class="map-chip" data-spot="darkisle">🏝️ Shrouded Atoll</button>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#08182c,#0e2b47)">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="over">Facilities</div><h2>The Decks &amp; Landmarks, In Detail</h2><p>Explore every key location marked on the official Ravenspire chart.</p></div>
+    <div class="grid-4">
+      <div class="card-life reveal" data-tilt>
+        <h3>The Chart Vault</h3>
+        <p>Houses 12,000 maritime charts, secret naval routes, and stellar globes high in the red bluffs.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="chartvault">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d1" data-tilt>
+        <h3>Crow’s Nest</h3>
+        <p>360-degree lookout tower among palm canopies housing 37,000 nautical tomes and avian roosts.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="crowsnest">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d2" data-tilt>
+        <h3>The Krakenarium</h3>
+        <p>Isolated research atoll where marine biologists study kraken tentacles, leviathans, and sirens.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="krakenarium">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d3" data-tilt>
+        <h3>The Harbor</h3>
+        <p>The flagship basin holding 1,200 ships, trade markets, assemblies, and the weekly bounty count.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="harbor">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal" data-tilt>
+        <h3>The Quarterdeck</h3>
+        <p>Senior command post and heavy artillery proving grounds overlooking the Western Approaches.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="quarterdeck">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d1" data-tilt>
+        <h3>The Drydock</h3>
+        <p>Shipwrights, hull scrapers, and sailmakers restoring wooden galleons in the protected coral lock.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="drydock">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d2" data-tilt>
+        <h3>Crew Quarters</h3>
+        <p>1,200 swinging hammocks, sea chests, dueling rings, and deckhand quarters. Sleep with one eye open.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="crewquarters">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d3" data-tilt>
+        <h3>The Galley</h3>
+        <p>Salt beef, roasted boar, spiced citrus, and non-alcoholic grog served beneath the black flag.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="galley">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal" data-tilt>
+        <h3>The Treasure Vault</h3>
+        <p>Heavily fortified sea cave guarding 37,000 doubloons and priceless relics behind iron portcullises.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="treasurevault">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d1" data-tilt>
+        <h3>X Marks The Spot</h3>
+        <p>The founder's secret cache etched in blood-red ink. Only accessible under auspicious tides.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="xmark">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d2" data-tilt>
+        <h3>The Bounty Chest</h3>
+        <p>Spanish escudos and jewels available to any cadet who solves the collegiate navigational riddle.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="goldenchest">⚓ Chart on Map</button>
+      </div>
+      <div class="card-life reveal d3" data-tilt>
+        <h3>Siren’s Boneyard</h3>
+        <p>Bleached rib cages and skull warning totems reminding captains of the unforgiving shoals.</p>
+        <button type="button" class="btn small ghost spot-jump-btn" data-chart-spot="bonesgraveyard">⚓ Chart on Map</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:840px">
+    <div class="sec-head reveal"><div class="over">Tide Tables</div><h2>A Day on the Island</h2><p>As observed by the night watch, who also keeps the light and the gossip.</p></div>
+    <div class="day-list">
+      <div class="day-row reveal"><span class="dt">0500</span><span>The bell (the one that survives)</span></div>
+      <div class="day-row reveal"><span class="dt">0600</span><span>Deck drill &amp; sea-state check at The Quarterdeck</span></div>
+      <div class="day-row reveal"><span class="dt">0700</span><span>Grog-tea in the Galley (it is tea)</span></div>
+      <div class="day-row reveal"><span class="dt">0900</span><span>Cartography lectures in the Chart Vault</span></div>
+      <div class="day-row reveal"><span class="dt">1300</span><span>Rigging drill at the Drydock</span></div>
+      <div class="day-row reveal"><span class="dt">1600</span><span>Krakenarium feeding &amp; marine dissection</span></div>
+      <div class="day-row reveal"><span class="dt">1800</span><span>Bounty counts at The Harbor</span></div>
+      <div class="day-row reveal"><span class="dt">2100</span><span>Night watch from Crow's Nest</span></div>
+      <div class="day-row reveal"><span class="dt">0000</span><span>The grog bell — taps in Crew Quarters</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band"><div class="wrap reveal"><h2>You Will Know the Island in a Week</h2><p>Everyone does. The island teaches you. It is very good at this.</p><div class="hero-ctas"><a class="btn" href="enlist.html">Join the Crew</a><a class="btn ghost" href="wanted.html">Check the Wanted Board</a></div></div></div>
+
+<footer>
+  <div class="wrap">
+    <img class="foot-medal" src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest">
+    <div class="fname">Ravenspire Blacktide Collegium</div>
+    <div class="fsub">Est. 1654 · Built, designed &amp; managed entirely by pirates · No land, no problem. The crew still calls it the Seven Seas.</div>
+    <div class="foot-links">
+      <a href="index.html">The Harbor</a>
+      <a href="scroll.html">The Scroll</a>
+      <a href="fleet.html">The Fleet</a>
+      <a href="skills.html">Skills</a>
+      <a href="quartermasters.html">Quartermasters</a>
+      <a href="crew.html">The Crew</a>
+      <a href="treasure-hauled.html">Treasure Hauled</a>
+      <a href="island.html">The Island</a>
+      <a href="feasts.html">Feasts &amp; Raids</a>
+      <a href="doubloons.html">Gold Doubloons</a>
+      <a href="legends.html">Legends</a>
+      <a href="wanted.html">The Wanted Board</a>
+      <a href="enlist.html">Join the Crew</a>
+      <a href="raven.html">Send a Raven</a>
+      <a href="quarters.html">Shipman’s Quarters</a>
+      <a href="forge.html">The Forge</a>
+    </div>
+    <p class="fine">This website was forged by hand by the pirate web crew — see <a href="forge.html">The Forge</a> for the full crew. Powered by 100% renewable grog. © 1654–2026. All doubloons reserved.</p>
+  </div>
+</footer>
+<div id="parrotRig">
+  <div class="parrot-bob"><div class="parrot-body" id="parrotBody" tabindex="0" role="button" aria-label="Professor Feather, the college parrot. Click for a clue.">
+    <model-viewer id="parrot3d" tabindex="-1" src="img/parrot.glb" alt="Professor Feather, the college pirate parrot, in real 3D"
+      camera-controls="false" interaction-prompt="none" touch-action="none" loading="eager"
+      exposure="1.15" environment-image="neutral" auto-rotate auto-rotate-delay="1500" rotation-per-second="0.5rad"></model-viewer>
+    <img id="parrot2d" src="img/parrot.jpg" alt="">
+  </div></div>
+  <span class="zzz" id="parrotZzz" aria-hidden="true">z&thinsp;z&thinsp;Z</span>
+  <div class="parrot-bubble" id="parrotBubble" role="status" aria-live="polite"></div>
+  <div class="parrot-tag">Professor Feather<small>Chief QA Officer · peck for a clue</small></div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
