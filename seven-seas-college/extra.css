@@ -16,11 +16,10 @@
 body.storm .island-video{filter:brightness(.7) saturate(.85)}
 .island-video .iv-img{filter:saturate(1.05) contrast(1.02)}
 body.storm .iv-img{filter:brightness(.7) saturate(.7)}
-/* ============ SHIP'S REEL (real footage) ============ */
 .iv-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;
-  opacity:0;transition:opacity 2.2s ease;
-  filter:brightness(.72) saturate(.82) contrast(1.08) hue-rotate(-12deg);
-  animation:reelDrift 34s ease-in-out infinite alternate;will-change:transform}
+  opacity:1;transition:opacity 1s ease;
+  filter:brightness(1) contrast(1.02) saturate(1.05);
+  animation:none;will-change:auto}
 .iv-video.ready{opacity:1}
 @keyframes reelDrift{from{transform:scale(1.07)}to{transform:scale(1.16) translate(-1.4%,-1.8%)}}
 .island-video.paused .iv-video{animation-play-state:paused}
@@ -441,20 +440,7 @@ button,.btn{position:relative}
 #parrotRig.zzz #parrotZzz{opacity:.95;animation:zzzFloat 2.2s ease-in-out infinite}
 #parrotRig.zzz-idle #parrotZzz{opacity:.5;animation:zzzFloat 3s ease-in-out infinite}
 @keyframes zzzFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(4deg)}}
-/* speech bubble */
-.parrot-bubble{position:absolute;bottom:calc(100% + 12px);left:-8px;max-width:242px;pointer-events:auto;
-  background:linear-gradient(180deg,#f4e7c3,#e8d5a4);color:#3c2a12;border:2px solid #8a6a2f;border-radius:10px;
-  padding:10px 30px 10px 12px;font-family:'IM Fell English',serif;font-size:.82rem;line-height:1.4;
-  box-shadow:0 10px 26px rgba(0,0,0,.5);opacity:0;transform:translateY(8px) scale(.95);transform-origin:bottom left;
-  transition:opacity .25s,transform .25s;z-index:6}
-.parrot-bubble.show{opacity:1;transform:none}
-.parrot-bubble::after{content:"";position:absolute;bottom:-8px;left:22px;width:13px;height:13px;background:#e8d5a4;
-  border-right:2px solid #8a6a2f;border-bottom:2px solid #8a6a2f;transform:rotate(45deg)}
-.parrot-bubble .b-close{position:absolute;top:3px;right:5px;background:none;border:0;font-size:15px;cursor:pointer;
-  color:#6b4d1d;padding:2px 6px;line-height:1}
-.parrot-bubble .b-close:hover{color:#2c1d0b}
-.parrot-bubble .b-close:focus-visible{outline:2px dashed #8a6a2f}
-.parrot-bubble b{font-family:'Pirata One',cursive;letter-spacing:.4px}
+/* speech bubble defined in overhaul section below */
 /* chilli bowl */
 #chilliBowl{position:fixed;right:26px;bottom:96px;width:74px;height:56px;z-index:1141;cursor:grab;touch-action:none;
   transition:transform .45s cubic-bezier(.3,1.4,.5,1);will-change:transform}
@@ -495,11 +481,42 @@ button,.btn{position:relative}
 /* ================================================================
    SEA OF THIEVES AESTHETIC & INTERACTIVE ENHANCEMENTS
    ================================================================ */
-.sot-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#030a14}
-.sot-hero .iv-video{opacity:0;transition:opacity 2s ease;filter:brightness(.84) contrast(1.08) saturate(1.1)}
-.sot-hero .iv-video.ready{opacity:1}
-.sot-hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(3,10,20,.45) 0%,rgba(3,10,20,.82) 75%,rgba(2,6,12,.96) 100%);pointer-events:none;z-index:3}
-.sot-hero-content{position:relative;z-index:6;max-width:1120px;margin:0 auto;padding:140px 24px 100px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.sot-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#030a14;z-index:10}
+.sot-hero .iv-video{opacity:1!important;transition:opacity 1s ease;filter:brightness(1) contrast(1.02) saturate(1.05)!important;animation:none!important}
+.sot-hero .iv-video.ready{opacity:1!important}
+.sot-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,14,0.3) 0%,transparent 15%,transparent 85%,rgba(2,6,14,0.45) 100%)!important;pointer-events:none;z-index:3}
+.sot-hero-content{position:relative;z-index:6;max-width:1120px;margin:0 auto;padding:140px 24px 100px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+.sot-college-name{
+  font-family:'Pirata One',cursive;
+  font-size:clamp(3.2rem,7.8vw,6.4rem);
+  line-height:1.05;
+  color:#fff9e6;
+  text-shadow:0 4px 22px rgba(0,0,0,0.95),0 0 35px rgba(230,179,74,0.7),0 2px 5px rgba(0,0,0,1);
+  letter-spacing:0.05em;
+  text-align:center;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.sot-college-sub{
+  display:inline-block;
+  font-family:'IM Fell English',Georgia,serif;
+  font-size:clamp(1.05rem,2.2vw,1.45rem);
+  font-style:italic;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--gold-bright);
+  background:rgba(3,12,22,0.75);
+  border:1.5px solid rgba(230,179,74,0.65);
+  border-radius:30px;
+  padding:6px 26px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.75),0 0 15px rgba(230,179,74,0.3);
+  backdrop-filter:blur(6px);
+}
 
 .sot-crest{width:116px;height:116px;margin:0 auto 16px;filter:drop-shadow(0 0 25px rgba(230,179,74,.75));animation:crestHover 4s ease-in-out infinite alternate}
 @keyframes crestHover{0%{transform:translateY(0) scale(1)}100%{transform:translateY(-8px) scale(1.04)}}
@@ -697,14 +714,21 @@ button,.btn{position:relative}
 /* ================================================================
    PARROT SPEECH BUBBLE & CHILI PEPPER OVERHAUL
    ================================================================ */
+#parrotRig {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999 !important;
+  width: 170px;
+  height: 170px;
+  pointer-events: none;
+}
 .parrot-bubble {
   position: absolute !important;
-  bottom: calc(100% + 14px) !important;
-  right: 0 !important;
-  left: auto !important;
+  display: none !important;
   width: max-content !important;
-  min-width: 220px !important;
-  max-width: min(320px, calc(100vw - 40px)) !important;
+  min-width: 240px !important;
+  max-width: min(340px, calc(100vw - 32px)) !important;
   height: auto !important;
   min-height: fit-content !important;
   box-sizing: border-box !important;
@@ -713,30 +737,61 @@ button,.btn{position:relative}
   word-break: normal !important;
   white-space: normal !important;
   overflow: visible !important;
-  background: linear-gradient(180deg, #fbf2d8, #e8d39f) !important;
-  color: #2b1806 !important;
-  border: 2px solid #825a22 !important;
-  border-radius: 12px !important;
-  padding: 12px 32px 12px 14px !important;
+  background: linear-gradient(175deg, #fffcf3 0%, #faecd0 50%, #f3dec0 100%) !important;
+  color: #1a0f05 !important;
+  border: 2.5px solid #5a3818 !important;
+  border-radius: 14px !important;
+  padding: 14px 34px 14px 18px !important;
   font-family: 'IM Fell English', Georgia, serif !important;
-  font-size: 0.88rem !important;
-  line-height: 1.45 !important;
-  box-shadow: 0 14px 34px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.7) !important;
-  z-index: 1200 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.52 !important;
+  font-weight: 500 !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.85), 0 0 15px rgba(230,179,74,0.4), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+  z-index: 10000 !important;
   pointer-events: auto !important;
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+.parrot-bubble.show {
+  display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.parrot-bubble b {
+  font-family: 'Pirata One', cursive !important;
+  color: #8c1e05 !important;
+  font-size: 1.16rem !important;
+  letter-spacing: 0.04em !important;
 }
 .parrot-bubble::after {
   content: "" !important;
   position: absolute !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: #f3dec0 !important;
+  border-right: 2.5px solid #5a3818 !important;
+  border-bottom: 2.5px solid #5a3818 !important;
+  transform: rotate(45deg) !important;
+}
+/* Smart pointer tail alignment */
+.parrot-bubble.bubble-on-left::after {
+  bottom: -9px !important;
+  left: 28px !important;
+  right: auto !important;
+}
+.parrot-bubble.bubble-on-right::after {
   bottom: -9px !important;
   right: 28px !important;
   left: auto !important;
-  width: 14px !important;
-  height: 14px !important;
-  background: #e8d39f !important;
-  border-right: 2px solid #825a22 !important;
-  border-bottom: 2px solid #825a22 !important;
-  transform: rotate(45deg) !important;
+}
+.parrot-bubble.bubble-below::after {
+  top: -9px !important;
+  bottom: auto !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: 2.5px solid #5a3818 !important;
+  border-top: 2.5px solid #5a3818 !important;
 }
 .parrot-bubble .b-close {
   position: absolute !important;
@@ -744,11 +799,12 @@ button,.btn{position:relative}
   right: 6px !important;
   background: none !important;
   border: 0 !important;
-  font-size: 16px !important;
+  font-size: 19px !important;
+  font-weight: bold !important;
   cursor: pointer !important;
-  color: #7a4e16 !important;
+  color: #6b3d16 !important;
   line-height: 1 !important;
-  padding: 2px 6px !important;
+  padding: 3px 7px !important;
 }
 .parrot-bubble .b-close:hover { color: #a82208 !important; }
 
@@ -1173,33 +1229,32 @@ button,.btn{position:relative}
 }
 
 /* ================================================================
-   UNDERWATER LAGOON: ANIMATED SEA CREATURES
+   OCEANIC PAGE BACKDROP: ANIMATED SEA CREATURES ACROSS WHOLE PAGE
    ================================================================ */
-.underwater-lagoon {
-  position: relative;
-  width: 100%;
-  min-height: 440px;
+.ocean-page-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
   overflow: hidden;
-  background: linear-gradient(180deg, #07233b 0%, #061a2e 40%, #03101c 80%, #020910 100%);
-  border-top: 2px solid rgba(0,210,190,0.3);
-  border-bottom: 2px solid #061a2e;
-  box-shadow: inset 0 20px 40px rgba(0,0,0,0.8), inset 0 -30px 50px rgba(0,0,0,0.9);
 }
-.lagoon-sunbeams {
+.ocean-page-backdrop .lagoon-sunbeams {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(65deg, rgba(70,220,200,0.06) 0%, rgba(70,220,200,0.06) 50px, transparent 50px, transparent 120px);
-  filter: blur(14px);
+  background: repeating-linear-gradient(65deg, rgba(70,220,200,0.04) 0%, rgba(70,220,200,0.04) 60px, transparent 60px, transparent 150px);
+  filter: blur(16px);
   animation: sunbeamShift 14s ease-in-out infinite alternate;
   pointer-events: none;
 }
 @keyframes sunbeamShift {
-  0% { transform: translateX(-40px) skewX(2deg); opacity: 0.6; }
-  100% { transform: translateX(40px) skewX(-2deg); opacity: 1; }
+  0% { transform: translateX(-40px) skewX(2deg); opacity: 0.5; }
+  100% { transform: translateX(40px) skewX(-2deg); opacity: 0.9; }
 }
 
 /* Sea Floor & Reef */
-.sea-floor {
+.ocean-page-backdrop .sea-floor, .sea-floor {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1207,7 +1262,7 @@ button,.btn{position:relative}
   height: 110px;
   background: linear-gradient(0deg, #05101a 0%, #091e30 70%, transparent 100%);
   pointer-events: none;
-  z-index: 5;
+  z-index: 3;
 }
 .coral-formation {
   position: absolute;
@@ -1220,16 +1275,25 @@ button,.btn{position:relative}
   100% { transform: rotate(2.5deg); }
 }
 
-/* Swimming Shark */
+/* Swimming Sharks at different depths */
 .swimming-shark {
   position: absolute;
-  top: 28%;
   left: -240px;
   width: 220px;
   height: 70px;
-  animation: sharkSwim 24s cubic-bezier(.4, 0, .2, 1) infinite;
   filter: drop-shadow(0 14px 20px rgba(0,0,0,0.8));
-  z-index: 4;
+  pointer-events: none;
+  z-index: 2;
+}
+.swimming-shark.shark-1 {
+  top: 24%;
+  animation: sharkSwim 24s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+.swimming-shark.shark-2 {
+  top: 66%;
+  transform: scale(0.85);
+  opacity: 0.82;
+  animation: sharkSwim 30s cubic-bezier(.4, 0, .2, 1) infinite 12s;
 }
 @keyframes sharkSwim {
   0% { transform: translate(0, 0) scaleX(1); left: -240px; }
@@ -1239,16 +1303,25 @@ button,.btn{position:relative}
   100% { transform: translate(0, 0) scaleX(1); left: -240px; }
 }
 
-/* Sea Turtle */
+/* Sea Turtles at different depths */
 .swimming-turtle {
   position: absolute;
-  top: 54%;
   right: -160px;
   width: 140px;
   height: 90px;
-  animation: turtleSwim 32s ease-in-out infinite 3s;
   filter: drop-shadow(0 10px 16px rgba(0,0,0,0.7));
-  z-index: 3;
+  pointer-events: none;
+  z-index: 2;
+}
+.swimming-turtle.turtle-1 {
+  top: 44%;
+  animation: turtleSwim 32s ease-in-out infinite 2s;
+}
+.swimming-turtle.turtle-2 {
+  top: 80%;
+  transform: scale(0.8);
+  opacity: 0.85;
+  animation: turtleSwim 36s ease-in-out infinite 18s;
 }
 @keyframes turtleSwim {
   0% { transform: translate(0, 0) scaleX(1); right: -160px; }
@@ -1258,22 +1331,30 @@ button,.btn{position:relative}
   100% { transform: translate(0, 0) scaleX(1); right: -160px; }
 }
 
-/* School of Fish */
+/* Schools of Fish */
 .school-of-fish {
   position: absolute;
-  top: 18%;
-  left: -120px;
+  left: -140px;
   width: 200px;
   height: 90px;
-  animation: fishSwarm 16s ease-in-out infinite 1s;
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
+}
+.school-of-fish.fish-1 {
+  top: 15%;
+  animation: fishSwarm 17s ease-in-out infinite 1s;
+}
+.school-of-fish.fish-2 {
+  top: 56%;
+  transform: scale(0.75);
+  opacity: 0.85;
+  animation: fishSwarm 22s ease-in-out infinite 9s;
 }
 @keyframes fishSwarm {
-  0% { transform: translate(0, 0); left: -120px; }
-  50% { transform: translate(calc(100vw + 240px), -25px); left: -120px; }
-  50.1% { transform: translate(calc(100vw + 240px), 40px) scaleX(-1); left: -120px; }
-  100% { transform: translate(0, 20px) scaleX(-1); left: -120px; }
+  0% { transform: translate(0, 0); left: -140px; }
+  50% { transform: translate(calc(100vw + 260px), -25px); left: -140px; }
+  50.1% { transform: translate(calc(100vw + 260px), 40px) scaleX(-1); left: -140px; }
+  100% { transform: translate(0, 20px) scaleX(-1); left: -140px; }
 }
 
 /* Bioluminescent Jellyfish */
@@ -1284,17 +1365,18 @@ button,.btn{position:relative}
   filter: drop-shadow(0 0 16px rgba(70,240,220,0.8));
   animation: jellyfishBob 7s ease-in-out infinite alternate;
   pointer-events: none;
-  z-index: 4;
+  z-index: 2;
 }
-.glowing-jellyfish.j1 { left: 16%; top: 35%; animation-duration: 6.5s; }
-.glowing-jellyfish.j2 { right: 22%; top: 22%; animation-duration: 8.2s; animation-delay: 1.5s; filter: drop-shadow(0 0 16px rgba(255,100,180,0.7)); }
+.glowing-jellyfish.j1 { left: 7%; top: 28%; animation-duration: 6.5s; }
+.glowing-jellyfish.j2 { right: 9%; top: 48%; animation-duration: 8.2s; animation-delay: 1.5s; filter: drop-shadow(0 0 16px rgba(255,100,180,0.7)); }
+.glowing-jellyfish.j3 { left: 14%; top: 74%; animation-duration: 7.2s; animation-delay: 3s; filter: drop-shadow(0 0 16px rgba(255,215,90,0.7)); }
 @keyframes jellyfishBob {
   0% { transform: translateY(0) scaleY(1); }
   50% { transform: translateY(-38px) scaleY(1.08) scaleX(0.94); }
   100% { transform: translateY(-8px) scaleY(0.96) scaleX(1.04); }
 }
 
-/* Rising Bubbles */
+/* Rising Bubbles across full screen */
 .lagoon-bubbles {
   position: absolute;
   inset: 0;
@@ -1318,10 +1400,14 @@ button,.btn{position:relative}
   0% { transform: translateY(0) translateX(0); opacity: 0; }
   20% { opacity: 0.8; }
   80% { opacity: 0.8; }
-  100% { transform: translateY(-460px) translateX(var(--b-drift, 25px)); opacity: 0; }
+  100% { transform: translateY(-105vh) translateX(var(--b-drift, 25px)); opacity: 0; }
 }
 
-.underwater-banner-copy {
+/* Ensure landing page content layers cleanly over the swimming creatures */
+.stats, #sot-pillars-section, #fleet-teaser, #island-teaser, #wanted-teaser, .footer {
+  position: relative;
+  z-index: 5;
+}
   position: relative;
   z-index: 8;
   max-width: 800px;

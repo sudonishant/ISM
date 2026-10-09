@@ -198,30 +198,14 @@ const INDEX = `
   <img class="iv-img" src="img/island-hero.jpg" alt="Ravenspire Blacktide Collegium - open seas at dusk">
   <video class="iv-video ready" id="shipReel" src="img/hello.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="auto"></video>
   <div class="sot-hero-overlay"></div>
-  <div class="iv-mist iv-m1"></div>
-  <div class="iv-mist iv-m2"></div>
-  <div class="map-beam iv-beam" aria-hidden="true"></div>
   ${waves3()}
   ${GULL('g1')}${GULL('g2')}
   
   <div class="sot-hero-content">
-    <div class="sot-badge">
-      <span class="live-dot"></span> Season XIV: Siren's Wrath · Est. 1654
-    </div>
-    <div class="sot-crest">
-      <svg viewBox="0 0 100 100" width="100%" height="100%" color="#ffd873">
-        <use href="#skullMark"/>
-      </svg>
-    </div>
-    <h1 class="sot-title">BE MORE <span>PIRATE</span></h1>
-    <p class="sot-lead">
-      Welcome to <strong>Ravenspire Blacktide Collegium</strong> — the world’s only open-ocean pirate academy where legends are forged in salt, cannon smoke, and gold. Built, run, and over-thought entirely by pirates.
-    </p>
-    <div class="sot-hero-actions">
-      <a class="sot-btn-gold" href="enlist.html"><span>⚔️</span> SET SAIL NOW</a>
-      <a class="sot-btn-teal" href="island.html"><span>🗺️</span> CHART THE ISLAND</a>
-      <a class="sot-btn-ghost" href="scroll.html"><span>📜</span> THE PIRATE CODE</a>
-    </div>
+    <h1 class="sot-college-name">
+      Ravenspire Blacktide Collegium
+      <span class="sot-college-sub">Est. 1654</span>
+    </h1>
   </div>
 
   <div class="sot-controls-bar">
@@ -238,12 +222,12 @@ const INDEX = `
   </div>
 </div>
 
-<!-- ANIMATED UNDERWATER SEA CREATURES & REEF -->
-<section class="underwater-lagoon" aria-label="Underwater Reef and Sea Creatures">
+<!-- LIVING OCEANIC BACKDROP: ANIMATED SEA CREATURES ACROSS ENTIRE PAGE -->
+<div class="ocean-page-backdrop" aria-hidden="true">
   <div class="lagoon-sunbeams"></div>
   
-  <!-- School of Fish -->
-  <div class="school-of-fish" aria-hidden="true">
+  <!-- School of Fish 1 & 2 -->
+  <div class="school-of-fish fish-1" aria-hidden="true">
     <svg viewBox="0 0 200 90" width="100%" height="100%">
       <g fill="#4fd1c5" opacity="0.9">
         <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
@@ -266,9 +250,21 @@ const INDEX = `
       </g>
     </svg>
   </div>
+  <div class="school-of-fish fish-2" aria-hidden="true">
+    <svg viewBox="0 0 200 90" width="100%" height="100%">
+      <g fill="#38b2ac" opacity="0.85">
+        <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
+        <polygon points="25,30 15,20 18,30 15,40" fill="#285e61"/>
+      </g>
+      <g fill="#f6ad55" opacity="0.8" transform="translate(40, 20) scale(0.75)">
+        <path d="M40 20 C60 10 70 25 85 20 C75 25 75 35 85 40 C70 35 60 50 40 40 C30 35 30 25 40 20 Z"/>
+        <polygon points="25,30 15,20 18,30 15,40" fill="#dd6b20"/>
+      </g>
+    </svg>
+  </div>
 
-  <!-- Swimming Shark -->
-  <div class="swimming-shark" aria-hidden="true">
+  <!-- Swimming Shark 1 & 2 -->
+  <div class="swimming-shark shark-1" aria-hidden="true">
     <svg viewBox="0 0 220 70" width="100%" height="100%">
       <g fill="#1a365d" stroke="#2b6cb0" stroke-width="1.5">
         <path d="M190 32 C170 18 120 15 90 22 C60 28 30 32 15 28 C2 26 0 35 15 37 C35 39 60 42 90 44 C125 46 170 44 190 36 C195 35 198 33 190 32 Z" fill="#234e70"/>
@@ -282,9 +278,19 @@ const INDEX = `
       </g>
     </svg>
   </div>
+  <div class="swimming-shark shark-2" aria-hidden="true">
+    <svg viewBox="0 0 220 70" width="100%" height="100%">
+      <g fill="#162e4a" stroke="#255a88" stroke-width="1.5">
+        <path d="M190 32 C170 18 120 15 90 22 C60 28 30 32 15 28 C2 26 0 35 15 37 C35 39 60 42 90 44 C125 46 170 44 190 36 C195 35 198 33 190 32 Z" fill="#1b3c58"/>
+        <path d="M120 18 C115 5 105 2 100 0 C102 10 105 18 108 20 Z" fill="#173147"/>
+        <path d="M15 28 C5 10 0 5 0 2 C2 15 8 26 12 30 C8 36 2 45 0 55 C5 50 10 42 16 36 Z" fill="#173147"/>
+        <circle cx="178" cy="28" r="2.5" fill="#e6b34a"/>
+      </g>
+    </svg>
+  </div>
 
-  <!-- Sea Turtle -->
-  <div class="swimming-turtle" aria-hidden="true">
+  <!-- Sea Turtle 1 & 2 -->
+  <div class="swimming-turtle turtle-1" aria-hidden="true">
     <svg viewBox="0 0 140 90" width="100%" height="100%">
       <g fill="#276749" stroke="#38a169" stroke-width="1.5">
         <ellipse cx="65" cy="45" rx="36" ry="24" fill="#22543d"/>
@@ -299,8 +305,20 @@ const INDEX = `
       </g>
     </svg>
   </div>
+  <div class="swimming-turtle turtle-2" aria-hidden="true">
+    <svg viewBox="0 0 140 90" width="100%" height="100%">
+      <g fill="#22543d" stroke="#2f855a" stroke-width="1.5">
+        <ellipse cx="65" cy="45" rx="36" ry="24" fill="#1c4532"/>
+        <ellipse cx="65" cy="45" rx="26" ry="16" fill="#22543d" stroke="#38a169" stroke-dasharray="4,3"/>
+        <ellipse cx="110" cy="45" rx="12" ry="9" fill="#276749"/>
+        <circle cx="114" cy="42" r="2" fill="#f6e05e"/>
+        <path d="M85 30 C95 10 115 0 120 2 C115 15 95 32 80 36 Z" fill="#276749"/>
+        <path d="M85 60 C95 80 115 90 120 88 C115 75 95 58 80 54 Z" fill="#276749"/>
+      </g>
+    </svg>
+  </div>
 
-  <!-- Bioluminescent Jellyfish 1 -->
+  <!-- Bioluminescent Jellyfish 1, 2, 3 -->
   <div class="glowing-jellyfish j1" aria-hidden="true">
     <svg viewBox="0 0 70 110" width="100%" height="100%">
       <defs>
@@ -319,7 +337,6 @@ const INDEX = `
     </svg>
   </div>
 
-  <!-- Bioluminescent Jellyfish 2 -->
   <div class="glowing-jellyfish j2" aria-hidden="true">
     <svg viewBox="0 0 70 110" width="100%" height="100%">
       <defs>
@@ -338,14 +355,32 @@ const INDEX = `
     </svg>
   </div>
 
-  <!-- Rising Bubbles -->
+  <div class="glowing-jellyfish j3" aria-hidden="true">
+    <svg viewBox="0 0 70 110" width="100%" height="100%">
+      <defs>
+        <radialGradient id="jellyGlow3" cx="50%" cy="40%" r="50%">
+          <stop offset="0%" stop-color="#fbd38d" stop-opacity="0.95"/>
+          <stop offset="70%" stop-color="#dd6b20" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#7b341e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="35" cy="30" rx="22" ry="18" fill="url(#jellyGlow3)"/>
+      <path d="M16 34 Q35 42 54 34" stroke="#f6ad55" stroke-width="2.2" fill="none"/>
+      <path d="M26 38 Q22 62 28 90" stroke="#f6ad55" stroke-width="1.8" fill="none" opacity="0.8"/>
+      <path d="M34 40 Q40 65 36 95" stroke="#fbd38d" stroke-width="2" fill="none" opacity="0.9"/>
+      <path d="M42 38 Q46 62 40 90" stroke="#f6ad55" stroke-width="1.8" fill="none" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <!-- Rising Bubbles across full screen -->
   <div class="lagoon-bubbles" aria-hidden="true">
-    <div class="lagoon-bubble" style="--b-left:14%;--b-sz:16px;--b-dur:7s;--b-del:0.5s;--b-drift:30px"></div>
-    <div class="lagoon-bubble" style="--b-left:28%;--b-sz:10px;--b-dur:9s;--b-del:2s;--b-drift:-20px"></div>
-    <div class="lagoon-bubble" style="--b-left:42%;--b-sz:20px;--b-dur:6.5s;--b-del:1.2s;--b-drift:25px"></div>
-    <div class="lagoon-bubble" style="--b-left:58%;--b-sz:12px;--b-dur:8s;--b-del:3s;--b-drift:-15px"></div>
-    <div class="lagoon-bubble" style="--b-left:72%;--b-sz:18px;--b-dur:7.5s;--b-del:0.8s;--b-drift:35px"></div>
-    <div class="lagoon-bubble" style="--b-left:86%;--b-sz:14px;--b-dur:8.5s;--b-del:2.5s;--b-drift:-25px"></div>
+    <div class="lagoon-bubble" style="--b-left:12%;--b-sz:16px;--b-dur:7s;--b-del:0.5s;--b-drift:30px"></div>
+    <div class="lagoon-bubble" style="--b-left:24%;--b-sz:10px;--b-dur:9s;--b-del:2s;--b-drift:-20px"></div>
+    <div class="lagoon-bubble" style="--b-left:38%;--b-sz:20px;--b-dur:6.5s;--b-del:1.2s;--b-drift:25px"></div>
+    <div class="lagoon-bubble" style="--b-left:52%;--b-sz:12px;--b-dur:8s;--b-del:3s;--b-drift:-15px"></div>
+    <div class="lagoon-bubble" style="--b-left:68%;--b-sz:18px;--b-dur:7.5s;--b-del:0.8s;--b-drift:35px"></div>
+    <div class="lagoon-bubble" style="--b-left:82%;--b-sz:14px;--b-dur:8.5s;--b-del:2.5s;--b-drift:-25px"></div>
+    <div class="lagoon-bubble" style="--b-left:94%;--b-sz:16px;--b-dur:7.2s;--b-del:1.8s;--b-drift:20px"></div>
   </div>
 
   <!-- Deep Sea Floor & Coral Reef Formations -->
@@ -361,17 +396,7 @@ const INDEX = `
       <ellipse cx="40" cy="82" rx="28" ry="16" fill="#b83280" opacity="0.85"/>
     </svg>
   </div>
-
-  <div class="underwater-banner-copy reveal">
-    <div style="font-family:'Pirata One',cursive;letter-spacing:0.22em;color:#ffd873;font-size:1.1rem;text-transform:uppercase;margin-bottom:6px">
-      🌊 Beneath The Collegiate Sound 🌊
-    </div>
-    <h2>The Living Lagoon &amp; Abyssal Trench</h2>
-    <p>
-      Patrolled by reef sharks, ancient sea turtles, and bioluminescent deep-sea jellyfish. Here our marine cartographers and beast masters train in genuine open water.
-    </p>
-  </div>
-</section>
+</div>
 
 <div class="stats">
   <div class="wrap stats-grid">

@@ -463,13 +463,42 @@ if(spots.length){
 
   /* ---- speech bubble ---- */
   let bubbleTimer = null;
+  function updateBubblePosition(){
+    if(!bubble || !rig) return;
+    const r = rig.getBoundingClientRect();
+    const winW = window.innerWidth;
+    
+    bubble.classList.remove('bubble-on-right', 'bubble-on-left', 'bubble-below');
+    
+    if (r.top < 160) {
+      bubble.style.top = 'calc(100% + 14px)';
+      bubble.style.bottom = 'auto';
+      bubble.classList.add('bubble-below');
+    } else {
+      bubble.style.bottom = 'calc(100% + 14px)';
+      bubble.style.top = 'auto';
+    }
+    
+    if (r.left > winW * 0.5) {
+      bubble.style.left = 'auto';
+      bubble.style.right = '12px';
+      bubble.classList.add('bubble-on-right');
+    } else {
+      bubble.style.left = '12px';
+      bubble.style.right = 'auto';
+      bubble.classList.add('bubble-on-left');
+    }
+  }
+
   function say(html, ms){
     if(!bubble) return;
     bubble.innerHTML = html + '<button class="b-close" aria-label="Dismiss message">&times;</button>';
+    updateBubblePosition();
     bubble.classList.add('show');
-    bubble.querySelector('.b-close').addEventListener('click', (e) => { e.stopPropagation(); hideBubble(); });
+    const closeBtn = bubble.querySelector('.b-close');
+    if (closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); hideBubble(); });
     clearTimeout(bubbleTimer);
-    bubbleTimer = setTimeout(hideBubble, ms || 7000);
+    bubbleTimer = setTimeout(hideBubble, ms || 7500);
   }
   function hideBubble(){ if(bubble){ bubble.classList.remove('show'); clearTimeout(bubbleTimer); } }
 
@@ -666,6 +695,7 @@ if(spots.length){
       moved = false;
       bowl.classList.add('dragging');
     });
+    let nearChilli = false;
     bowl.addEventListener('pointermove', (e) => {
       if (pid === null || e.pointerId !== pid) return;
       if (!moved && Math.hypot(e.clientX - startX, e.clientY - startY) < 8) return;
@@ -676,14 +706,20 @@ if(spots.length){
 
       const pr = rig.getBoundingClientRect();
       const dist = Math.hypot(e.clientX - (pr.left + pr.width/2), e.clientY - (pr.top + pr.height/2));
-      if (dist < 200) {
+      if (dist < 230) {
         rig.classList.add('waking');
-        say('<b>AWWWK!!</b> I smell red-hot chili! Bring it closer to me beak! 🌶️🔥', 4000);
+        if (!nearChilli) {
+          nearChilli = true;
+          say('<b>AWWWK!!</b> I smell red-hot chili! Bring it closer to me beak! 🌶️🔥', 4500);
+        }
+      } else {
+        nearChilli = false;
       }
     });
     bowl.addEventListener('pointerup', (e) => {
       if (pid === null || e.pointerId !== pid) return;
       pid = null;
+      nearChilli = false;
       bowl.classList.remove('dragging');
       if (!moved) {
         grabbed = !grabbed;
@@ -692,7 +728,7 @@ if(spots.length){
         return;
       }
       const pr = rig.getBoundingClientRect();
-      if (e.clientX >= pr.left - 30 && e.clientX <= pr.right + 30 && e.clientY >= pr.top - 30 && e.clientY <= pr.bottom + 45) {
+      if (e.clientX >= pr.left - 50 && e.clientX <= pr.right + 50 && e.clientY >= pr.top - 50 && e.clientY <= pr.bottom + 65) {
         wakeUp();
       }
     });

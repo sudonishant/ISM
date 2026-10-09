@@ -463,7 +463,6 @@ footer .fine{font-size:.82rem;color:#5f7484}
   .grid-3{grid-template-columns:repeat(2,1fr)}
   .event-row{grid-template-columns:90px 1fr}
   .e-tag{grid-column:2}
-  .parrot-bubble{display:none}
   .steps li{padding-left:70px}
 }
 @media (max-width:620px){
