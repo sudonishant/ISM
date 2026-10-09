@@ -1420,7 +1420,8 @@ const BODIES = {
 for (const [file, [title, , desc]] of Object.entries(PAGES)) {
   const key = file.replace('.html','');
   const active = {'index':'home','scroll':'scroll','fleet':'fleet','quartermasters':'qm','island':'island','wanted':'wanted'}[key] || '';
-  const html = head(title, desc) + '\n' + ticker() + '\n' + nav(active) + '\n' + BODIES[file] + '\n' + foot();
+  const tickerHtml = file === 'index.html' ? '' : (ticker() + '\n');
+  const html = head(title, desc) + '\n' + tickerHtml + nav(active) + '\n' + BODIES[file] + '\n' + foot();
   fs.writeFileSync(file, html);
   console.log('wrote', file, html.length);
 }
