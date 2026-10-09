@@ -191,38 +191,8 @@ function waves3(){
 
 const GULL = (cls)=>`<div class="gull ${cls}" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div>`;
 
-/* ---------------- PAGE CONTENT ---------------- */
-
-const INDEX = `
-<header class="sot-hero" id="islandVideo">
-  <img class="iv-img" src="img/island-hero.jpg" alt="Ravenspire Blacktide Collegium - open seas at dusk">
-  <video class="iv-video ready" id="shipReel" src="img/hello.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="auto"></video>
-  <div class="sot-hero-overlay"></div>
-  ${waves3()}
-  ${GULL('g1')}${GULL('g2')}
-  
-  <div class="sot-hero-content">
-    <h1 class="sot-college-name">
-      Ravenspire Blacktide Collegium
-      <span class="sot-college-sub">Est. 1654</span>
-    </h1>
-  </div>
-
-  <div class="sot-controls-bar">
-    <button class="sot-ctrl-btn" id="soundToggle" type="button" aria-label="Toggle sound">🔇 Sound: Off</button>
-    <button class="sot-ctrl-btn" id="reelPause" type="button" aria-label="Pause or play video">⏸ Pause Voyage</button>
-  </div>
-</header>
-
-<div class="sot-season-bar">
-  <div class="sot-season-inner">
-    <span class="sot-season-tag">VOYAGE UPDATE</span>
-    <span class="sot-season-text"><strong>Season XIV: The Siren’s Shadow</strong> is now live across the Seven Seas. New high-seas bounties, cursed sunken shrines, and stealth boarding grapples added to the curriculum!</span>
-    <a class="btn ghost" href="wanted.html" style="padding:6px 16px;font-size:.85rem">View Bounties →</a>
-  </div>
-</div>
-
-<!-- LIVING OCEANIC BACKDROP: ANIMATED SEA CREATURES ACROSS ENTIRE PAGE -->
+const OCEAN_PAGE_BACKDROP = `
+<!-- LIVING OCEANIC BACKDROP: ANIMATED SEA CREATURES ACROSS ALL PAGES -->
 <div class="ocean-page-backdrop" aria-hidden="true">
   <div class="lagoon-sunbeams"></div>
   
@@ -383,20 +353,208 @@ const INDEX = `
     <div class="lagoon-bubble" style="--b-left:94%;--b-sz:16px;--b-dur:7.2s;--b-del:1.8s;--b-drift:20px"></div>
   </div>
 
-  <!-- Deep Sea Floor & Coral Reef Formations -->
+  <!-- Deep Sea Floor: Sunken Broken Boat, Scattered Gold Coins & Overflowing Treasure Chest -->
   <div class="sea-floor" aria-hidden="true">
-    <svg class="coral-formation" style="left:4%;width:180px;height:95px" viewBox="0 0 180 95">
-      <path d="M10 95 Q15 60 25 45 Q15 35 10 20 Q20 25 30 38 Q38 20 45 5 Q48 20 40 42 Q55 35 68 25 Q62 42 48 55 Q60 62 75 58 Q65 72 45 80 Q35 95 10 95 Z" fill="#dd6b20" opacity="0.9"/>
-      <path d="M60 95 Q70 65 85 50 Q80 35 75 15 Q88 28 92 45 Q105 35 118 20 Q112 40 98 55 Q115 65 130 60 Q118 75 92 82 Q78 95 60 95 Z" fill="#e53e3e" opacity="0.85"/>
-      <ellipse cx="140" cy="80" rx="30" ry="18" fill="#d69e2e" opacity="0.8"/>
+    <!-- 1. Broken Pirate Boat / Sunken Galleon Hull in Sand -->
+    <svg class="seabed-broken-boat" viewBox="0 0 340 140" aria-label="Sunken broken pirate boat">
+      <defs>
+        <linearGradient id="hullPlankGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#4a2a14"/>
+          <stop offset="50%" stop-color="#2c1608"/>
+          <stop offset="100%" stop-color="#140a04"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 140 Q80 120 180 132 Q270 124 340 140 Z" fill="#05121e" opacity="0.95"/>
+      <g transform="translate(15, 10)">
+        <line x1="140" y1="90" x2="110" y2="10" stroke="#3d2110" stroke-width="8" stroke-linecap="round"/>
+        <line x1="110" y1="10" x2="95" y2="4" stroke="#542e17" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="90,4 98,1 106,7 101,12 92,6" fill="#7a4623"/>
+        <path d="M100 12 Q80 30 75 60 Q72 80 85 95" stroke="#a07d50" stroke-width="2" fill="none" opacity="0.75" stroke-dasharray="3,2"/>
+        <path d="M108 20 Q130 35 145 65" stroke="#8c6d42" stroke-width="1.8" fill="none" opacity="0.7"/>
+        <path d="M102 14 Q120 5 135 18" stroke="#a07d50" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M104 22 Q125 18 140 25 Q132 35 145 42 Q120 38 106 32 Z" fill="#14181c" opacity="0.85"/>
+        <circle cx="120" cy="28" r="3" fill="#e2ecf2" opacity="0.7"/>
+        <path d="M30 115 C50 75 95 62 165 65 C220 67 265 85 295 118 C250 126 150 128 30 115 Z" fill="url(#hullPlankGrad)"/>
+        <path d="M45 102 C75 75 125 72 180 74 C225 76 260 92 285 114" stroke="#160903" stroke-width="2.5" fill="none"/>
+        <path d="M38 110 C68 85 115 82 170 84 C215 86 250 100 275 120" stroke="#160903" stroke-width="2.2" fill="none"/>
+        <polygon points="50,85 58,55 64,57 60,88" fill="#5c3419"/>
+        <polygon points="80,75 86,45 92,47 88,77" fill="#502c14"/>
+        <polygon points="175,70 181,42 188,44 183,72" fill="#502c14"/>
+        <polygon points="210,75 218,50 224,53 218,78" fill="#422410"/>
+        <path d="M115 88 Q135 80 155 86 Q162 100 150 108 Q125 109 115 98 Z" fill="#080402"/>
+        <rect x="122" y="88" width="30" height="12" rx="3" transform="rotate(-15 122 88)" fill="#20262b" stroke="#0d1114" stroke-width="1.5"/>
+        <ellipse cx="120" cy="98" rx="3" ry="5.5" transform="rotate(-15 120 98)" fill="#0d1114"/>
+        <circle cx="75" cy="105" r="2.5" fill="#fbd38d" opacity="0.8"/>
+        <circle cx="82" cy="108" r="2" fill="#fbd38d" opacity="0.8"/>
+        <circle cx="230" cy="102" r="3" fill="#f6ad55" opacity="0.8"/>
+        <circle cx="190" cy="112" r="2" fill="#cbd5e0" opacity="0.7"/>
+        <circle cx="194" cy="110" r="1.5" fill="#a0aec0" opacity="0.7"/>
+      </g>
     </svg>
-    <svg class="coral-formation" style="right:5%;width:190px;height:95px" viewBox="0 0 190 95">
-      <path d="M170 95 Q160 55 145 40 Q155 25 160 8 Q148 20 140 35 Q130 18 122 2 Q120 18 128 38 Q115 32 102 20 Q108 38 122 52 Q105 60 90 55 Q102 70 125 78 Q138 95 170 95 Z" fill="#9f7aea" opacity="0.9"/>
-      <path d="M90 95 Q80 70 65 52 Q50 38 42 18 Q55 30 62 48 Q75 40 88 28 Q82 48 72 62 Q85 70 102 65 Q90 78 72 85 Q60 95 40 95 Z" fill="#319795" opacity="0.85"/>
-      <ellipse cx="40" cy="82" rx="28" ry="16" fill="#b83280" opacity="0.85"/>
+
+    <!-- 2. Scattered Gold Coins Dunes across the Seabed -->
+    <svg class="seabed-gold-coins" viewBox="0 0 600 75" preserveAspectRatio="none" aria-label="Scattered gold coins">
+      <defs>
+        <radialGradient id="doubloonGold" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#fff3b0"/>
+          <stop offset="45%" stop-color="#ecc94b"/>
+          <stop offset="80%" stop-color="#d69e2e"/>
+          <stop offset="100%" stop-color="#975a16"/>
+        </radialGradient>
+      </defs>
+      <path d="M0 75 Q150 35 300 48 Q450 32 600 75 Z" fill="#05121e" opacity="0.85"/>
+      <g fill="url(#doubloonGold)" stroke="#975a16" stroke-width="0.7">
+        <ellipse cx="60" cy="58" rx="7" ry="3.5"/>
+        <ellipse cx="72" cy="56" rx="7" ry="3.5"/>
+        <ellipse cx="85" cy="60" rx="6.5" ry="3"/>
+        <ellipse cx="66" cy="52" rx="6.5" ry="3"/>
+        <ellipse cx="78" cy="50" rx="7" ry="3.5"/>
+        <ellipse cx="105" cy="62" rx="6.5" ry="3"/>
+        <ellipse cx="118" cy="64" rx="6.5" ry="3.2"/>
+        <ellipse cx="220" cy="58" rx="6.5" ry="3.2"/>
+        <ellipse cx="232" cy="60" rx="6" ry="3"/>
+        <ellipse cx="245" cy="56" rx="7" ry="3.4"/>
+        <ellipse cx="258" cy="59" rx="6" ry="3"/>
+        <ellipse cx="272" cy="55" rx="6.5" ry="3.2"/>
+        <ellipse cx="285" cy="58" rx="6" ry="3"/>
+        <ellipse cx="330" cy="60" rx="7" ry="3.5"/>
+        <ellipse cx="330" cy="56" rx="7" ry="3.5"/>
+        <ellipse cx="330" cy="52" rx="7" ry="3.5"/>
+        <ellipse cx="342" cy="57" rx="6" ry="3"/>
+        <ellipse cx="390" cy="57" rx="6.5" ry="3.2"/>
+        <ellipse cx="402" cy="59" rx="6" ry="3"/>
+        <ellipse cx="415" cy="55" rx="7" ry="3.4"/>
+        <ellipse cx="470" cy="55" rx="7" ry="3.5"/>
+        <ellipse cx="482" cy="53" rx="6.5" ry="3.2"/>
+        <ellipse cx="495" cy="57" rx="7" ry="3.5"/>
+        <ellipse cx="508" cy="51" rx="6.5" ry="3.2"/>
+        <ellipse cx="520" cy="53" rx="7" ry="3.5"/>
+        <ellipse cx="532" cy="49" rx="7" ry="3.5"/>
+      </g>
+      <path class="coin-glint glint-1" d="M72 43 L73 40 L74 43 L77 44 L74 45 L73 48 L72 45 L69 44 Z" fill="#ffffff"/>
+      <path class="coin-glint glint-2" d="M245 48 L246 45 L247 48 L250 49 L247 50 L246 53 L245 50 L242 49 Z" fill="#fff5b8"/>
+      <path class="coin-glint glint-3" d="M330 46 L331 43 L332 46 L335 47 L332 48 L331 51 L330 48 L327 47 Z" fill="#ffffff"/>
+      <path class="coin-glint glint-1" d="M520 44 L521 41 L522 44 L525 45 L522 46 L521 49 L520 46 L517 45 Z" fill="#ffffff"/>
+    </svg>
+
+    <!-- 3. Open Overflowing Pirate Treasure Chest -->
+    <svg class="seabed-treasure-chest" viewBox="0 0 260 140" aria-label="Sunken treasure chest overflowing with gold">
+      <defs>
+        <linearGradient id="chestWood" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#5a331a"/>
+          <stop offset="100%" stop-color="#241307"/>
+        </linearGradient>
+        <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d69e2e"/>
+          <stop offset="50%" stop-color="#f6e05e"/>
+          <stop offset="100%" stop-color="#b7791f"/>
+        </linearGradient>
+        <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffd873" stop-opacity="0.9"/>
+          <stop offset="60%" stop-color="#d69e2e" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#b7791f" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      
+      <ellipse cx="130" cy="95" rx="75" ry="35" fill="url(#goldGlow)"/>
+
+      <g transform="translate(40, 20)">
+        <path d="M15 45 C15 15 135 15 135 45 L135 52 L15 52 Z" fill="#3a1e0c" stroke="#1d0d04" stroke-width="2"/>
+        <path d="M18 45 C18 20 132 20 132 45" fill="url(#chestWood)"/>
+        <path d="M35 48 C35 24 45 24 45 48" stroke="url(#goldPlate)" stroke-width="5" fill="none"/>
+        <path d="M105 48 C105 24 115 24 115 48" stroke="url(#goldPlate)" stroke-width="5" fill="none"/>
+        <circle cx="40" cy="36" r="1.8" fill="#ffd873"/>
+        <circle cx="110" cy="36" r="1.8" fill="#ffd873"/>
+      </g>
+
+      <ellipse cx="115" cy="74" rx="55" ry="14" fill="#ffd873" opacity="0.95"/>
+      <ellipse cx="115" cy="72" rx="48" ry="11" fill="#ecc94b"/>
+
+      <path d="M55 70 L175 70 L168 122 L62 122 Z" fill="url(#chestWood)" stroke="#1a0c04" stroke-width="2.5"/>
+      <path d="M72 70 L70 122" stroke="url(#goldPlate)" stroke-width="6"/>
+      <path d="M158 70 L160 122" stroke="url(#goldPlate)" stroke-width="6"/>
+      <rect x="54" y="68" width="122" height="6" rx="2" fill="url(#goldPlate)"/>
+      <rect x="61" y="118" width="108" height="5" rx="1.5" fill="url(#goldPlate)"/>
+      
+      <rect x="110" y="70" width="10" height="15" rx="2" fill="url(#goldPlate)" stroke="#744210" stroke-width="1"/>
+      <circle cx="115" cy="75" r="2" fill="#2d1707"/>
+      <polygon points="114,75 116,75 116.5,81 113.5,81" fill="#2d1707"/>
+
+      <g fill="#ffd700" stroke="#b7791f" stroke-width="0.8">
+        <circle cx="95" cy="68" r="5" fill="#f6e05e"/>
+        <circle cx="104" cy="66" r="5.5" fill="#ecc94b"/>
+        <circle cx="114" cy="65" r="5" fill="#ffd873"/>
+        <circle cx="124" cy="66" r="5.5" fill="#f6e05e"/>
+        <circle cx="134" cy="67" r="5" fill="#ecc94b"/>
+        <circle cx="88" cy="74" r="5.5" fill="#ecc94b"/>
+        <circle cx="98" cy="73" r="5" fill="#f6e05e"/>
+        <circle cx="108" cy="72" r="5.5" fill="#ffd873"/>
+        <circle cx="118" cy="71" r="5" fill="#f6e05e"/>
+        <circle cx="128" cy="73" r="5.5" fill="#ecc94b"/>
+        <circle cx="138" cy="74" r="5" fill="#f6e05e"/>
+        <circle cx="102" cy="80" r="5" fill="#ffd873"/>
+        <circle cx="112" cy="79" r="5.5" fill="#f6e05e"/>
+        <circle cx="122" cy="81" r="5" fill="#ecc94b"/>
+        <circle cx="108" cy="87" r="5" fill="#f6e05e"/>
+        <circle cx="116" cy="88" r="4.8" fill="#ffd873"/>
+      </g>
+
+      <g transform="translate(142, 62) rotate(32)">
+        <path d="M0 0 L14 0 L10 16 L4 16 Z" fill="url(#goldPlate)" stroke="#975a16" stroke-width="1"/>
+        <rect x="5" y="16" width="4" height="10" fill="url(#goldPlate)"/>
+        <ellipse cx="7" cy="27" rx="8" ry="3" fill="url(#goldPlate)"/>
+      </g>
+
+      <polygon points="102,62 106,58 111,62 108,68 104,68" fill="#e53e3e" stroke="#9b2c2c" stroke-width="0.8"/>
+      <polygon points="126,60 131,57 135,62 132,67 128,67" fill="#38a169" stroke="#22543d" stroke-width="0.8"/>
+      <polygon points="116,60 120,57 123,61 121,65 117,65" fill="#3182ce" stroke="#2a4365" stroke-width="0.8"/>
+
+      <g fill="#f7fafc" stroke="#cbd5e0" stroke-width="0.6">
+        <circle cx="80" cy="76" r="2.8"/>
+        <circle cx="82" cy="81" r="2.8"/>
+        <circle cx="85" cy="86" r="2.8"/>
+        <circle cx="89" cy="91" r="2.8"/>
+        <circle cx="94" cy="95" r="2.8"/>
+        <circle cx="100" cy="98" r="2.8"/>
+      </g>
+
+      <path class="coin-glint glint-1" d="M108 55 L110 50 L112 55 L117 57 L112 59 L110 64 L108 59 L103 57 Z" fill="#ffffff"/>
+      <path class="coin-glint glint-2" d="M130 52 L131 48 L132 52 L136 53 L132 54 L131 58 L130 54 L126 53 Z" fill="#fff5b8"/>
+      <path class="coin-glint glint-3" d="M92 70 L93 67 L94 70 L97 71 L94 72 L93 75 L92 72 L89 71 Z" fill="#ffffff"/>
     </svg>
   </div>
 </div>
+`;
+
+/* ---------------- PAGE CONTENT ---------------- */
+
+const INDEX = `
+<header class="sot-hero" id="islandVideo">
+  <img class="iv-img" src="img/island-hero.jpg" alt="Ravenspire Blacktide Collegium - open seas at dusk">
+  <video class="iv-video ready" id="shipReel" src="img/hello.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="sot-hero-overlay"></div>
+  ${waves3()}
+  ${GULL('g1')}${GULL('g2')}
+  
+  <div class="sot-hero-content">
+    <h1 class="sot-college-name">
+      Ravenspire Blacktide Collegium
+      <span class="sot-college-sub">Est. 1654</span>
+    </h1>
+  </div>
+
+  <div class="sot-controls-bar">
+    <button class="sot-ctrl-btn" id="soundToggle" type="button" aria-label="Toggle sound">🔇 Sound: Off</button>
+    <button class="sot-ctrl-btn" id="reelPause" type="button" aria-label="Pause or play video">⏸ Pause Voyage</button>
+  </div>
+</header>
+
+<div class="sot-season-bar">
+  <div class="sot-season-inner">
+    <span class="sot-season-tag">VOYAGE UPDATE</span>
+    <span class="sot-season-text"><strong>Season XIV: The Siren’s Shadow</strong> is now live across the Seven Seas. New high-seas bounties, cursed sunken shrines, and stealth boarding grapples added to the curriculum!</span>
+    <a class="btn ghost" href="wanted.html" style="padding:6px 16px;font-size:.85rem">View Bounties →</a>
+  </div>
 
 <div class="stats">
   <div class="wrap stats-grid">
@@ -1321,125 +1479,140 @@ ${pageHero('Students · 1,200 Aboard','The Crew','Not students. Students don’t
     <div class="crew-full-grid">
       <!-- 1. Captain Maeve -->
       <div class="crew-full-card reveal" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Captain Maeve Ironhook Vane" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Captain</span>
-          <span class="crew-bounty-badge">50,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Capt. Maeve "Ironhook" Vane</h3>
-          <div class="crew-full-title">Navigation &amp; Fleet Strategy · Class of 2026</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">⚔️ Hook Prosthetic</span>
-            <span class="crew-gear-chip">🗡️ Damascus Dagger</span>
-            <span class="crew-gear-chip">🦜 White Cockatoo</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Captain Maeve Ironhook Vane" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Captain</span>
+            <span class="crew-bounty-badge">50,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"A fair wind is a gift, but a violent storm is a syllabus. We take the storm every single time."</div>
-          <p class="crew-full-bio">Solo-navigated the Maelstrom of Skulls and captured three merchant frigates before her morning tea. Renowned for ruthless tactical precision and absolute crew loyalty.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Naval Rating<b>98 / 100</b></div>
-            <div class="crew-stat-cell">Boarding Skill<b>Master</b></div>
+          <div class="crew-full-info">
+            <h3>Capt. Maeve "Ironhook" Vane</h3>
+            <div class="crew-full-title">Navigation &amp; Fleet Strategy · Class of 2026</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">⚔️ Hook Prosthetic</span>
+              <span class="crew-gear-chip">🗡️ Damascus Dagger</span>
+              <span class="crew-gear-chip">🦜 White Cockatoo</span>
+            </div>
+            <div class="crew-full-quote">"A fair wind is a gift, but a violent storm is a syllabus. We take the storm every single time."</div>
+            <p class="crew-full-bio">Solo-navigated the Maelstrom of Skulls and captured three merchant frigates before her morning tea. Renowned for ruthless tactical precision and absolute crew loyalty.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Naval Rating<b>98 / 100</b></div>
+              <div class="crew-stat-cell">Boarding Skill<b>Master</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 2. Navigator Saki Chen -->
       <div class="crew-full-card reveal d1" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Navigator Saki Starwatcher Chen" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Astrogator</span>
-          <span class="crew-bounty-badge">42,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Saki "Starwatcher" Chen</h3>
-          <div class="crew-full-title">Celestial Cartography · Class of 2025</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🧭 Brass Sextant</span>
-            <span class="crew-gear-chip">📜 Astral Chart</span>
-            <span class="crew-gear-chip">👁️ Eyepatch of Depths</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Navigator Saki Starwatcher Chen" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Astrogator</span>
+            <span class="crew-bounty-badge">42,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"The stars never lie, even when the sea tries to drown you. Follow the needle or sleep in Davy Jones's locker."</div>
-          <p class="crew-full-bio">Discovered four uncharted archipelagoes hidden beneath perpetual fog banks. Master of tidal anomalies, ocean currents, and reading constellations through hurricane clouds.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Navigation<b>100 / 100</b></div>
-            <div class="crew-stat-cell">Storm Lore<b>Legendary</b></div>
+          <div class="crew-full-info">
+            <h3>Saki "Starwatcher" Chen</h3>
+            <div class="crew-full-title">Celestial Cartography · Class of 2025</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🧭 Brass Sextant</span>
+              <span class="crew-gear-chip">📜 Astral Chart</span>
+              <span class="crew-gear-chip">👁️ Eyepatch of Depths</span>
+            </div>
+            <div class="crew-full-quote">"The stars never lie, even when the sea tries to drown you. Follow the needle or sleep in Davy Jones's locker."</div>
+            <p class="crew-full-bio">Discovered four uncharted archipelagoes hidden beneath perpetual fog banks. Master of tidal anomalies, ocean currents, and reading constellations through hurricane clouds.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Navigation<b>100 / 100</b></div>
+              <div class="crew-stat-cell">Storm Lore<b>Legendary</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 3. Gunner Jax Rivera -->
       <div class="crew-full-card reveal d2" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Gunner Jax Quick-Cut Rivera" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Gunner</span>
-          <span class="crew-bounty-badge">38,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Jax "Quick-Cut" Rivera</h3>
-          <div class="crew-full-title">Artillery &amp; Infiltration · Class of 2026</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🔫 Twin Flintlocks</span>
-            <span class="crew-gear-chip">⚔️ Curved Cutlass</span>
-            <span class="crew-gear-chip">💣 Black Powder Bags</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Gunner Jax Quick-Cut Rivera" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Gunner</span>
+            <span class="crew-bounty-badge">38,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Aim low, light the fuse fast, and always swing into the enemy quarterdeck with a grin."</div>
-          <p class="crew-full-bio">Top marksman of the Collegium Artillery Department. Holds the record for double-barrel chain-shot hits at 300 fathoms while swinging from the topgallant halyard.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Cannon Shot<b>99 / 100</b></div>
-            <div class="crew-stat-cell">Demolitions<b>Expert</b></div>
+          <div class="crew-full-info">
+            <h3>Jax "Quick-Cut" Rivera</h3>
+            <div class="crew-full-title">Artillery &amp; Infiltration · Class of 2026</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🔫 Twin Flintlocks</span>
+              <span class="crew-gear-chip">⚔️ Curved Cutlass</span>
+              <span class="crew-gear-chip">💣 Black Powder Bags</span>
+            </div>
+            <div class="crew-full-quote">"Aim low, light the fuse fast, and always swing into the enemy quarterdeck with a grin."</div>
+            <p class="crew-full-bio">Top marksman of the Collegium Artillery Department. Holds the record for double-barrel chain-shot hits at 300 fathoms while swinging from the topgallant halyard.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Cannon Shot<b>99 / 100</b></div>
+              <div class="crew-stat-cell">Demolitions<b>Expert</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 4. Quartermaster Tariq -->
       <div class="crew-full-card reveal d1" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Quartermaster Tariq The Hawk Al-Mansur" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Quartermaster</span>
-          <span class="crew-bounty-badge">65,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Tariq "The Hawk" Al-Mansur</h3>
-          <div class="crew-full-title">Treasure Appraisal &amp; Vaults · Class of 2024</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
-            <span class="crew-gear-chip">⚖️ Doubloon Scale</span>
-            <span class="crew-gear-chip">🧥 Crimson Coat</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Quartermaster Tariq The Hawk Al-Mansur" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Quartermaster</span>
+            <span class="crew-bounty-badge">65,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Every piece of eight tells a story. Some scream. It is my duty to count them all accurately."</div>
-          <p class="crew-full-bio">Handled over 1,500,000 gold doubloons in Collegium plunder distributions. Can appraise a cursed ruby at fifty paces and negotiate with sirens without losing his soul.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty Appraisal<b>99 / 100</b></div>
-            <div class="crew-stat-cell">Vault Defense<b>Supreme</b></div>
+          <div class="crew-full-info">
+            <h3>Tariq "The Hawk" Al-Mansur</h3>
+            <div class="crew-full-title">Treasure Appraisal &amp; Vaults · Class of 2024</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
+              <span class="crew-gear-chip">⚖️ Doubloon Scale</span>
+              <span class="crew-gear-chip">🧥 Crimson Coat</span>
+            </div>
+            <div class="crew-full-quote">"Every piece of eight tells a story. Some scream. It is my duty to count them all accurately."</div>
+            <p class="crew-full-bio">Handled over 1,500,000 gold doubloons in Collegium plunder distributions. Can appraise a cursed ruby at fifty paces and negotiate with sirens without losing his soul.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty Appraisal<b>99 / 100</b></div>
+              <div class="crew-stat-cell">Vault Defense<b>Supreme</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 5. First Mate Ren Kuroda -->
       <div class="crew-full-card reveal d2" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="First Mate Ren Shadowblade Kuroda" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Duelist</span>
-          <span class="crew-bounty-badge">48,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Ren "Shadowblade" Kuroda</h3>
-          <div class="crew-full-title">Vanguard Boarding &amp; Tactics · Class of 2025</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">⚔️ Katana Cutlass</span>
-            <span class="crew-gear-chip">🥋 Boarding Garb</span>
-            <span class="crew-gear-chip">🌅 Sunset Cloak</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="First Mate Ren Shadowblade Kuroda" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Duelist</span>
+            <span class="crew-bounty-badge">48,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Quiet steel cuts deepest. When the fog rolls in, our enemies only hear the ocean."</div>
-          <p class="crew-full-bio">Defeated thirty rival buccaneers in the annual Collegium Boarding Gauntlet without suffering a single scratch. Commands the vanguard assault line during night raids.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Swordsmanship<b>100 / 100</b></div>
-            <div class="crew-stat-cell">Silent Boarding<b>Flawless</b></div>
+          <div class="crew-full-info">
+            <h3>Ren "Shadowblade" Kuroda</h3>
+            <div class="crew-full-title">Vanguard Boarding &amp; Tactics · Class of 2025</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">⚔️ Katana Cutlass</span>
+              <span class="crew-gear-chip">🥋 Boarding Garb</span>
+              <span class="crew-gear-chip">🌅 Sunset Cloak</span>
+            </div>
+            <div class="crew-full-quote">"Quiet steel cuts deepest. When the fog rolls in, our enemies only hear the ocean."</div>
+            <p class="crew-full-bio">Defeated thirty rival buccaneers in the annual Collegium Boarding Gauntlet without suffering a single scratch. Commands the vanguard assault line during night raids.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Swordsmanship<b>100 / 100</b></div>
+              <div class="crew-stat-cell">Silent Boarding<b>Flawless</b></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1909,7 +2082,6 @@ ${pageHero('Fees / Scholarships','Gold Doubloons &amp; Bounties','What it costs,
         <h3>Refunds, A Policy</h3>
         <p>We do not do refunds. We do do treasure.</p>
         <p>Any crew member whose first genuine find is worth more than their total tuition has the difference returned, minus one coin, which goes to Mrs. Oat for the kettle.</p>
-        <p>This has happened 214 times. The 215th is expected any tide.</p>
         <span class="sig">— The Board of Captains, Financial Committee</span>
       </div>
     </div>
@@ -1927,154 +2099,171 @@ ${pageHero('Alumni &amp; Living Legends','Legends of the Seven Seas','Every grad
     <div class="crew-full-grid">
       <!-- 1. Fleetmaster Crane -->
       <div class="crew-full-card reveal" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">High Admiral</span>
-          <span class="crew-bounty-badge">100,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Fleetmaster Aldric Crane</h3>
-          <div class="crew-full-title">Living Legend &amp; Dean · Class of 1654</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">👑 Pirate Hat</span>
-            <span class="crew-gear-chip">🪝 Golden Hook</span>
-            <span class="crew-gear-chip">🦜 Scarlet Macaw</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">High Admiral</span>
+            <span class="crew-bounty-badge">100,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won."</div>
-          <p class="crew-full-bio">Founding father of the Ravenspire Blacktide Collegium. Still holds the fleet record for sailing through three simultaneous typhoons without spilling his tea.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty on Record<b>100,000 DBL</b></div>
-            <div class="crew-stat-cell">Status<b>Immortal Dean</b></div>
+          <div class="crew-full-info">
+            <h3>Fleetmaster Aldric Crane</h3>
+            <div class="crew-full-title">Living Legend &amp; Dean · Class of 1654</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">👑 Pirate Hat</span>
+              <span class="crew-gear-chip">🪝 Golden Hook</span>
+              <span class="crew-gear-chip">🦜 Scarlet Macaw</span>
+            </div>
+            <div class="crew-full-quote">"Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won."</div>
+            <p class="crew-full-bio">Founding father of the Ravenspire Blacktide Collegium. Still holds the fleet record for sailing through three simultaneous typhoons without spilling his tea.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty on Record<b>100,000 DBL</b></div>
+              <div class="crew-stat-cell">Status<b>Immortal Dean</b></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 2. Captain Maeve -->
+      <!-- 2. Admiral Bartholomew Drake -->
       <div class="crew-full-card reveal d1" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Grand Captain Maeve Ironhook Vane" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Pirate Lord</span>
-          <span class="crew-bounty-badge">85,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Capt. Maeve "Ironhook" Vane</h3>
-          <div class="crew-full-title">Scourge of the Crimson Reach · Class of 1674</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">⚔️ Dual Boarding Blades</span>
-            <span class="crew-gear-chip">🗡️ Hook Prosthetic</span>
-            <span class="crew-gear-chip">🦜 War Bird</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/qm-isla-pass.jpg" alt="Admiral Bartholomew Drake" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Grand Admiral</span>
+            <span class="crew-bounty-badge">92,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Captured twenty imperial fortresses in a single hurricane season. The sea bends to those who refuse to flinch."</div>
-          <p class="crew-full-bio">Founded the Tactical Boarding Guild. Her captured silver fleet bell now rings out the morning bell at the Great Hall.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty on Record<b>85,000 DBL</b></div>
-            <div class="crew-stat-cell">Flagship<b>The Crimson Tide</b></div>
+          <div class="crew-full-info">
+            <h3>Admiral Bartholomew Drake</h3>
+            <div class="crew-full-title">Scourge of the Silver Galleons · Class of 1674</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🔫 Long Musket</span>
+              <span class="crew-gear-chip">🧥 Crimson Cape</span>
+              <span class="crew-gear-chip">💰 Spanish Chest</span>
+            </div>
+            <div class="crew-full-quote">"Captured twenty imperial treasure armadas in a single hurricane season. The sea bends to those who refuse to flinch."</div>
+            <p class="crew-full-bio">Pioneered the Coastal Ambush doctrine still taught at the Collegium. Commanded thirty sloops in the legendary Battle of the Smuggler's Ridge.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty on Record<b>92,000 DBL</b></div>
+              <div class="crew-stat-cell">Flagship<b>The Crimson Tide</b></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 3. Astrogator Saki Chen -->
+      <!-- 3. Dame Morgana Marigold -->
       <div class="crew-full-card reveal d2" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Elder Astrogator Saki Starwatcher Chen" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Grand Astrogator</span>
-          <span class="crew-bounty-badge">70,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Saki "Starwatcher" Chen</h3>
-          <div class="crew-full-title">Keeper of the Astral Meridian · Class of 1662</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🧭 Astral Sextant</span>
-            <span class="crew-gear-chip">📜 Uncharted Maps</span>
-            <span class="crew-gear-chip">👁️ Abyssal Sight</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/qm-marigold-pass.jpg" alt="Dame Morgana The Compass Marigold" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Grand Astrogator</span>
+            <span class="crew-bounty-badge">84,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Crossed the Great Abyssal Trench with no compass, guided only by starlight and bioluminescent tides."</div>
-          <p class="crew-full-bio">Now runs the Cartographic Guild of Buried Alive. His maps still predict shifting volcanic islands three weeks before they breach the surface.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty on Record<b>70,000 DBL</b></div>
-            <div class="crew-stat-cell">Flagship<b>The Wandering Star</b></div>
+          <div class="crew-full-info">
+            <h3>Dame Morgana Marigold</h3>
+            <div class="crew-full-title">Grand Master of Star Routes · Class of 1681</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🧭 Astral Sextant</span>
+              <span class="crew-gear-chip">🎩 Feathered Tricorn</span>
+              <span class="crew-gear-chip">🗡️ Silver Cutlass</span>
+            </div>
+            <div class="crew-full-quote">"The stars never lie, even when the fog tries to swallow you whole. Chart the void and conquer the tide."</div>
+            <p class="crew-full-bio">Discovered the secret southern passage through the Abyssal Reefs. Her celestial navigational treatise remains mandatory reading for all navigators.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty on Record<b>84,000 DBL</b></div>
+              <div class="crew-stat-cell">Flagship<b>The Star of the Deep</b></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 4. Jax Rivera -->
+      <!-- 4. Captain Bartholomew Marlow -->
       <div class="crew-full-card reveal d1" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Commander Jax Quick-Cut Rivera" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Bombardier</span>
-          <span class="crew-bounty-badge">68,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Jax "Quick-Cut" Rivera</h3>
-          <div class="crew-full-title">Master Siegemaster · Class of 1681</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">💣 Cursed Cannonballs</span>
-            <span class="crew-gear-chip">🔫 Double-Barrels</span>
-            <span class="crew-gear-chip">⚔️ Storm Cutlass</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/qm-marlow-pass.jpg" alt="Captain Bartholomew Redcoat Marlow" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Siegemaster</span>
+            <span class="crew-bounty-badge">88,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Invented the explosive chain-shot technique that breached the Sunken Citadel in fifteen minutes flat."</div>
-          <p class="crew-full-bio">Holds thirty-six letters of marque from rival monarchs, framed as shooting targets in the galley. Master of naval artillery.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty on Record<b>68,000 DBL</b></div>
-            <div class="crew-stat-cell">Flagship<b>The Thunder's Echo</b></div>
+          <div class="crew-full-info">
+            <h3>Capt. Bartholomew Marlow</h3>
+            <div class="crew-full-title">Master Siegemaster &amp; Artillery · Class of 1668</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🏮 Storm Lantern</span>
+              <span class="crew-gear-chip">🧥 Scarlet Greatcoat</span>
+              <span class="crew-gear-chip">💣 32-Pdr Cannon</span>
+            </div>
+            <div class="crew-full-quote">"Aim low, fire the broadside on the crest of the wave, and watch the imperial flagships shatter."</div>
+            <p class="crew-full-bio">Invented the double-tier broadside ignition matrix. Held off six royal frigates single-handedly during the Siege of the Broken Masts.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty on Record<b>88,000 DBL</b></div>
+              <div class="crew-stat-cell">Flagship<b>The Thunder's Echo</b></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 5. Tariq Al-Mansur -->
+      <!-- 5. Brother Anchor The Silent -->
       <div class="crew-full-card reveal d2" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Lord Quartermaster Tariq Al-Mansur" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Lord Chancellor</span>
-          <span class="crew-bounty-badge">95,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Tariq "The Hawk" Al-Mansur</h3>
-          <div class="crew-full-title">Chancellor of the Iron Vault · Class of 1668</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
-            <span class="crew-gear-chip">🪙 Ancient Coins</span>
-            <span class="crew-gear-chip">🧥 Imperial Velvet</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/qm-anchor-pass.jpg" alt="Brother Anchor The Silent" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Lore Keeper</span>
+            <span class="crew-bounty-badge">95,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Established the Sovereign Doubloon Exchange that funded the Collegium for over three centuries."</div>
-          <p class="crew-full-bio">Built the secret underwater hoard caverns that safeguard the island's legendary treasury against armada sieges.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty on Record<b>95,000 DBL</b></div>
-            <div class="crew-stat-cell">Flagship<b>The Golden Argosy</b></div>
+          <div class="crew-full-info">
+            <h3>Brother Anchor "The Silent"</h3>
+            <div class="crew-full-title">Keeper of Sunken Covenants · Class of 1659</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🍾 Sealed Rum Bottle</span>
+              <span class="crew-gear-chip">📜 Black Covenant</span>
+              <span class="crew-gear-chip">⚓ Iron Anchor</span>
+            </div>
+            <div class="crew-full-quote">"The deep remembers every promise made in salt. Speak only what you are prepared to carve into timber."</div>
+            <p class="crew-full-bio">Sole survivor of the Abyssal Expedition of 1660. Sits on the rocky atolls observing the tides and guarding the collegiate vault keys.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty on Record<b>95,000 DBL</b></div>
+              <div class="crew-stat-cell">Flagship<b>The Silent Galleon</b></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 6. Ren Kuroda -->
+      <!-- 6. Master Alchemist Corvus Black -->
       <div class="crew-full-card reveal d3" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="Lord Ren Shadowblade Kuroda" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Grand Duelist</span>
-          <span class="crew-bounty-badge">75,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Ren "Shadowblade" Kuroda</h3>
-          <div class="crew-full-title">Master of the Midnight Waves · Class of 1679</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">⚔️ Damascus Katana</span>
-            <span class="crew-gear-chip">🥋 Topknot Ribbons</span>
-            <span class="crew-gear-chip">🌅 Crimson Sunset</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/qm-corvus-pass.jpg" alt="Master Alchemist Corvus Black" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Grand Alchemist</span>
+            <span class="crew-bounty-badge">78,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Legend holds he once held the outer harbor against an entire skeleton raid with only two swords and the setting sun."</div>
-          <p class="crew-full-bio">Now trains the elite vanguard duelists of the Collegium. Never drawn a blade without settling the conflict in three moves.</p>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty on Record<b>75,000 DBL</b></div>
-            <div class="crew-stat-cell">Flagship<b>The Sovereign Eclipse</b></div>
+          <div class="crew-full-info">
+            <h3>Corvus "Shadowflame" Black</h3>
+            <div class="crew-full-title">Master of Fire-Bottles &amp; Fog · Class of 1665</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🧪 Phosphor Vials</span>
+              <span class="crew-gear-chip">🌫️ Smoke Pots</span>
+              <span class="crew-gear-chip">🕯️ Red Glow Embers</span>
+            </div>
+            <div class="crew-full-quote">"When the night falls, fire burns twice as bright and shadows conceal everything worth stealing."</div>
+            <p class="crew-full-bio">Synthesized the legendary green greek fire and cloaking sea-mist formulas that allow the collegiate fleet to vanish in plain water.</p>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty on Record<b>78,000 DBL</b></div>
+              <div class="crew-stat-cell">Flagship<b>The Shadow Phantom</b></div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -2519,7 +2708,7 @@ for (const [file, [title, , desc]] of Object.entries(PAGES)) {
   const key = file.replace('.html','');
   const active = {'index':'home','scroll':'scroll','fleet':'fleet','quartermasters':'qm','island':'island','wanted':'wanted'}[key] || '';
   const tickerHtml = '';
-  const html = head(title, desc) + '\n' + nav(active) + '\n' + BODIES[file] + '\n' + foot();
+  const html = head(title, desc) + '\n' + nav(active) + '\n' + OCEAN_PAGE_BACKDROP + '\n' + BODIES[file] + '\n' + foot();
   fs.writeFileSync(file, html);
   console.log('wrote', file, html.length);
 }

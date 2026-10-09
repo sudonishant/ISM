@@ -294,6 +294,8 @@ node build.js
 ## 🏴‍☠️ The Crew of the Forge
 
 - **Fleetmaster & Creator**: Nishant ([@sudonishant](https://github.com/sudonishant))
+- **Master Navigator**: Kartik ⚓
+- **Chief Gunner**: Gourvendra 💣
 - **Senior 3D Consultant**: Professor Feather III 🦜
 - **Spiritual Inspiration**: Rare Ltd. (*Sea of Thieves*), Robert Louis Stevenson (*Treasure Island*), and Pirates of the Spanish Main.
 - **Built With**: Raw HTML5, Semantic CSS3, Vanilla ES6 JavaScript, WebGL (`<model-viewer>`), SVG Cartography, and pure Buccaneer determination.

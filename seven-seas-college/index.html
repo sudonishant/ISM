@@ -99,39 +99,7 @@
   <a class="btn" href="enlist.html">Join the Crew</a>
   </nav>
 
-<header class="sot-hero" id="islandVideo">
-  <img class="iv-img" src="img/island-hero.jpg" alt="Ravenspire Blacktide Collegium - open seas at dusk">
-  <video class="iv-video ready" id="shipReel" src="img/hello.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="auto"></video>
-  <div class="sot-hero-overlay"></div>
-  <div class="sea-scene" aria-hidden="true">
-    <div class="wave w-far" data-speed="0.06"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg></div></div>
-    <div class="wave w-mid" data-speed="0.14"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg></div></div>
-    <div class="wave w-near" data-speed="0.24"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg></div></div>
-  </div>
-  <div class="gull g1" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div><div class="gull g2" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div>
-  
-  <div class="sot-hero-content">
-    <h1 class="sot-college-name">
-      Ravenspire Blacktide Collegium
-      <span class="sot-college-sub">Est. 1654</span>
-    </h1>
-  </div>
-
-  <div class="sot-controls-bar">
-    <button class="sot-ctrl-btn" id="soundToggle" type="button" aria-label="Toggle sound">🔇 Sound: Off</button>
-    <button class="sot-ctrl-btn" id="reelPause" type="button" aria-label="Pause or play video">⏸ Pause Voyage</button>
-  </div>
-</header>
-
-<div class="sot-season-bar">
-  <div class="sot-season-inner">
-    <span class="sot-season-tag">VOYAGE UPDATE</span>
-    <span class="sot-season-text"><strong>Season XIV: The Siren’s Shadow</strong> is now live across the Seven Seas. New high-seas bounties, cursed sunken shrines, and stealth boarding grapples added to the curriculum!</span>
-    <a class="btn ghost" href="wanted.html" style="padding:6px 16px;font-size:.85rem">View Bounties →</a>
-  </div>
-</div>
-
-<!-- LIVING OCEANIC BACKDROP: ANIMATED SEA CREATURES ACROSS ENTIRE PAGE -->
+<!-- LIVING OCEANIC BACKDROP: ANIMATED SEA CREATURES ACROSS ALL PAGES -->
 <div class="ocean-page-backdrop" aria-hidden="true">
   <div class="lagoon-sunbeams"></div>
   
@@ -292,20 +260,209 @@
     <div class="lagoon-bubble" style="--b-left:94%;--b-sz:16px;--b-dur:7.2s;--b-del:1.8s;--b-drift:20px"></div>
   </div>
 
-  <!-- Deep Sea Floor & Coral Reef Formations -->
+  <!-- Deep Sea Floor: Sunken Broken Boat, Scattered Gold Coins & Overflowing Treasure Chest -->
   <div class="sea-floor" aria-hidden="true">
-    <svg class="coral-formation" style="left:4%;width:180px;height:95px" viewBox="0 0 180 95">
-      <path d="M10 95 Q15 60 25 45 Q15 35 10 20 Q20 25 30 38 Q38 20 45 5 Q48 20 40 42 Q55 35 68 25 Q62 42 48 55 Q60 62 75 58 Q65 72 45 80 Q35 95 10 95 Z" fill="#dd6b20" opacity="0.9"/>
-      <path d="M60 95 Q70 65 85 50 Q80 35 75 15 Q88 28 92 45 Q105 35 118 20 Q112 40 98 55 Q115 65 130 60 Q118 75 92 82 Q78 95 60 95 Z" fill="#e53e3e" opacity="0.85"/>
-      <ellipse cx="140" cy="80" rx="30" ry="18" fill="#d69e2e" opacity="0.8"/>
+    <!-- 1. Broken Pirate Boat / Sunken Galleon Hull in Sand -->
+    <svg class="seabed-broken-boat" viewBox="0 0 340 140" aria-label="Sunken broken pirate boat">
+      <defs>
+        <linearGradient id="hullPlankGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#4a2a14"/>
+          <stop offset="50%" stop-color="#2c1608"/>
+          <stop offset="100%" stop-color="#140a04"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 140 Q80 120 180 132 Q270 124 340 140 Z" fill="#05121e" opacity="0.95"/>
+      <g transform="translate(15, 10)">
+        <line x1="140" y1="90" x2="110" y2="10" stroke="#3d2110" stroke-width="8" stroke-linecap="round"/>
+        <line x1="110" y1="10" x2="95" y2="4" stroke="#542e17" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="90,4 98,1 106,7 101,12 92,6" fill="#7a4623"/>
+        <path d="M100 12 Q80 30 75 60 Q72 80 85 95" stroke="#a07d50" stroke-width="2" fill="none" opacity="0.75" stroke-dasharray="3,2"/>
+        <path d="M108 20 Q130 35 145 65" stroke="#8c6d42" stroke-width="1.8" fill="none" opacity="0.7"/>
+        <path d="M102 14 Q120 5 135 18" stroke="#a07d50" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M104 22 Q125 18 140 25 Q132 35 145 42 Q120 38 106 32 Z" fill="#14181c" opacity="0.85"/>
+        <circle cx="120" cy="28" r="3" fill="#e2ecf2" opacity="0.7"/>
+        <path d="M30 115 C50 75 95 62 165 65 C220 67 265 85 295 118 C250 126 150 128 30 115 Z" fill="url(#hullPlankGrad)"/>
+        <path d="M45 102 C75 75 125 72 180 74 C225 76 260 92 285 114" stroke="#160903" stroke-width="2.5" fill="none"/>
+        <path d="M38 110 C68 85 115 82 170 84 C215 86 250 100 275 120" stroke="#160903" stroke-width="2.2" fill="none"/>
+        <polygon points="50,85 58,55 64,57 60,88" fill="#5c3419"/>
+        <polygon points="80,75 86,45 92,47 88,77" fill="#502c14"/>
+        <polygon points="175,70 181,42 188,44 183,72" fill="#502c14"/>
+        <polygon points="210,75 218,50 224,53 218,78" fill="#422410"/>
+        <path d="M115 88 Q135 80 155 86 Q162 100 150 108 Q125 109 115 98 Z" fill="#080402"/>
+        <rect x="122" y="88" width="30" height="12" rx="3" transform="rotate(-15 122 88)" fill="#20262b" stroke="#0d1114" stroke-width="1.5"/>
+        <ellipse cx="120" cy="98" rx="3" ry="5.5" transform="rotate(-15 120 98)" fill="#0d1114"/>
+        <circle cx="75" cy="105" r="2.5" fill="#fbd38d" opacity="0.8"/>
+        <circle cx="82" cy="108" r="2" fill="#fbd38d" opacity="0.8"/>
+        <circle cx="230" cy="102" r="3" fill="#f6ad55" opacity="0.8"/>
+        <circle cx="190" cy="112" r="2" fill="#cbd5e0" opacity="0.7"/>
+        <circle cx="194" cy="110" r="1.5" fill="#a0aec0" opacity="0.7"/>
+      </g>
     </svg>
-    <svg class="coral-formation" style="right:5%;width:190px;height:95px" viewBox="0 0 190 95">
-      <path d="M170 95 Q160 55 145 40 Q155 25 160 8 Q148 20 140 35 Q130 18 122 2 Q120 18 128 38 Q115 32 102 20 Q108 38 122 52 Q105 60 90 55 Q102 70 125 78 Q138 95 170 95 Z" fill="#9f7aea" opacity="0.9"/>
-      <path d="M90 95 Q80 70 65 52 Q50 38 42 18 Q55 30 62 48 Q75 40 88 28 Q82 48 72 62 Q85 70 102 65 Q90 78 72 85 Q60 95 40 95 Z" fill="#319795" opacity="0.85"/>
-      <ellipse cx="40" cy="82" rx="28" ry="16" fill="#b83280" opacity="0.85"/>
+
+    <!-- 2. Scattered Gold Coins Dunes across the Seabed -->
+    <svg class="seabed-gold-coins" viewBox="0 0 600 75" preserveAspectRatio="none" aria-label="Scattered gold coins">
+      <defs>
+        <radialGradient id="doubloonGold" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#fff3b0"/>
+          <stop offset="45%" stop-color="#ecc94b"/>
+          <stop offset="80%" stop-color="#d69e2e"/>
+          <stop offset="100%" stop-color="#975a16"/>
+        </radialGradient>
+      </defs>
+      <path d="M0 75 Q150 35 300 48 Q450 32 600 75 Z" fill="#05121e" opacity="0.85"/>
+      <g fill="url(#doubloonGold)" stroke="#975a16" stroke-width="0.7">
+        <ellipse cx="60" cy="58" rx="7" ry="3.5"/>
+        <ellipse cx="72" cy="56" rx="7" ry="3.5"/>
+        <ellipse cx="85" cy="60" rx="6.5" ry="3"/>
+        <ellipse cx="66" cy="52" rx="6.5" ry="3"/>
+        <ellipse cx="78" cy="50" rx="7" ry="3.5"/>
+        <ellipse cx="105" cy="62" rx="6.5" ry="3"/>
+        <ellipse cx="118" cy="64" rx="6.5" ry="3.2"/>
+        <ellipse cx="220" cy="58" rx="6.5" ry="3.2"/>
+        <ellipse cx="232" cy="60" rx="6" ry="3"/>
+        <ellipse cx="245" cy="56" rx="7" ry="3.4"/>
+        <ellipse cx="258" cy="59" rx="6" ry="3"/>
+        <ellipse cx="272" cy="55" rx="6.5" ry="3.2"/>
+        <ellipse cx="285" cy="58" rx="6" ry="3"/>
+        <ellipse cx="330" cy="60" rx="7" ry="3.5"/>
+        <ellipse cx="330" cy="56" rx="7" ry="3.5"/>
+        <ellipse cx="330" cy="52" rx="7" ry="3.5"/>
+        <ellipse cx="342" cy="57" rx="6" ry="3"/>
+        <ellipse cx="390" cy="57" rx="6.5" ry="3.2"/>
+        <ellipse cx="402" cy="59" rx="6" ry="3"/>
+        <ellipse cx="415" cy="55" rx="7" ry="3.4"/>
+        <ellipse cx="470" cy="55" rx="7" ry="3.5"/>
+        <ellipse cx="482" cy="53" rx="6.5" ry="3.2"/>
+        <ellipse cx="495" cy="57" rx="7" ry="3.5"/>
+        <ellipse cx="508" cy="51" rx="6.5" ry="3.2"/>
+        <ellipse cx="520" cy="53" rx="7" ry="3.5"/>
+        <ellipse cx="532" cy="49" rx="7" ry="3.5"/>
+      </g>
+      <path class="coin-glint glint-1" d="M72 43 L73 40 L74 43 L77 44 L74 45 L73 48 L72 45 L69 44 Z" fill="#ffffff"/>
+      <path class="coin-glint glint-2" d="M245 48 L246 45 L247 48 L250 49 L247 50 L246 53 L245 50 L242 49 Z" fill="#fff5b8"/>
+      <path class="coin-glint glint-3" d="M330 46 L331 43 L332 46 L335 47 L332 48 L331 51 L330 48 L327 47 Z" fill="#ffffff"/>
+      <path class="coin-glint glint-1" d="M520 44 L521 41 L522 44 L525 45 L522 46 L521 49 L520 46 L517 45 Z" fill="#ffffff"/>
+    </svg>
+
+    <!-- 3. Open Overflowing Pirate Treasure Chest -->
+    <svg class="seabed-treasure-chest" viewBox="0 0 260 140" aria-label="Sunken treasure chest overflowing with gold">
+      <defs>
+        <linearGradient id="chestWood" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#5a331a"/>
+          <stop offset="100%" stop-color="#241307"/>
+        </linearGradient>
+        <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d69e2e"/>
+          <stop offset="50%" stop-color="#f6e05e"/>
+          <stop offset="100%" stop-color="#b7791f"/>
+        </linearGradient>
+        <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffd873" stop-opacity="0.9"/>
+          <stop offset="60%" stop-color="#d69e2e" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#b7791f" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      
+      <ellipse cx="130" cy="95" rx="75" ry="35" fill="url(#goldGlow)"/>
+
+      <g transform="translate(40, 20)">
+        <path d="M15 45 C15 15 135 15 135 45 L135 52 L15 52 Z" fill="#3a1e0c" stroke="#1d0d04" stroke-width="2"/>
+        <path d="M18 45 C18 20 132 20 132 45" fill="url(#chestWood)"/>
+        <path d="M35 48 C35 24 45 24 45 48" stroke="url(#goldPlate)" stroke-width="5" fill="none"/>
+        <path d="M105 48 C105 24 115 24 115 48" stroke="url(#goldPlate)" stroke-width="5" fill="none"/>
+        <circle cx="40" cy="36" r="1.8" fill="#ffd873"/>
+        <circle cx="110" cy="36" r="1.8" fill="#ffd873"/>
+      </g>
+
+      <ellipse cx="115" cy="74" rx="55" ry="14" fill="#ffd873" opacity="0.95"/>
+      <ellipse cx="115" cy="72" rx="48" ry="11" fill="#ecc94b"/>
+
+      <path d="M55 70 L175 70 L168 122 L62 122 Z" fill="url(#chestWood)" stroke="#1a0c04" stroke-width="2.5"/>
+      <path d="M72 70 L70 122" stroke="url(#goldPlate)" stroke-width="6"/>
+      <path d="M158 70 L160 122" stroke="url(#goldPlate)" stroke-width="6"/>
+      <rect x="54" y="68" width="122" height="6" rx="2" fill="url(#goldPlate)"/>
+      <rect x="61" y="118" width="108" height="5" rx="1.5" fill="url(#goldPlate)"/>
+      
+      <rect x="110" y="70" width="10" height="15" rx="2" fill="url(#goldPlate)" stroke="#744210" stroke-width="1"/>
+      <circle cx="115" cy="75" r="2" fill="#2d1707"/>
+      <polygon points="114,75 116,75 116.5,81 113.5,81" fill="#2d1707"/>
+
+      <g fill="#ffd700" stroke="#b7791f" stroke-width="0.8">
+        <circle cx="95" cy="68" r="5" fill="#f6e05e"/>
+        <circle cx="104" cy="66" r="5.5" fill="#ecc94b"/>
+        <circle cx="114" cy="65" r="5" fill="#ffd873"/>
+        <circle cx="124" cy="66" r="5.5" fill="#f6e05e"/>
+        <circle cx="134" cy="67" r="5" fill="#ecc94b"/>
+        <circle cx="88" cy="74" r="5.5" fill="#ecc94b"/>
+        <circle cx="98" cy="73" r="5" fill="#f6e05e"/>
+        <circle cx="108" cy="72" r="5.5" fill="#ffd873"/>
+        <circle cx="118" cy="71" r="5" fill="#f6e05e"/>
+        <circle cx="128" cy="73" r="5.5" fill="#ecc94b"/>
+        <circle cx="138" cy="74" r="5" fill="#f6e05e"/>
+        <circle cx="102" cy="80" r="5" fill="#ffd873"/>
+        <circle cx="112" cy="79" r="5.5" fill="#f6e05e"/>
+        <circle cx="122" cy="81" r="5" fill="#ecc94b"/>
+        <circle cx="108" cy="87" r="5" fill="#f6e05e"/>
+        <circle cx="116" cy="88" r="4.8" fill="#ffd873"/>
+      </g>
+
+      <g transform="translate(142, 62) rotate(32)">
+        <path d="M0 0 L14 0 L10 16 L4 16 Z" fill="url(#goldPlate)" stroke="#975a16" stroke-width="1"/>
+        <rect x="5" y="16" width="4" height="10" fill="url(#goldPlate)"/>
+        <ellipse cx="7" cy="27" rx="8" ry="3" fill="url(#goldPlate)"/>
+      </g>
+
+      <polygon points="102,62 106,58 111,62 108,68 104,68" fill="#e53e3e" stroke="#9b2c2c" stroke-width="0.8"/>
+      <polygon points="126,60 131,57 135,62 132,67 128,67" fill="#38a169" stroke="#22543d" stroke-width="0.8"/>
+      <polygon points="116,60 120,57 123,61 121,65 117,65" fill="#3182ce" stroke="#2a4365" stroke-width="0.8"/>
+
+      <g fill="#f7fafc" stroke="#cbd5e0" stroke-width="0.6">
+        <circle cx="80" cy="76" r="2.8"/>
+        <circle cx="82" cy="81" r="2.8"/>
+        <circle cx="85" cy="86" r="2.8"/>
+        <circle cx="89" cy="91" r="2.8"/>
+        <circle cx="94" cy="95" r="2.8"/>
+        <circle cx="100" cy="98" r="2.8"/>
+      </g>
+
+      <path class="coin-glint glint-1" d="M108 55 L110 50 L112 55 L117 57 L112 59 L110 64 L108 59 L103 57 Z" fill="#ffffff"/>
+      <path class="coin-glint glint-2" d="M130 52 L131 48 L132 52 L136 53 L132 54 L131 58 L130 54 L126 53 Z" fill="#fff5b8"/>
+      <path class="coin-glint glint-3" d="M92 70 L93 67 L94 70 L97 71 L94 72 L93 75 L92 72 L89 71 Z" fill="#ffffff"/>
     </svg>
   </div>
 </div>
+
+
+<header class="sot-hero" id="islandVideo">
+  <img class="iv-img" src="img/island-hero.jpg" alt="Ravenspire Blacktide Collegium - open seas at dusk">
+  <video class="iv-video ready" id="shipReel" src="img/hello.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="sot-hero-overlay"></div>
+  <div class="sea-scene" aria-hidden="true">
+    <div class="wave w-far" data-speed="0.06"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#14466b"/></svg></div></div>
+    <div class="wave w-mid" data-speed="0.14"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg></div></div>
+    <div class="wave w-near" data-speed="0.24"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg></div></div>
+  </div>
+  <div class="gull g1" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div><div class="gull g2" aria-hidden="true"><svg viewBox="0 0 44 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12 Q12 2 22 11 Q32 2 42 12"/></svg></div>
+  
+  <div class="sot-hero-content">
+    <h1 class="sot-college-name">
+      Ravenspire Blacktide Collegium
+      <span class="sot-college-sub">Est. 1654</span>
+    </h1>
+  </div>
+
+  <div class="sot-controls-bar">
+    <button class="sot-ctrl-btn" id="soundToggle" type="button" aria-label="Toggle sound">🔇 Sound: Off</button>
+    <button class="sot-ctrl-btn" id="reelPause" type="button" aria-label="Pause or play video">⏸ Pause Voyage</button>
+  </div>
+</header>
+
+<div class="sot-season-bar">
+  <div class="sot-season-inner">
+    <span class="sot-season-tag">VOYAGE UPDATE</span>
+    <span class="sot-season-text"><strong>Season XIV: The Siren’s Shadow</strong> is now live across the Seven Seas. New high-seas bounties, cursed sunken shrines, and stealth boarding grapples added to the curriculum!</span>
+    <a class="btn ghost" href="wanted.html" style="padding:6px 16px;font-size:.85rem">View Bounties →</a>
+  </div>
 
 <div class="stats">
   <div class="wrap stats-grid">
