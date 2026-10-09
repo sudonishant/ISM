@@ -2416,6 +2416,65 @@ ${cta('Now You Know Who Made It','The parrot knows. The goat knows. Now you do t
   '<a class="btn" href="index.html">Back to The Harbor</a><a class="btn ghost" href="island.html">Chart the Island</a>')}
 `;
 
+const ERROR_404 = `
+<header class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Navigation Error · Uncharted Reef</div>
+    <h1>Error 404: Map Route Not Available</h1>
+    <p>The sea mist has swallowed the coordinates and no chartered passage exists on this bearing.</p>
+  </div>
+</header>
+
+<section style="background:linear-gradient(180deg,#061424,#030a14);padding:80px 0;min-height:65vh">
+  <div class="wrap" style="max-width:880px;text-align:center">
+    <div class="error-404-card" style="background:radial-gradient(ellipse at 50% 30%,rgba(20,50,80,.5),rgba(4,14,24,.92));border:3px solid #855928;border-radius:18px;padding:48px 32px;box-shadow:0 24px 60px rgba(0,0,0,.85), 0 0 35px rgba(230,179,74,.25)">
+      
+      <div style="font-family:'Pirata One',cursive;font-size:clamp(5rem,11vw,9rem);line-height:1;color:#ff6b6b;text-shadow:0 4px 20px rgba(0,0,0,.9),0 0 30px rgba(255,107,107,.5);margin-bottom:8px">
+        404
+      </div>
+      
+      <h2 style="font-family:'Pirata One',cursive;font-size:clamp(2rem,4.5vw,3.2rem);color:#ffd873;letter-spacing:.05em;margin-bottom:18px">
+        ⚠️ Map Route Not Available
+      </h2>
+      
+      <p style="font-family:'IM Fell English',serif;font-size:clamp(1.1rem,2vw,1.35rem);color:#e0effa;line-height:1.65;max-width:680px;margin:0 auto 36px">
+        <strong>Uncharted waters ahead!</strong> The collegiate route to this landmark is shrouded in abyssal sea fog.
+        <br>
+        <span style="color:#7ee7d8;font-size:1.25rem;display:block;border-top:1px dashed rgba(230,179,74,.4);border-bottom:1px dashed rgba(230,179,74,.4);padding:14px 0;margin:18px 0">
+          🧭 <strong>Use your Compass</strong> and 🔭 <strong>Binoculars (Spyglass)</strong> to navigate!
+        </span>
+      </p>
+
+      <!-- Interactive Compass & Binoculars instruments -->
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:40px">
+        <div style="background:rgba(4,16,28,.8);border:2px solid #365e80;border-radius:12px;padding:20px 26px;min-width:240px;box-shadow:0 8px 24px rgba(0,0,0,.6)">
+          <div style="font-size:3rem;margin-bottom:8px">🧭</div>
+          <div style="font-family:'Pirata One',cursive;font-size:1.45rem;color:#ffd873">Ship's Astrolabe Compass</div>
+          <div style="font-size:.9rem;color:#bcd0dd;margin-top:4px">Bearing: 22° NNE · True North Locked</div>
+        </div>
+
+        <div style="background:rgba(4,16,28,.8);border:2px solid #365e80;border-radius:12px;padding:20px 26px;min-width:240px;box-shadow:0 8px 24px rgba(0,0,0,.6)">
+          <div style="font-size:3rem;margin-bottom:8px">🔭</div>
+          <div style="font-family:'Pirata One',cursive;font-size:1.45rem;color:#7ee7d8">Brass Binoculars &amp; Spyglass</div>
+          <div style="font-size:.9rem;color:#bcd0dd;margin-top:4px">Horizon Scan: Reef ahead, adjust sails!</div>
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px">
+        <a href="island.html" class="sot-btn-teal" style="text-decoration:none">
+          <span>🗺️</span> Return to Island Chart
+        </a>
+        <a href="index.html" class="sot-btn-gold" style="text-decoration:none">
+          <span>⚓</span> Sail Home to The Harbor
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+`;
+
 const PAGES = {
   'index.html': ['The Harbor','Home','A college on an island, run entirely by pirates. Join the crew.'],
   'scroll.html': ['The Scroll','About','The story of the college of the seven seas.'],
@@ -2433,6 +2492,7 @@ const PAGES = {
   'quarters.html': ["Shipman’s Quarters",'Login','Student portal.'],
   'enlist.html': ['Join the Crew','Admissions','How to join the crew.'],
   'forge.html': ['The Forge','Built by Pirates','Forged by the pirate web crew. Read the manifesto.'],
+  '404.html': ['Map Route Not Available — Error 404', 'Error 404', 'Map route not available. Use your compass and binoculars to navigate.'],
 };
 
 const BODIES = {
@@ -2452,6 +2512,7 @@ const BODIES = {
   'quarters.html': QUARTERS,
   'enlist.html': ENLIST,
   'forge.html': FORGE,
+  '404.html': ERROR_404,
 };
 
 for (const [file, [title, , desc]] of Object.entries(PAGES)) {

@@ -373,18 +373,18 @@ if(spots.length){
       burst(e.clientX, e.clientY, 10);
       spawnSpark(e.clientX, e.clientY);
     }
-    toast('⚓ Setting sail to ' + d.n + '... ⛵');
+    toast('⚠️ Error 404: Map route not available! Use your compass and binoculars to navigate.');
     setTimeout(function(){
-      if(d.l) window.location.href = d.l;
-    }, 280);
+      window.location.href = '404.html?spot=' + encodeURIComponent(k);
+    }, 450);
   }
 
   spots.forEach(function(s){
     var k = s.dataset.spot;
     var d = MAPDATA[k];
     if(d){
-      s.setAttribute('title', d.n + ' (' + d.s + ') — Tap to Sail! ⛵');
-      s.setAttribute('aria-label', d.n + ' — Tap to Sail to ' + d.l);
+      s.setAttribute('title', d.n + ' (' + d.s + ') — Tap to Chart Route!');
+      s.setAttribute('aria-label', d.n + ' — Tap to Chart Route');
       s.style.cursor = 'pointer';
     }
     s.addEventListener('click',function(e){
@@ -403,7 +403,7 @@ if(spots.length){
     var k = chip.dataset.spot;
     var d = MAPDATA[k];
     if(d){
-      chip.setAttribute('title', 'Sail to ' + d.n);
+      chip.setAttribute('title', 'Chart route to ' + d.n);
     }
     chip.addEventListener('click',function(e){
       selectMapSpot(chip.dataset.spot, e);
@@ -413,10 +413,7 @@ if(spots.length){
   $$('.spot-jump-btn').forEach(function(btn){
     btn.addEventListener('click',function(e){
       var k = btn.dataset.chartSpot;
-      var d = MAPDATA[k];
-      if(d && d.l){
-        window.location.href = d.l;
-      }
+      window.location.href = '404.html?spot=' + encodeURIComponent(k || 'uncharted');
     });
   });
 }

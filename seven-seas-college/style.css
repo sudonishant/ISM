@@ -83,9 +83,9 @@ body.storm .moon{filter:brightness(.6)}
 @keyframes tick{to{transform:translateX(-50%)}}
 
 /* ================= NAV ================= */
-nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:16px;padding:10px 26px;
-  background:linear-gradient(180deg,#52331a 0%,#42270f 100%);border-bottom:3px solid var(--wood-darker);
-  box-shadow:0 6px 20px rgba(0,0,0,.55)}
+nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:16px;padding:12px 26px;
+  background:transparent;border-bottom:none;
+  box-shadow:none}
 .nav-logo{display:flex;align-items:center;gap:12px;user-select:none}
 .nav-logo svg{width:44px;height:44px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6))}
 .nav-logo .name{font-family:var(--font-display);font-size:1.45rem;color:var(--cream);text-shadow:0 2px 0 rgba(0,0,0,.4);line-height:1}

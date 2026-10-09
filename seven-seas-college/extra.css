@@ -50,10 +50,16 @@ body.storm .iv-video{filter:brightness(.55) saturate(.6)}
 .map-stage .map-beam{left:20.5%;top:30.5%}
 
 /* ============ NAV DROPDOWN + QUARTERS LINK ============ */
+nav{
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+.nav-logo .name{text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,1)!important}
 .nav-links{gap:0}
-.nav-links a{font-size:.88rem;padding:8px 10px}
+.nav-links a{font-size:.88rem;padding:8px 10px;text-shadow: 0 2px 8px rgba(0,0,0,0.95), 0 1px 2px rgba(0,0,0,1)!important}
 .nav-more{position:relative}
-.more-btn{display:inline-block;padding:8px 10px;color:var(--cream);font-size:.88rem;border-radius:6px;white-space:nowrap}
+.more-btn{display:inline-block;padding:8px 10px;color:var(--cream);font-size:.88rem;border-radius:6px;white-space:nowrap;text-shadow: 0 2px 8px rgba(0,0,0,0.95), 0 1px 2px rgba(0,0,0,1)!important}
 .more-btn:hover{background:rgba(255,216,115,.12);color:var(--gold-bright)}
 .drop{position:absolute;top:calc(100% + 8px);left:-8px;min-width:280px;background:#2c1a0a;border:2px solid #6d4a26;
   border-radius:10px;padding:8px;display:none;box-shadow:0 18px 40px rgba(0,0,0,.6);z-index:70}
