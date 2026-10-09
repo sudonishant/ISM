@@ -212,7 +212,7 @@ const INDEX = `
   <div class="iv-scrim" aria-hidden="true"></div>
   <div class="iv-vignette" aria-hidden="true"></div>
   ${GULL('g1')}${GULL('g2')}
-  <div class="reel-badge"><span class="reel-dot"></span> Ship’s Reel — filmed by the Night Watch</div>
+  <div class="reel-badge"><span class="reel-dot"></span> Ravenspire Blacktide Collegium · Est. 1654</div>
   <button class="reel-pause" id="reelPause" type="button">⏸ Pause the Reel</button>
   <div class="coin-stage" aria-hidden="true">
     <div class="coin-bob"><div class="coin3d" id="coin3d">
