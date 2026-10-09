@@ -491,3 +491,205 @@ button,.btn{position:relative}
   #chilliBowl{transition:none}
   #parrotZzz,#parrotRig.zzz #parrotZzz,#parrotRig.zzz-idle #parrotZzz{animation:none}
 }
+
+/* ================================================================
+   SEA OF THIEVES AESTHETIC & INTERACTIVE ENHANCEMENTS
+   ================================================================ */
+.sot-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#030a14}
+.sot-hero .iv-video{opacity:0;transition:opacity 2s ease;filter:brightness(.84) contrast(1.08) saturate(1.1)}
+.sot-hero .iv-video.ready{opacity:1}
+.sot-hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(3,10,20,.45) 0%,rgba(3,10,20,.82) 75%,rgba(2,6,12,.96) 100%);pointer-events:none;z-index:3}
+.sot-hero-content{position:relative;z-index:6;max-width:1120px;margin:0 auto;padding:140px 24px 100px;text-align:center;display:flex;flex-direction:column;align-items:center}
+
+.sot-crest{width:116px;height:116px;margin:0 auto 16px;filter:drop-shadow(0 0 25px rgba(230,179,74,.75));animation:crestHover 4s ease-in-out infinite alternate}
+@keyframes crestHover{0%{transform:translateY(0) scale(1)}100%{transform:translateY(-8px) scale(1.04)}}
+
+.sot-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(4,16,28,.8);border:1px solid rgba(230,179,74,.6);
+  padding:8px 22px;border-radius:30px;color:var(--gold-bright);font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;
+  backdrop-filter:blur(8px);box-shadow:0 8px 25px rgba(0,0,0,.6), 0 0 20px rgba(0,230,184,.25);margin-bottom:18px}
+.sot-badge .live-dot{width:8px;height:8px;border-radius:50%;background:#00e6b8;box-shadow:0 0 10px #00e6b8;animation:pulse 1.5s infinite}
+
+.sot-title{font-family:'Pirata One',cursive;font-size:clamp(3.4rem,8.5vw,6.6rem);line-height:.95;color:#fff2d1;
+  text-shadow:0 0 35px rgba(230,179,74,.55), 0 6px 14px rgba(0,0,0,.9);margin-bottom:16px;letter-spacing:.04em}
+.sot-title span{background:linear-gradient(180deg,#fff8e0 20%,#ffd873 60%,#c9922e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+
+.sot-lead{font-family:'IM Fell English',serif;font-size:clamp(1.15rem,2.2vw,1.42rem);color:#e2ecf2;max-width:820px;
+  line-height:1.55;text-shadow:0 3px 8px rgba(0,0,0,.9);margin-bottom:34px}
+.sot-lead strong{color:var(--gold-bright);font-weight:600}
+
+.sot-hero-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;margin-bottom:28px}
+.sot-btn-gold{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(180deg,#ffd873,#c98b2c);color:#1a0f05!important;
+  font-family:'Pirata One',cursive;font-size:1.35rem;letter-spacing:.1em;padding:14px 34px;border-radius:6px;
+  border:2px solid #fff2d1;box-shadow:0 10px 30px rgba(0,0,0,.6), 0 0 25px rgba(255,216,115,.45);transition:all .25s;text-decoration:none}
+.sot-btn-gold:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 40px rgba(0,0,0,.8), 0 0 35px rgba(255,216,115,.7);filter:brightness(1.1)}
+
+.sot-btn-teal{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(180deg,rgba(0,230,184,.2),rgba(0,140,120,.4));color:#e0fff8!important;
+  font-family:'Pirata One',cursive;font-size:1.35rem;letter-spacing:.1em;padding:14px 30px;border-radius:6px;
+  border:2px solid #00e6b8;box-shadow:0 10px 25px rgba(0,0,0,.6), 0 0 20px rgba(0,230,184,.35);transition:all .25s;text-decoration:none;backdrop-filter:blur(6px)}
+.sot-btn-teal:hover{transform:translateY(-3px) scale(1.02);background:linear-gradient(180deg,rgba(0,230,184,.35),rgba(0,180,150,.55));color:#fff!important;box-shadow:0 14px 35px rgba(0,0,0,.8), 0 0 30px rgba(0,230,184,.6)}
+
+.sot-btn-ghost{display:inline-flex;align-items:center;gap:10px;background:rgba(3,10,20,.65);color:#d4e6f1!important;
+  font-family:'Pirata One',cursive;font-size:1.25rem;letter-spacing:.08em;padding:14px 26px;border-radius:6px;
+  border:1.5px solid rgba(230,179,74,.4);backdrop-filter:blur(6px);transition:all .25s;text-decoration:none}
+.sot-btn-ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright)!important;transform:translateY(-3px)}
+
+.sot-controls-bar{position:absolute;bottom:26px;right:26px;z-index:9;display:flex;align-items:center;gap:12px}
+.sot-ctrl-btn{background:rgba(3,10,20,.75);color:#fff;border:1px solid rgba(230,179,74,.5);border-radius:8px;
+  padding:10px 18px;font-size:.84rem;letter-spacing:.08em;font-family:'IM Fell English',serif;cursor:pointer;
+  backdrop-filter:blur(6px);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.sot-ctrl-btn:hover{background:rgba(230,179,74,.2);border-color:var(--gold-bright);color:var(--gold-bright)}
+.sot-ctrl-btn.active{border-color:#00e6b8;color:#00e6b8;box-shadow:0 0 15px rgba(0,230,184,.3)}
+
+/* Season Live Banner */
+.sot-season-bar{background:linear-gradient(90deg,#071524 0%,#103548 50%,#071524 100%);border-top:2px solid #00e6b8;
+  border-bottom:2px solid #00e6b8;padding:14px 20px;text-align:center;box-shadow:0 0 25px rgba(0,230,184,.25)}
+.sot-season-inner{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;max-width:1200px;margin:0 auto}
+.sot-season-tag{background:#00e6b8;color:#03131c;font-family:'Pirata One',cursive;font-size:1.15rem;letter-spacing:.12em;
+  padding:3px 14px;border-radius:4px;text-transform:uppercase;font-weight:700}
+.sot-season-text{font-size:.98rem;color:#e8f4f8;letter-spacing:.03em}
+.sot-season-text strong{color:#ffd873}
+
+/* Core Pillars */
+.sot-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px}
+.sot-pillar{background:radial-gradient(circle at 50% 15%,rgba(20,60,90,.35),rgba(4,12,22,.85));border:2px solid #234d6b;
+  border-top:4px solid var(--gold);border-radius:12px;padding:32px 24px;text-align:center;position:relative;
+  transition:all .3s ease;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.6)}
+.sot-pillar:hover{transform:translateY(-8px);border-color:#00e6b8;box-shadow:0 20px 45px rgba(0,0,0,.8), 0 0 30px rgba(0,230,184,.3)}
+.sot-pillar-icon{font-size:3rem;margin-bottom:14px;display:inline-block;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
+.sot-pillar h3{font-family:'Pirata One',cursive;font-size:1.75rem;color:var(--gold-bright);margin-bottom:12px;letter-spacing:.04em}
+.sot-pillar p{color:#bcd0dd;font-size:.95rem;line-height:1.55}
+
+/* Vessel Classes */
+.sot-vessels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.sot-vessel-card{background:linear-gradient(180deg,rgba(16,42,66,.5),rgba(3,10,20,.85));border:2px solid #2b5575;
+  border-radius:12px;overflow:hidden;transition:all .3s ease;box-shadow:0 16px 35px rgba(0,0,0,.65)}
+.sot-vessel-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 22px 50px rgba(0,0,0,.85), 0 0 25px rgba(255,216,115,.25)}
+.sot-vessel-header{padding:24px 24px 16px;background:rgba(255,216,115,.05);border-bottom:1px solid rgba(255,216,115,.15);display:flex;justify-content:space-between;align-items:center}
+.sot-vessel-header h3{font-family:'Pirata One',cursive;font-size:1.9rem;color:var(--gold-bright);margin:0}
+.sot-crew-badge{background:rgba(0,230,184,.15);border:1px solid #00e6b8;color:#00e6b8;padding:4px 12px;border-radius:14px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.sot-vessel-body{padding:24px}
+.sot-vessel-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;border-top:1px dashed rgba(255,255,255,.12);border-bottom:1px dashed rgba(255,255,255,.12);padding:14px 0}
+.sot-spec-item{font-size:.88rem;color:#9bb2c2}
+.sot-spec-item b{display:block;color:var(--cream);font-size:1.05rem;font-family:'Pirata One',cursive;letter-spacing:.04em}
+
+/* ================================================================
+   FLEET IN THE HARBOUR: STEERING WHEEL, CRATE, GRAVEYARD
+   ================================================================ */
+.fleet-custom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:stretch;margin-top:24px}
+
+/* 1. Steering Wheel Card (H.M.S. Educate & Plunder) */
+.helm-card{position:relative;background:radial-gradient(circle at 50% 28%,#3a1e0b 0%,#180c05 65%,#090402 100%);
+  border:4px solid #b8862d;border-radius:24px;padding:36px 26px 28px;text-align:center;box-shadow:0 22px 50px rgba(0,0,0,.8), 0 0 30px rgba(230,179,74,.3);
+  transition:all .35s cubic-bezier(.2,.8,.2,1);overflow:hidden;display:flex;flex-direction:column}
+.helm-card:hover{transform:translateY(-8px) scale(1.02);border-color:#ffd873;box-shadow:0 28px 60px rgba(0,0,0,.9), 0 0 45px rgba(255,216,115,.5)}
+.helm-wheel-decor{position:relative;width:150px;height:150px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center}
+.helm-wheel-svg{width:100%;height:100%;transition:transform .8s ease;filter:drop-shadow(0 6px 12px rgba(0,0,0,.7))}
+.helm-card:hover .helm-wheel-svg{transform:rotate(45deg)}
+.helm-card .sname{font-family:'Pirata One',cursive;font-size:2rem;color:var(--gold-bright);text-shadow:0 2px 6px rgba(0,0,0,.8);margin-bottom:6px}
+.helm-card .sdept{color:#f5e9c9;font-size:1.05rem;font-style:italic;margin-bottom:18px}
+.helm-card .srows{margin:auto 0 16px;background:rgba(0,0,0,.35);border:1px solid rgba(230,179,74,.3);border-radius:10px;padding:12px 16px}
+.helm-card .squip{font-style:italic;color:#ffd873;font-size:.95rem;border-top:1px dashed rgba(230,179,74,.3);padding-top:14px}
+
+/* 2. Ammunition Crate Card (The Broadside) */
+.crate-card{position:relative;background:url('img/wood-barrel-oak.jpg') center/cover, #241408;
+  border:4px solid #4a2810;border-radius:14px;padding:34px 26px 28px;box-shadow:0 22px 50px rgba(0,0,0,.8), inset 0 0 50px rgba(0,0,0,.7);
+  transition:all .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;text-align:center}
+.crate-card::before{content:"";position:absolute;inset:10px;border:2px dashed rgba(255,100,60,.5);pointer-events:none;border-radius:8px}
+.crate-card:hover{transform:translateY(-8px) scale(1.02);border-color:#e05338;box-shadow:0 28px 60px rgba(0,0,0,.9), 0 0 40px rgba(224,83,56,.45)}
+.crate-danger-stencil{background:#a32815;color:#fff;font-family:'Pirata One',cursive;font-size:.95rem;letter-spacing:.22em;
+  padding:5px 14px;border-radius:4px;display:inline-block;margin:0 auto 16px;text-transform:uppercase;border:1px solid #ff7763;box-shadow:0 4px 10px rgba(0,0,0,.5)}
+.crate-card .sname{font-family:'Pirata One',cursive;font-size:2rem;color:#ffe680;text-shadow:0 2px 8px rgba(0,0,0,.9);margin-bottom:6px}
+.crate-card .sdept{color:#f0cfb3;font-size:1.05rem;font-style:italic;margin-bottom:18px}
+.crate-card .srows{margin:auto 0 16px;background:rgba(10,5,2,.75);border:1px solid rgba(224,83,56,.4);border-radius:10px;padding:12px 16px}
+.crate-card .squip{font-style:italic;color:#ff9e80;font-size:.95rem;border-top:1px dashed rgba(224,83,56,.35);padding-top:14px}
+.crate-rivets{display:flex;justify-content:space-between;padding:0 8px;margin-bottom:12px}
+.crate-rivet{width:10px;height:10px;border-radius:50%;background:#8a6035;border:1px solid #2b1704;box-shadow:inset 0 1px 2px #fff}
+
+/* 3. Graveyard Tombstone Card (Buried Alive) */
+.graveyard-card{position:relative;background:radial-gradient(circle at 50% 20%,#192934 0%,#09141c 60%,#04080d 100%);
+  border:4px solid #3c657a;border-radius:40px 40px 14px 14px;padding:36px 26px 28px;text-align:center;
+  box-shadow:0 22px 50px rgba(0,0,0,.85), 0 0 35px rgba(0,230,184,.25);transition:all .35s cubic-bezier(.2,.8,.2,1);
+  display:flex;flex-direction:column;overflow:hidden}
+.graveyard-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:70px;
+  background:linear-gradient(0deg,rgba(0,230,184,.15),transparent);pointer-events:none}
+.graveyard-card:hover{transform:translateY(-8px) scale(1.02);border-color:#00e6b8;box-shadow:0 28px 60px rgba(0,0,0,.95), 0 0 45px rgba(0,230,184,.45)}
+.graveyard-cross-icon{font-size:2.8rem;margin-bottom:10px;filter:drop-shadow(0 0 12px rgba(0,230,184,.6))}
+.graveyard-card .sname{font-family:'Pirata One',cursive;font-size:2rem;color:#bbf7ee;text-shadow:0 2px 8px rgba(0,0,0,.9);margin-bottom:6px}
+.graveyard-card .sdept{color:#a5d3e0;font-size:1.05rem;font-style:italic;margin-bottom:18px}
+.graveyard-card .srows{margin:auto 0 16px;background:rgba(4,14,20,.75);border:1px solid rgba(0,230,184,.35);border-radius:10px;padding:12px 16px}
+.graveyard-card .squip{font-style:italic;color:#7ae6d4;font-size:.95rem;border-top:1px dashed rgba(0,230,184,.3);padding-top:14px}
+
+/* ================================================================
+   HANGING ROPE GALLERY: QUARTERMASTERS (OUTDOOR LECTURES & PHOTOS)
+   ================================================================ */
+.hanging-rope-stage{position:relative;margin:40px 0 20px;padding-top:40px}
+.rigging-beam{position:relative;width:100%;height:22px;background:linear-gradient(180deg,#5c3a1e,#301c0c);border-radius:6px;
+  border:2px solid #82542a;box-shadow:0 8px 18px rgba(0,0,0,.7);display:flex;justify-content:space-around;align-items:flex-end}
+.beam-iron-bolt{width:14px;height:14px;border-radius:50%;background:#1a1008;border:2px solid #a87d46;box-shadow:inset 0 1px 2px #fff}
+
+.hanging-rope-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px;padding:0 12px;margin-top:-6px}
+
+.hanging-photo-item{position:relative;display:flex;flex-direction:column;align-items:center;
+  transform-origin:50% -30px;animation:ropeSway var(--sway-dur,6s) ease-in-out infinite alternate;
+  animation-delay:var(--sway-delay,0s);transition:transform .4s cubic-bezier(.2,.8,.2,1), z-index .2s;z-index:10}
+.hanging-photo-item:hover{animation-play-state:paused;transform:scale(1.18) rotate(0deg) translateZ(40px)!important;z-index:60}
+
+@keyframes ropeSway{
+  0%{transform:rotate(var(--rot-from,-3.5deg))}
+  100%{transform:rotate(var(--rot-to,3.5deg))}
+}
+
+.rope-cords{position:relative;width:100%;height:var(--rope-h,75px);display:flex;justify-content:space-between;padding:0 30px}
+.rope-line{width:5px;height:100%;background:repeating-linear-gradient(45deg,#b38d58 0,#b38d58 5px,#805c31 5px,#805c31 10px);
+  box-shadow:2px 3px 6px rgba(0,0,0,.6);border-radius:3px}
+.rope-knot{position:absolute;bottom:-6px;width:16px;height:14px;background:#805c31;border:2px solid #54391a;border-radius:50%;box-shadow:0 2px 4px rgba(0,0,0,.7)}
+.rope-knot.left{left:24px}
+.rope-knot.right{right:24px}
+
+.hanging-frame{position:relative;background:#241407;border:5px solid #855b2e;border-radius:12px;overflow:hidden;
+  box-shadow:0 18px 36px rgba(0,0,0,.85), 0 0 20px rgba(0,0,0,.6);transition:all .35s ease;width:100%}
+.hanging-photo-item:hover .hanging-frame{border-color:var(--gold-bright);box-shadow:0 28px 60px rgba(0,0,0,.95), 0 0 35px rgba(255,216,115,.5)}
+
+.hanging-img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s ease;filter:sepia(.15) contrast(1.05)}
+.hanging-photo-item:hover .hanging-img{transform:scale(1.06);filter:sepia(0) contrast(1.1)}
+.hanging-caption{background:linear-gradient(180deg,#efe0b6,#dfc894);color:#361f0a;padding:12px 14px;text-align:center;
+  font-family:'IM Fell English',serif;font-size:.95rem;font-weight:600;border-top:2px solid #855b2e}
+.hanging-caption span{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#852210;font-family:'Pirata One',cursive;margin-top:2px}
+
+/* ================================================================
+   WANTED BOARD BACKGROUND (ATTACHED WOODEN TEXTURE)
+   ================================================================ */
+.wanted-board-wall{position:relative;background:url('img/wood-door-studs.jpg') center/cover no-repeat, #140b04;
+  border:8px solid #361f0a;border-radius:18px;padding:48px 36px;box-shadow:0 30px 70px rgba(0,0,0,.9), inset 0 0 100px rgba(0,0,0,.85);margin-top:24px}
+.wanted-board-wall .poster{box-shadow:0 16px 32px rgba(0,0,0,.75)}
+
+/* ================================================================
+   FULL-IMAGE CARDS FOR THE CREW & LEGENDS
+   ================================================================ */
+.crew-full-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:32px;margin-top:26px}
+.crew-full-card{background:linear-gradient(180deg,rgba(18,36,54,.85),rgba(6,14,24,.96));border:2px solid #5a3818;
+  border-radius:14px;overflow:hidden;transition:all .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 18px 40px rgba(0,0,0,.7);display:flex;flex-direction:column}
+.crew-full-card:hover{transform:translateY(-9px);border-color:var(--gold-bright);box-shadow:0 26px 55px rgba(0,0,0,.85), 0 0 35px rgba(255,216,115,.35)}
+.crew-full-img-wrap{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#0d1822}
+.crew-full-img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease}
+.crew-full-card:hover .crew-full-img{transform:scale(1.05)}
+.crew-full-scrim{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(6,14,24,.96) 100%);pointer-events:none}
+.crew-full-role-tag{position:absolute;top:14px;left:14px;background:rgba(3,10,20,.85);border:1px solid var(--gold);color:var(--gold-bright);
+  font-family:'Pirata One',cursive;font-size:1rem;letter-spacing:.12em;padding:5px 14px;border-radius:6px;backdrop-filter:blur(6px);text-transform:uppercase}
+.crew-bounty-badge{position:absolute;top:14px;right:14px;background:rgba(180,40,30,.92);border:1px solid #ff8577;color:#fff;
+  font-size:.76rem;letter-spacing:.16em;padding:4px 10px;border-radius:6px;font-weight:700;text-transform:uppercase}
+.crew-full-info{padding:24px 22px;display:flex;flex-direction:column;flex-grow:1}
+.crew-full-info h3{font-family:'Pirata One',cursive;font-size:1.85rem;color:var(--cream);margin-bottom:4px;letter-spacing:.03em}
+.crew-full-title{color:var(--gold);font-size:.88rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.crew-full-gear{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.crew-gear-chip{background:rgba(230,179,74,.12);border:1px solid rgba(230,179,74,.35);color:#e2ecf2;font-size:.78rem;
+  padding:3px 10px;border-radius:4px;letter-spacing:.04em}
+.crew-full-quote{font-style:italic;color:#bcd0dd;font-size:.96rem;line-height:1.5;margin-bottom:14px;border-left:3px solid var(--gold);padding-left:12px}
+.crew-full-bio{color:#9bb2c2;font-size:.9rem;line-height:1.55;margin-bottom:16px}
+.crew-stats-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;padding-top:14px;border-top:1px dashed rgba(255,255,255,.12)}
+.crew-stat-cell{font-size:.82rem;color:#7e98ab}
+.crew-stat-cell b{display:block;color:var(--gold-bright);font-size:1.02rem;font-family:'Pirata One',cursive;letter-spacing:.03em}
+
+@media (max-width:960px){
+  .sot-pillars,.sot-vessels-grid,.fleet-custom-grid{grid-template-columns:1fr}
+}

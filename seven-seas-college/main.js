@@ -264,21 +264,36 @@ window.addEventListener('keydown',function(e){
   if(kb==='arr'){ kb=''; toast("Arrr! We heard that from the crow's nest. 🦜"); }
 });
 
-/* ================= SHIP'S REEL PAUSE (home) ================= */
-var reelBtn=document.getElementById('reelPause'), iv=document.getElementById('islandVideo');
+/* ================= SEA OF THIEVES VIDEO CONTROLS (home) ================= */
+var reelBtn=document.getElementById('reelPause'), soundBtn=document.getElementById('soundToggle'), iv=document.getElementById('islandVideo');
 var shipReel=document.getElementById('shipReel');
 if(shipReel){
   shipReel.addEventListener('canplay',function(){ shipReel.classList.add('ready'); });
-  shipReel.addEventListener('error',function(){ shipReel.classList.remove('ready'); shipReel.style.display='none'; });
+  shipReel.addEventListener('error',function(){ shipReel.classList.remove('ready'); });
   var p=shipReel.play(); if(p&&p.catch)p.catch(function(){}); /* autoplay is muted; no-op if blocked */
+}
+if(soundBtn&&shipReel){
+  soundBtn.addEventListener('click',function(){
+    shipReel.muted = !shipReel.muted;
+    if(!shipReel.muted){
+      soundBtn.innerHTML = '🔊 Sound: On';
+      soundBtn.classList.add('active');
+      toast('🔊 Sound unmuted! Feel the roar of the high seas.');
+      var pr=shipReel.play(); if(pr&&pr.catch)pr.catch(function(){});
+    }else{
+      soundBtn.innerHTML = '🔇 Sound: Off';
+      soundBtn.classList.remove('active');
+      toast('🔇 Video muted.');
+    }
+  });
 }
 if(reelBtn&&iv){
   reelBtn.addEventListener('click',function(){
     iv.classList.toggle('paused');
     var paused=iv.classList.contains('paused');
     if(shipReel){ if(paused){ shipReel.pause(); } else { var pr=shipReel.play(); if(pr&&pr.catch)pr.catch(function(){}); } }
-    reelBtn.textContent=paused?'▶ Play the Reel':'⏸ Pause the Reel';
-    toast(paused?'Reel paused. The island will wait.':'The reel rolls on. Fair winds.');
+    reelBtn.textContent=paused?'▶ Play Voyage':'⏸ Pause Voyage';
+    toast(paused?'Voyage paused. The sea awaits.':'The voyage rolls on! Fair winds.');
   });
 }
 

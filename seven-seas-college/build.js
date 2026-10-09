@@ -202,29 +202,49 @@ const GULL = (cls)=>`<div class="gull ${cls}" aria-hidden="true"><svg viewBox="0
 /* ---------------- PAGE CONTENT ---------------- */
 
 const INDEX = `
-<header class="island-video" id="islandVideo">
-  <img class="iv-img" src="img/island-hero.jpg" alt="The College of the Seven Seas — a gothic pirate island campus at night">
-  <video class="iv-video" id="shipReel" src="img/ship-reel.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="metadata"></video>
+<header class="sot-hero" id="islandVideo">
+  <img class="iv-img" src="img/island-hero.jpg" alt="Ravenspire Blacktide Collegium - open seas at dusk">
+  <video class="iv-video ready" id="shipReel" src="img/hello.mp4" poster="img/island-hero.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="sot-hero-overlay"></div>
   <div class="iv-mist iv-m1"></div>
   <div class="iv-mist iv-m2"></div>
   <div class="map-beam iv-beam" aria-hidden="true"></div>
   ${waves3()}
-  <div class="iv-scrim" aria-hidden="true"></div>
-  <div class="iv-vignette" aria-hidden="true"></div>
   ${GULL('g1')}${GULL('g2')}
-  <div class="reel-badge"><span class="reel-dot"></span> Ravenspire Blacktide Collegium · Est. 1654</div>
-  <button class="reel-pause" id="reelPause" type="button">⏸ Pause the Reel</button>
-  <div class="coin-stage" aria-hidden="true">
-    <div class="coin-bob"><div class="coin3d" id="coin3d">
-      <div class="cface front"><svg viewBox="0 0 200 200" width="100%" height="100%"><use href="#coinArt"/></svg></div>
-      <div class="cface back"><svg viewBox="0 0 200 200" width="100%" height="100%"><use href="#coinArt" transform="rotate(180 100 100)"/></svg></div>
-      <div id="coinEdge"></div>
-    </div></div>
+  
+  <div class="sot-hero-content">
+    <div class="sot-badge">
+      <span class="live-dot"></span> Season XIV: Siren's Wrath · Est. 1654
+    </div>
+    <div class="sot-crest">
+      <svg viewBox="0 0 100 100" width="100%" height="100%" color="#ffd873">
+        <use href="#skullMark"/>
+      </svg>
+    </div>
+    <h1 class="sot-title">BE MORE <span>PIRATE</span></h1>
+    <p class="sot-lead">
+      Welcome to <strong>Ravenspire Blacktide Collegium</strong> — the world’s only open-ocean pirate academy where legends are forged in salt, cannon smoke, and gold. Built, run, and over-thought entirely by pirates.
+    </p>
+    <div class="sot-hero-actions">
+      <a class="sot-btn-gold" href="enlist.html"><span>⚔️</span> SET SAIL NOW</a>
+      <a class="sot-btn-teal" href="island.html"><span>🗺️</span> CHART THE ISLAND</a>
+      <a class="sot-btn-ghost" href="scroll.html"><span>📜</span> THE PIRATE CODE</a>
+    </div>
   </div>
-  <div class="parrot-perch" aria-hidden="true">
-    <div class="parrot-bubble show" id="parrotSay"><b>Feather</b> Welcome to the only college that sails to class.</div>
-    <svg class="parrot-svg" viewBox="0 0 120 180"><use href="#parrotArt"/></svg>
+
+  <div class="sot-controls-bar">
+    <button class="sot-ctrl-btn" id="soundToggle" type="button" aria-label="Toggle sound">🔇 Sound: Off</button>
+    <button class="sot-ctrl-btn" id="reelPause" type="button" aria-label="Pause or play video">⏸ Pause Voyage</button>
+  </div>
 </header>
+
+<div class="sot-season-bar">
+  <div class="sot-season-inner">
+    <span class="sot-season-tag">VOYAGE UPDATE</span>
+    <span class="sot-season-text"><strong>Season XIV: The Siren’s Shadow</strong> is now live across the Seven Seas. New high-seas bounties, cursed sunken shrines, and stealth boarding grapples added to the curriculum!</span>
+    <a class="btn ghost" href="wanted.html" style="padding:6px 16px;font-size:.85rem">View Bounties →</a>
+  </div>
+</div>
 
 <div class="stats">
   <div class="wrap stats-grid">
@@ -235,115 +255,365 @@ const INDEX = `
   </div>
 </div>
 
-<section id="wanted-teaser">
+<section id="sot-pillars-section" style="background:linear-gradient(180deg,#040c16,#08182c)">
   <div class="wrap">
-    ${secHead('The Wanted Board','Fresh Off the Board','Everything the college says, pinned and slightly crooked. Claim rewards before Thursday.')}
-    <div class="grid-posters">
-      <div class="poster reveal" data-tilt style="--rot:-2deg"><span class="ptype">Bounty</span><h3>Doubloons Found</h3><div class="reward">Reward: 2,400 doubloons</div><p>Found in the library, under a chart of "somewhere lovely". Claim before Thursday or forfeit to the college.</p><div class="pdate"><span>The Board</span><span>every tide</span></div></div>
-      <div class="poster reveal d1" data-tilt style="--rot:1.6deg"><span class="ptype">Raid</span><h3>Storm Week Drills</h3><div class="reward">Bring a towel + fear of whales</div><p>Advanced Navigation practicum. We sail into the storm. The syllabus means it.</p><div class="pdate"><span>Dept. of Navigation</span><span>Nov 20</span></div></div>
-      <div class="poster reveal d2" data-tilt style="--rot:-1.4deg"><span class="ptype">Notice</span><h3>New Bird on Faculty</h3><div class="reward">Reward: none. It’s a parrot.</div><p>Professor Feather III now grades. Do not feed him forms. Do not feed him anything but seeds.</p><div class="pdate"><span>The Aviary</span><span>this tide</span></div></div>
-    </div>
-    <div class="center mt reveal"><a class="btn ghost" href="wanted.html">The Full Wanted Board →</a></div>
-  </div>
-</section>
-
-<section id="fleet-teaser" style="background:linear-gradient(180deg,#0a1f38,#0e2b47)">
-  <div class="wrap">
-    ${secHead('The Fleet','Departments, But They Sail','Six departments. Six ships. Every department moors at its own berth and sails its own curriculum.')}
-    <div class="grid-3">
-      <div class="ship-card reveal" data-tilt><div class="sname">H.M.S. Educate &amp; Plunder</div><div class="sdept">Navigation &amp; Wayfinding</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1654</b></div><div class="stat-row"><span>Crew</span><b>210</b></div><div class="stat-row"><span>Sails (courses)</span><b>9</b></div><div class="stat-row"><span>Top speed</span><b>14 kn</b></div></div><div class="squip">"The campus itself. The Great Hall is her wheelhouse."</div></div>
-      <div class="ship-card reveal d1" data-tilt><div class="sname">The Broadside</div><div class="sdept">Artillery &amp; Cannon Science</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1671</b></div><div class="stat-row"><span>Crew</span><b>140</b></div><div class="stat-row"><span>Sails (courses)</span><b>7</b></div><div class="stat-row"><span>Top speed</span><b>12 kn</b></div></div><div class="squip">"Has never missed a deadline or a target."</div></div>
-      <div class="ship-card reveal d2" data-tilt><div class="sname">Buried Alive</div><div class="sdept">Treasure Recovery &amp; Cartography</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1688</b></div><div class="stat-row"><span>Crew</span><b>185</b></div><div class="stat-row"><span>Sails (courses)</span><b>11</b></div><div class="stat-row"><span>Top speed</span><b>10 kn</b></div></div><div class="squip">"Her hold smells of wet sand and good maps."</div></div>
-    </div>
-    <div class="center mt reveal"><a class="btn ghost" href="fleet.html">Meet the Whole Fleet →</a></div>
-  </div>
-</section>
-
-<section id="island-teaser">
-  <div class="wrap">
-    <div class="duo">
-      <figure class="frame reveal" data-tilt style="--rot:-1.6deg">
-        <img src="img/island-top.jpg" alt="Top-down view of the gothic pirate island campus" loading="lazy">
-        <figcaption>The island, as charted (Dr. Quill’s "honest" edition)</figcaption>
-      </figure>
-      <div class="reveal d2">
-        <div class="over" style="font-family:var(--font-display);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-size:1rem;margin-bottom:10px">Campus / Facilities</div>
-        <h2 style="font-size:clamp(2rem,4.5vw,3rem);color:var(--cream)">The Island</h2>
-        <p style="color:#bcd0dd;margin:14px 0;font-size:1.05rem">Lighthouse, Great Hall, Crow’s Nest library, the Vault, the Galley, the Plank — everything you need, and nothing you can’t swim back from. The campus map is <strong>interactive</strong>: tap a pin, read the post, plan your tide.</p>
-        <p style="color:#bcd0dd;margin-bottom:26px;font-style:italic">Yes, there is a treasure vault on campus. No, you cannot open it. Yes, it is the most-visited landmark. All three of those are true.</p>
-        <a class="btn" href="island.html">Open the Treasure Map</a>
+    ${secHead('The Pirate Life','Four Pillars of the Seven Seas','A pirate’s education is tested by the ocean itself: sailing treacherous waves, claiming rival plunder, and uncovering ancient lore.')}
+    <div class="sot-pillars">
+      <div class="sot-pillar reveal" data-tilt>
+        <span class="sot-pillar-icon">🧭</span>
+        <h3>Sail &amp; Discover</h3>
+        <p>Command the helm through blinding squalls, dense sea mists, and uncharted archipelagos. Dive into sunken mermaid shrines and unearth forgotten island vaults.</p>
+      </div>
+      <div class="sot-pillar reveal d1" data-tilt>
+        <span class="sot-pillar-icon">⚔️</span>
+        <h3>Fight &amp; Plunder</h3>
+        <p>Master naval broadsides with 32-pounder cannons, repel skeleton armadas, board rival galleons with cutlass in hand, and claim lucrative bounty flags.</p>
+      </div>
+      <div class="sot-pillar reveal d2" data-tilt>
+        <span class="sot-pillar-icon">👑</span>
+        <h3>Become Pirate Legend</h3>
+        <p>Rise through the ranks, amass thousands of shimmering gold doubloons, gain the trust of ancient Trading Companies, and unlock the legendary Pirate Lord hideout.</p>
+      </div>
+      <div class="sot-pillar reveal d3" data-tilt>
+        <span class="sot-pillar-icon">📜</span>
+        <h3>Tall Tales &amp; Lore</h3>
+        <p>Embark on cinematic seafaring sagas filled with cursed captain journals, mystical golden chalices, star-guided quests, and the spectral wrath of Davy Jones.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills-teaser" style="background:linear-gradient(180deg,#08182c,#0e2b47)">
+<!-- THE FLEET IN THE HARBOUR: STEERING WHEEL, CRATE, GRAVEYARD -->
+<section id="fleet-teaser" style="background:linear-gradient(180deg,#08182c,#050f1e)">
   <div class="wrap">
-    ${secHead('Skills of the Seven Seas','Courses, Graded by the Sea','No exams. Just skills, assessed the way the sea assesses everything: by what you bring back.')}
-    <div class="table-wrap reveal">
-      <table class="course-table">
-        <thead><tr><th>Code</th><th>Skill</th><th>Ship</th><th>Sea State</th></tr></thead>
-        <tbody>
-          <tr><td class="code">NAV-101</td><td>Astrolabe Theory &amp; Practice</td><td>Educate &amp; Plunder</td><td>☠</td></tr>
-          <tr><td class="code">TRE-105</td><td>Charting Islands That Lie</td><td>Buried Alive</td><td>☠☠</td></tr>
-          <tr><td class="code">ROP-112</td><td>The 34 Essential Knots</td><td>The Tightrope</td><td>☠ <em>(blindfolded)</em></td></tr>
-          <tr><td class="code">NAV-400</td><td>Capstone: Cross an Ocean, Solo</td><td>Educate &amp; Plunder</td><td>☠☠☠☠</td></tr>
-        </tbody>
-      </table>
+    ${secHead('The Fleet in the Harbour','Departments, But They Sail','Three moored flagships in the harbor: steering through storms, loaded with cannon ammunition, and charting what lies beneath.')}
+    <div class="fleet-custom-grid">
+      
+      <!-- 1. H.M.S. Educate & Plunder on Ship's Steering Wheel -->
+      <div class="helm-card reveal" data-tilt>
+        <div class="helm-wheel-decor">
+          <svg class="helm-wheel-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="76" stroke="#b8862d" stroke-width="8"/>
+            <circle cx="100" cy="100" r="54" stroke="#8a5a1f" stroke-width="5"/>
+            <!-- 8 spokes extending through rim with handles -->
+            <line x1="100" y1="8" x2="100" y2="192" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="8" y1="100" x2="192" y2="100" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="35" y1="35" x2="165" y2="165" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="165" y1="35" x2="35" y2="165" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <!-- Brass hub -->
+            <circle cx="100" cy="100" r="28" fill="#ffd873" stroke="#5a3818" stroke-width="4"/>
+            <circle cx="100" cy="100" r="14" fill="#3a1e0b"/>
+            <!-- Handles knobs -->
+            <circle cx="100" cy="10" r="6" fill="#ffd873"/>
+            <circle cx="100" cy="190" r="6" fill="#ffd873"/>
+            <circle cx="10" cy="100" r="6" fill="#ffd873"/>
+            <circle cx="190" cy="100" r="6" fill="#ffd873"/>
+            <circle cx="36" cy="36" r="6" fill="#ffd873"/>
+            <circle cx="164" cy="164" r="6" fill="#ffd873"/>
+            <circle cx="164" cy="36" r="6" fill="#ffd873"/>
+            <circle cx="36" cy="164" r="6" fill="#ffd873"/>
+          </svg>
+        </div>
+        <div class="sname">H.M.S. Educate &amp; Plunder</div>
+        <div class="sdept">Navigation &amp; Wayfinding</div>
+        <div class="srows">
+          <div class="stat-row"><span>Keel-laid</span><b>1654</b></div>
+          <div class="stat-row"><span>Crew</span><b>210</b></div>
+          <div class="stat-row"><span>Sails (courses)</span><b>9</b></div>
+          <div class="stat-row"><span>Top speed</span><b>14 kn</b></div>
+        </div>
+        <div class="squip">"The campus itself. The Great Hall is her wheelhouse."</div>
+      </div>
+
+      <!-- 2. The Broadside on Crate of Ammunition -->
+      <div class="crate-card reveal d1" data-tilt>
+        <div class="crate-rivets">
+          <div class="crate-rivet"></div><div class="crate-rivet"></div><div class="crate-rivet"></div>
+        </div>
+        <span class="crate-danger-stencil">💣 32-Pounder Ammunition · Explosive</span>
+        <div class="sname">The Broadside</div>
+        <div class="sdept">Artillery &amp; Cannon Science</div>
+        <div class="srows">
+          <div class="stat-row"><span>Keel-laid</span><b>1671</b></div>
+          <div class="stat-row"><span>Crew</span><b>140</b></div>
+          <div class="stat-row"><span>Sails (courses)</span><b>7</b></div>
+          <div class="stat-row"><span>Top speed</span><b>12 kn</b></div>
+        </div>
+        <div class="squip">"Has never missed a deadline or a target."</div>
+      </div>
+
+      <!-- 3. Buried Alive on Graveyard -->
+      <div class="graveyard-card reveal d2" data-tilt>
+        <div class="graveyard-cross-icon">🪦</div>
+        <div class="sname">Buried Alive</div>
+        <div class="sdept">Treasure Recovery &amp; Cartography</div>
+        <div class="srows">
+          <div class="stat-row"><span>Keel-laid</span><b>1688</b></div>
+          <div class="stat-row"><span>Crew</span><b>185</b></div>
+          <div class="stat-row"><span>Sails (courses)</span><b>11</b></div>
+          <div class="stat-row"><span>Top speed</span><b>10 kn</b></div>
+        </div>
+        <div class="squip">"Her hold smells of wet sand and good maps."</div>
+      </div>
+
     </div>
-    <div class="center mt reveal"><a class="btn ghost" href="skills.html">All 38 Skills →</a></div>
+    <div class="center mt reveal"><a class="btn ghost" href="fleet.html">Meet the Whole Fleet (6 Ships) →</a></div>
   </div>
 </section>
 
-<section id="crew-teaser">
+<!-- SEA OF THIEVES VESSELS SHOWCASE -->
+<section style="background:linear-gradient(180deg,#050f1e,#0a1f38)">
   <div class="wrap">
-    ${secHead('The Crew','Word On The Deck','Not students. Students don’t navigate. The Crew does.')}
-    <div class="grid-3">
-      <div class="quote-card reveal" data-tilt>"I came for the navigation. I stayed because the Wi-Fi (the wind) never lags in a storm. 10/10 would drown again."<span class="who">— Nadia "North" Okafor, Class of 2026</span></div>
-      <div class="quote-card reveal d1" data-tilt>"My parrot failed me on purpose. Still my favorite professor."<span class="who">— T. "Two-Fathoms" Marsh, Class of 2025</span></div>
-      <div class="quote-card reveal d2" data-tilt>"POV: your capstone is an ocean and you’re solo. No cap. Well. A hat."<span class="who">— Isla Reyes, Class of 2024</span></div>
+    ${secHead('Vessels of the Sea','Choose Your Ship Class','From agile one-pirate skiffs to hulking four-pirate warships, every ship sails with full freedom.')}
+    <div class="sot-vessels-grid">
+      <div class="sot-vessel-card reveal" data-tilt>
+        <div class="sot-vessel-header">
+          <h3>The Sloop</h3>
+          <span class="sot-crew-badge">1–2 Pirates</span>
+        </div>
+        <div class="sot-vessel-body">
+          <p style="color:#bcd0dd;font-size:.95rem">The ultimate agile vessel. The fastest ship when sailing directly into the wind, with lightning-quick anchor recovery and single-deck nimbleness.</p>
+          <div class="sot-vessel-specs">
+            <div class="sot-spec-item">Cannons<b>2 (1 per side)</b></div>
+            <div class="sot-spec-item">Masts<b>1 Sail</b></div>
+            <div class="sot-spec-item">Turning Rate<b>Exceptional</b></div>
+            <div class="sot-spec-item">Deck Decks<b>1 Single Deck</b></div>
+          </div>
+          <a class="btn ghost" href="enlist.html" style="width:100%;text-align:center">Sail a Sloop →</a>
+        </div>
+      </div>
+      <div class="sot-vessel-card reveal d1" data-tilt>
+        <div class="sot-vessel-header">
+          <h3>The Brigantine</h3>
+          <span class="sot-crew-badge">3 Pirates</span>
+        </div>
+        <div class="sot-vessel-body">
+          <p style="color:#bcd0dd;font-size:.95rem">A versatile and lethal predator. Fastest ship with a crosswind breeze, balancing heavy double broadside firepower with rapid crew responsiveness.</p>
+          <div class="sot-vessel-specs">
+            <div class="sot-spec-item">Cannons<b>4 (2 per side)</b></div>
+            <div class="sot-spec-item">Masts<b>2 Sails</b></div>
+            <div class="sot-spec-item">Crosswind Speed<b>Devastating</b></div>
+            <div class="sot-spec-item">Deck Decks<b>2 Decks</b></div>
+          </div>
+          <a class="btn ghost" href="enlist.html" style="width:100%;text-align:center">Sail a Brigantine →</a>
+        </div>
+      </div>
+      <div class="sot-vessel-card reveal d2" data-tilt>
+        <div class="sot-vessel-header">
+          <h3>The Galleon</h3>
+          <span class="sot-crew-badge">4 Pirates</span>
+        </div>
+        <div class="sot-vessel-body">
+          <p style="color:#bcd0dd;font-size:.95rem">A floating naval fortress. Unmatched in pure firepower and tailwind cruising speed. Takes a coordinated four-buccaneer crew to unleash her full wrath.</p>
+          <div class="sot-vessel-specs">
+            <div class="sot-spec-item">Cannons<b>8 (4 per side)</b></div>
+            <div class="sot-spec-item">Masts<b>3 Towering Masts</b></div>
+            <div class="sot-spec-item">Hull Strength<b>3 Decks Armor</b></div>
+            <div class="sot-spec-item">Full Broadside<b>Catastrophic</b></div>
+          </div>
+          <a class="btn ghost" href="enlist.html" style="width:100%;text-align:center">Sail a Galleon →</a>
+        </div>
+      </div>
     </div>
-    <div class="center mt reveal"><a class="btn ghost" href="crew.html">Meet The Crew →</a></div>
   </div>
 </section>
 
-<section id="haul-teaser" style="background:linear-gradient(180deg,#08182c,#0a1f38)">
+<!-- CHARACTER SHOWCASE -->
+<section style="background:linear-gradient(180deg,#0a1f38,#08182c)">
   <div class="wrap">
-    ${secHead('Treasure Hauled','Placements, But Make It Loot','Where our crews end up — and what they bring back for the island.')}
-    <div class="grid-3">
-      <div class="recruit reveal" data-tilt><div class="rname">East India Plunder Co.</div><div class="rline">Offers: 9-to-5 and a boat</div><div class="rstat">Hauled 31 crews last term</div></div>
-      <div class="recruit reveal d1" data-tilt><div class="rname">Kraken Logistics</div><div class="rline">Offers: infinite tentacles, zero commute</div><div class="rstat">Hauled 24 crews last term</div></div>
-      <div class="recruit reveal d2" data-tilt><div class="rname">Gull-Back Airlines</div><div class="rline">Offers: free gull lessons, window seat (the island)</div><div class="rstat">Hauled 19 crews last term</div></div>
+    ${secHead('Buccaneers &amp; Leaders','Meet The Pirate Crew','Trained under salt and storm, these buccaneers command the decks and lead the voyages.')}
+    <div class="crew-full-grid">
+      
+      <!-- Captain Maeve -->
+      <div class="crew-full-card reveal" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Captain Maeve Ironhook Vane" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Captain</span>
+          <span class="crew-bounty-badge">50,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Capt. Maeve "Ironhook" Vane</h3>
+          <div class="crew-full-title">Fleet Strategist · Flagship H.M.S. Educate &amp; Plunder</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">⚔️ Hook Prosthetic</span>
+            <span class="crew-gear-chip">🗡️ Damascus Dagger</span>
+            <span class="crew-gear-chip">🦜 White Cockatoo</span>
+          </div>
+          <div class="crew-full-quote">"A fair wind is a gift, but a violent storm is a syllabus. We take the storm every single time."</div>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Naval Rating<b>98 / 100</b></div>
+            <div class="crew-stat-cell">Boarding Skill<b>Master</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigator Saki Chen -->
+      <div class="crew-full-card reveal d1" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Navigator Saki Starwatcher Chen" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Astrogator</span>
+          <span class="crew-bounty-badge">42,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Saki "Starwatcher" Chen</h3>
+          <div class="crew-full-title">Master Cartographer · Ship: Buried Alive</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🧭 Brass Sextant</span>
+            <span class="crew-gear-chip">📜 Astral Chart</span>
+            <span class="crew-gear-chip">👁️ Eyepatch of Depths</span>
+          </div>
+          <div class="crew-full-quote">"The stars never lie, even when the sea tries to drown you. Follow the needle or sleep in Davy Jones's locker."</div>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Navigation<b>100 / 100</b></div>
+            <div class="crew-stat-cell">Storm Lore<b>Legendary</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gunner Jax Rivera -->
+      <div class="crew-full-card reveal d2" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Gunner Jax Quick-Cut Rivera" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Gunner</span>
+          <span class="crew-bounty-badge">38,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Jax "Quick-Cut" Rivera</h3>
+          <div class="crew-full-title">Master Gunner · Ship: The Broadside</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🔫 Twin Flintlocks</span>
+            <span class="crew-gear-chip">⚔️ Curved Cutlass</span>
+            <span class="crew-gear-chip">💣 Black Powder Bags</span>
+          </div>
+          <div class="crew-full-quote">"Aim low, light the fuse fast, and always swing into the enemy quarterdeck with a grin."</div>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Cannon Shot<b>99 / 100</b></div>
+            <div class="crew-stat-cell">Demolitions<b>Expert</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quartermaster Tariq -->
+      <div class="crew-full-card reveal d1" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Quartermaster Tariq The Hawk Al-Mansur" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Quartermaster</span>
+          <span class="crew-bounty-badge">65,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Tariq "The Hawk" Al-Mansur</h3>
+          <div class="crew-full-title">Master of Accounts · Ship: The Tightrope</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
+            <span class="crew-gear-chip">⚖️ Doubloon Scale</span>
+            <span class="crew-gear-chip">🧥 Crimson Coat</span>
+          </div>
+          <div class="crew-full-quote">"Every piece of eight tells a story. Some scream. It is my duty to count them all accurately."</div>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty Appraisal<b>99 / 100</b></div>
+            <div class="crew-stat-cell">Vault Defense<b>Supreme</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- First Mate Ren Kuroda -->
+      <div class="crew-full-card reveal d2" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="First Mate Ren Shadowblade Kuroda" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Duelist</span>
+          <span class="crew-bounty-badge">48,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Ren "Shadowblade" Kuroda</h3>
+          <div class="crew-full-title">Vanguard Duelist · Ship: The Black Wake</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">⚔️ Katana Cutlass</span>
+            <span class="crew-gear-chip">🥋 Boarding Garb</span>
+            <span class="crew-gear-chip">🌅 Sunset Cloak</span>
+          </div>
+          <div class="crew-full-quote">"Quiet steel cuts deepest. When the fog rolls in, our enemies only hear the ocean."</div>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Swordsmanship<b>100 / 100</b></div>
+            <div class="crew-stat-cell">Silent Boarding<b>Flawless</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fleetmaster Aldric Crane -->
+      <div class="crew-full-card reveal d3" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Fleetmaster</span>
+          <span class="crew-bounty-badge">100,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Fleetmaster Aldric "Grimtide" Crane</h3>
+          <div class="crew-full-title">Dean of the Fleet · Flagship Commander</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">👑 Pirate Hat</span>
+            <span class="crew-gear-chip">🪝 Golden Hook</span>
+            <span class="crew-gear-chip">🦜 Scarlet Macaw</span>
+          </div>
+          <div class="crew-full-quote">"Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won."</div>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Fleet Command<b>Supreme</b></div>
+            <div class="crew-stat-cell">College Lore<b>Est. 1654</b></div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="center mt reveal"><a class="btn ghost" href="treasure-hauled.html">The Full Haul Report →</a></div>
+    <div class="center mt reveal">
+      <a class="btn" href="crew.html">Meet The Entire Crew →</a>
+      <a class="btn ghost" href="legends.html">View Hall of Legends →</a>
+    </div>
   </div>
 </section>
 
-<section id="feasts-teaser">
+<!-- THE ISLAND INTERACTIVE TEASER -->
+<section id="island-teaser" style="background:linear-gradient(180deg,#08182c,#050f1e)">
   <div class="wrap">
-    ${secHead('Feasts &amp; Raids','Events &amp; Fests','All events sail regardless of weather. The weather has been informed.')}
-    <div class="event-row reveal" data-tilt>
-      <div class="e-date"><div class="d">21</div><div class="m">OCT</div></div>
-      <div><h3>The Great Regatta</h3><p>Inter-ship racing, three laps, one cannon of confetti. Bring goggles.</p></div>
-      <div class="e-tag">All Fleet</div>
+    <div class="duo">
+      <figure class="frame reveal" data-tilt style="--rot:-1.6deg">
+        <img src="img/island-map.jpg" alt="Authentic illustrated pirate map of Ravenspire Blacktide Collegium" loading="lazy">
+        <figcaption>The island campus — 17 clickable landmarks charted in authentic pirate style</figcaption>
+      </figure>
+      <div class="reveal d2">
+        <div class="over" style="font-family:var(--font-display);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-size:1rem;margin-bottom:10px">Campus / Facilities</div>
+        <h2 style="font-size:clamp(2rem,4.5vw,3rem);color:var(--cream)">The Island</h2>
+        <p style="color:#bcd0dd;margin:14px 0;font-size:1.05rem">Lighthouse, Great Hall, Crow’s Nest library, the Vault, the Galley, the Krakenarium, the Plank — everything you need, and nothing you can’t swim back from. The campus map is <strong>interactive</strong> with real sound effects, audio tides, and clickable pins.</p>
+        <p style="color:#bcd0dd;margin-bottom:26px;font-style:italic">Yes, there is a treasure vault on campus. No, you cannot open it. Yes, it is the most-visited landmark. All three of those are true.</p>
+        <a class="sot-btn-gold" href="island.html"><span>🗺️</span> Open Interactive Treasure Map</a>
+      </div>
     </div>
-    <div class="event-row reveal d1" data-tilt>
-      <div class="e-date"><div class="d">12</div><div class="m">NOV</div></div>
-      <div><h3>Full Moon Cannon Gala</h3><p>Fireworks over the water, music from the deck, absolutely no fire (one fire).</p></div>
-      <div class="e-tag">By Invitation</div>
+  </div>
+</section>
+
+<!-- THE WANTED BOARD TEASER -->
+<section id="wanted-teaser" style="background:linear-gradient(180deg,#050f1e,#0a1f38)">
+  <div class="wrap">
+    ${secHead('The Wanted Board','Fresh Off the Board','Everything the college says, pinned and slightly crooked onto weathered oak.')}
+    <div class="wanted-board-wall reveal">
+      <div class="grid-posters">
+        <div class="poster reveal" data-tilt style="--rot:-2deg"><span class="ptype">Bounty</span><h3>Doubloons Found</h3><div class="reward">Reward: 2,400 doubloons</div><p>Found in the library, under a chart of "somewhere lovely". Claim before Thursday or forfeit to the college.</p><div class="pdate"><span>The Board</span><span>every tide</span></div></div>
+        <div class="poster reveal d1" data-tilt style="--rot:1.6deg"><span class="ptype">Raid</span><h3>Storm Week Drills</h3><div class="reward">Bring a towel + fear of whales</div><p>Advanced Navigation practicum. We sail into the storm. The syllabus means it.</p><div class="pdate"><span>Dept. of Navigation</span><span>Nov 20</span></div></div>
+        <div class="poster reveal d2" data-tilt style="--rot:-1.4deg"><span class="ptype">Notice</span><h3>New Bird on Faculty</h3><div class="reward">Reward: none. It’s a parrot.</div><p>Professor Feather III now grades. Do not feed him forms. Do not feed him anything but seeds.</p><div class="pdate"><span>The Aviary</span><span>this tide</span></div></div>
+      </div>
     </div>
-    <div class="event-row reveal d2" data-tilt>
-      <div class="e-date"><div class="d">05</div><div class="m">NOV</div></div>
-      <div><h3>Treasure Fair &amp; Marketplace</h3><p>The Crew sells finds, maps, and one suspiciously glowing stone. No refunds on the stone.</p></div>
-      <div class="e-tag">Open Port</div>
-    </div>
-    <div class="center mt reveal"><a class="btn ghost" href="feasts.html">Full Deck Calendar →</a></div>
+    <div class="center mt reveal"><a class="btn ghost" href="wanted.html">The Full Wanted Board →</a></div>
   </div>
 </section>
 
 ${cta('The Tide Is Good. The Doubloons Are Shiny.','What are you waiting for? The tide does not wait for the undecided.',
-  '<a class="btn" href="enlist.html">Join the Crew</a><a class="btn ghost" href="scroll.html">Read The Scroll</a>')}
+  '<a class="sot-btn-gold" href="enlist.html"><span>⚔️</span> Join the Crew</a><a class="sot-btn-ghost" href="scroll.html"><span>📜</span> Read The Scroll</a>')}
 `;
+
 
 const SCROLL = `
 ${pageHero('About Us · Est. 1654','The Scroll','The college\u2019s story, as written in tar, salt, and one very old hand.','The Scroll')}
@@ -405,10 +675,76 @@ const FLEET = `
 ${pageHero('Departments · Each Is a Ship','The Fleet','Six departments. Six ships. Every department moors at its own berth and sails its own curriculum.','The Fleet')}
 <section>
   <div class="wrap">
+    <div class="fleet-custom-grid" style="margin-bottom:34px">
+      <!-- 1. H.M.S. Educate & Plunder on Ship's Steering Wheel -->
+      <div class="helm-card reveal" data-tilt>
+        <div class="helm-wheel-decor">
+          <svg class="helm-wheel-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="76" stroke="#b8862d" stroke-width="8"/>
+            <circle cx="100" cy="100" r="54" stroke="#8a5a1f" stroke-width="5"/>
+            <line x1="100" y1="8" x2="100" y2="192" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="8" y1="100" x2="192" y2="100" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="35" y1="35" x2="165" y2="165" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="165" y1="35" x2="35" y2="165" stroke="#e6b34a" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="100" cy="100" r="28" fill="#ffd873" stroke="#5a3818" stroke-width="4"/>
+            <circle cx="100" cy="100" r="14" fill="#3a1e0b"/>
+            <circle cx="100" cy="10" r="6" fill="#ffd873"/>
+            <circle cx="100" cy="190" r="6" fill="#ffd873"/>
+            <circle cx="10" cy="100" r="6" fill="#ffd873"/>
+            <circle cx="190" cy="100" r="6" fill="#ffd873"/>
+            <circle cx="36" cy="36" r="6" fill="#ffd873"/>
+            <circle cx="164" cy="164" r="6" fill="#ffd873"/>
+            <circle cx="164" cy="36" r="6" fill="#ffd873"/>
+            <circle cx="36" cy="164" r="6" fill="#ffd873"/>
+          </svg>
+        </div>
+        <div class="sname">H.M.S. Educate &amp; Plunder</div>
+        <div class="sdept">Navigation &amp; Wayfinding</div>
+        <div class="srows">
+          <div class="stat-row"><span>Keel-laid</span><b>1654</b></div>
+          <div class="stat-row"><span>Crew</span><b>210</b></div>
+          <div class="stat-row"><span>Sails (courses)</span><b>9</b></div>
+          <div class="stat-row"><span>Top speed</span><b>14 kn</b></div>
+          <div class="stat-row"><span>Captain</span><b>Prof. M. Vance</b></div>
+        </div>
+        <div class="squip">"The campus itself. The Great Hall is her wheelhouse. Her bell is the college’s heartbeat."</div>
+      </div>
+
+      <!-- 2. The Broadside on Crate of Ammunition -->
+      <div class="crate-card reveal d1" data-tilt>
+        <div class="crate-rivets">
+          <div class="crate-rivet"></div><div class="crate-rivet"></div><div class="crate-rivet"></div>
+        </div>
+        <span class="crate-danger-stencil">💣 32-Pounder Ammunition · Explosive</span>
+        <div class="sname">The Broadside</div>
+        <div class="sdept">Artillery &amp; Cannon Science</div>
+        <div class="srows">
+          <div class="stat-row"><span>Keel-laid</span><b>1671</b></div>
+          <div class="stat-row"><span>Crew</span><b>140</b></div>
+          <div class="stat-row"><span>Sails (courses)</span><b>7</b></div>
+          <div class="stat-row"><span>Top speed</span><b>12 kn</b></div>
+          <div class="stat-row"><span>Captain</span><b>Prof. I. Blackbeard</b></div>
+        </div>
+        <div class="squip">"Has never missed a deadline or a target. Her deck is always slightly sootier than the others. With pride."</div>
+      </div>
+
+      <!-- 3. Buried Alive on Graveyard -->
+      <div class="graveyard-card reveal d2" data-tilt>
+        <div class="graveyard-cross-icon">🪦</div>
+        <div class="sname">Buried Alive</div>
+        <div class="sdept">Treasure Recovery &amp; Cartography</div>
+        <div class="srows">
+          <div class="stat-row"><span>Keel-laid</span><b>1688</b></div>
+          <div class="stat-row"><span>Crew</span><b>185</b></div>
+          <div class="stat-row"><span>Sails (courses)</span><b>11</b></div>
+          <div class="stat-row"><span>Top speed</span><b>10 kn</b></div>
+          <div class="stat-row"><span>Captain</span><b>Dr. C. Quill</b></div>
+        </div>
+        <div class="squip">"Her hold smells of wet sand and good maps. Half her charts are real. The other half are promises."</div>
+      </div>
+    </div>
+
     <div class="grid-3">
-      <div class="ship-card reveal" data-tilt><div class="sname">H.M.S. Educate &amp; Plunder</div><div class="sdept">Navigation &amp; Wayfinding</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1654</b></div><div class="stat-row"><span>Crew</span><b>210</b></div><div class="stat-row"><span>Sails (courses)</span><b>9</b></div><div class="stat-row"><span>Top speed</span><b>14 kn</b></div><div class="stat-row"><span>Captain</span><b>Prof. M. Vance</b></div></div><div class="squip">"The campus itself. The Great Hall is her wheelhouse. Her bell is the college’s heartbeat."</div></div>
-      <div class="ship-card reveal d1" data-tilt><div class="sname">The Broadside</div><div class="sdept">Artillery &amp; Cannon Science</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1671</b></div><div class="stat-row"><span>Crew</span><b>140</b></div><div class="stat-row"><span>Sails (courses)</span><b>7</b></div><div class="stat-row"><span>Top speed</span><b>12 kn</b></div><div class="stat-row"><span>Captain</span><b>Prof. I. Blackbeard</b></div></div><div class="squip">"Has never missed a deadline or a target. Her deck is always slightly sootier than the others. With pride."</div></div>
-      <div class="ship-card reveal d2" data-tilt><div class="sname">Buried Alive</div><div class="sdept">Treasure Recovery &amp; Cartography</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1688</b></div><div class="stat-row"><span>Crew</span><b>185</b></div><div class="stat-row"><span>Sails (courses)</span><b>11</b></div><div class="stat-row"><span>Top speed</span><b>10 kn</b></div><div class="stat-row"><span>Captain</span><b>Dr. C. Quill</b></div></div><div class="squip">"Her hold smells of wet sand and good maps. Half her charts are real. The other half are promises."</div></div>
       <div class="ship-card reveal" data-tilt><div class="sname">The Tightrope</div><div class="sdept">Ropes &amp; Rigging Engineering</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1702</b></div><div class="stat-row"><span>Crew</span><b>120</b></div><div class="stat-row"><span>Sails (courses)</span><b>8</b></div><div class="stat-row"><span>Top speed</span><b>15 kn</b></div><div class="stat-row"><span>Captain</span><b>Capt. (ret.) R. Flint</b></div></div><div class="squip">"Fastest ship in The Fleet. Mostly because of the students. The knots are load-bearing; so are the friendships."</div></div>
       <div class="ship-card reveal d1" data-tilt><div class="sname">Feather’s Folly</div><div class="sdept">Parrot Husbandry &amp; Marine Biology</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1848</b></div><div class="stat-row"><span>Crew</span><b>95</b></div><div class="stat-row"><span>Sails (courses)</span><b>6</b></div><div class="stat-row"><span>Top speed</span><b>9 kn</b></div><div class="stat-row"><span>Captain</span><b>Prof. Feather III</b></div></div><div class="squip">"Crewed by 95 humans and 95 very small lecturers. The small ones set the syllabus. The big ones comply."</div></div>
       <div class="ship-card reveal d2" data-tilt><div class="sname">The Anvil’s Wake</div><div class="sdept">Naval Architecture &amp; Blacksmithing</div><div class="srows"><div class="stat-row"><span>Keel-laid</span><b>1790</b></div><div class="stat-row"><span>Crew</span><b>110</b></div><div class="stat-row"><span>Sails (courses)</span><b>7</b></div><div class="stat-row"><span>Top speed</span><b>11 kn</b></div><div class="stat-row"><span>Captain</span><b>Mrs. M. Oat (Adj.)</b></div></div><div class="squip">"The sound of her workshop can be heard two bays away. Her capstone boats have survived three storms and one very rude whale."</div></div>
@@ -493,48 +829,131 @@ ${pageHero('Faculty','Quartermasters','Every professor holds a captain’s licen
   <div class="wrap">
     <div class="grid-4">
       <div class="person reveal" data-tilt>
-        <div class="portrait"><img src="img/captain.jpg" alt="Portrait of Fleetmaster Crane at the helm" loading="lazy"></div>
+        <div class="portrait" style="height:170px"><img src="img/captain-crane.jpg" alt="Portrait of Fleetmaster Aldric Grimtide Crane" loading="lazy"></div>
         <h3>Fleetmaster Aldric "Grimtide" Crane</h3>
         <div class="role">Dean of the Fleet</div>
         <p>Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won.</p>
         <span class="photo-tag">Verified by the Fleet</span>
       </div>
       <div class="person reveal d1" data-tilt>
-        <div class="portrait"><img src="img/parrot.jpg" alt="Professor Feather, the college parrot" loading="lazy"></div>
+        <div class="portrait" style="height:170px"><img src="img/parrot.jpg" alt="Professor Feather, the college parrot" loading="lazy"></div>
         <h3>Professor Feather, III</h3>
         <div class="role">Chair of Parrot Linguistics</div>
         <p>Grades, supervises, and occasionally eats the answer sheets. Salaried in sunflower seeds since 1848.</p>
         <span class="photo-tag">Verified by Everyone</span>
       </div>
-      <div class="person reveal d2" data-tilt style="--ptint:#7a4a2a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#241408"/></svg></div>
+      <div class="person reveal d2" data-tilt style="--ptint:#7a4a2a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#241408"/></svg></div>
         <h3>Prof. Marlow "One-Leg" Vance</h3><div class="role">Navigation (Educate &amp; Plunder)</div><p>Lost a leg to a cannonball in 1698. Teaches with the other one, mostly.</p></div>
-      <div class="person reveal d3" data-tilt style="--ptint:#2f5d63"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#101d20"/></svg></div>
+      <div class="person reveal d3" data-tilt style="--ptint:#2f5d63"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#101d20"/></svg></div>
         <h3>Prof. Isla Blackbeard</h3><div class="role">Artillery (The Broadside)</div><p>Has never missed a target. Has also never missed a deadline.</p></div>
-      <div class="person reveal" data-tilt style="--ptint:#6e3a3a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#20100c"/></svg></div>
+      <div class="person reveal" data-tilt style="--ptint:#6e3a3a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#20100c"/></svg></div>
         <h3>Dr. Corvus Quill</h3><div class="role">Cartography (Buried Alive)</div><p>Maps places that don’t exist yet. The Crew call them "promises."</p></div>
-      <div class="person reveal d1" data-tilt style="--ptint:#5a5230"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#15130a"/></svg></div>
+      <div class="person reveal d1" data-tilt style="--ptint:#5a5230"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#15130a"/></svg></div>
         <h3>Capt. (ret.) Rosa Flint</h3><div class="role">Rigging (The Tightrope)</div><p>Her parrot, Professor Feather, is officially on the faculty too. He grades.</p></div>
-      <div class="person reveal d2" data-tilt style="--ptint:#6a4a2a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#1c1208"/></svg></div>
+      <div class="person reveal d2" data-tilt style="--ptint:#6a4a2a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#1c1208"/></svg></div>
         <h3>Mrs. Marigold Oat</h3><div class="role">The Galley (Food &amp; Grog)</div><p>Cook of record. Salt beef three ways. Her grog recipe is a college secret with 372 holders.</p></div>
-      <div class="person reveal d3" data-tilt style="--ptint:#44506a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#11141c"/></svg></div>
+      <div class="person reveal d3" data-tilt style="--ptint:#44506a"><div class="portrait" style="height:170px"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#11141c"/></svg></div>
         <h3>Brother Anchor</h3><div class="role">Keeper of the Vault (Bursar)</div><p>Counts the doubloons. Has counted them. Will count them again. Do not stand in front of the safe.</p></div>
     </div>
   </div>
 </section>
 
-<section style="background:linear-gradient(180deg,#08182c,#050f1e)">
+<!-- HANGING ROPES GALLERY FOR OUTDOOR LECTURES & PHOTOS -->
+<section style="background:linear-gradient(180deg,#061322,#0a1e33);padding:60px 0">
+  <div class="wrap">
+    ${secHead('Where Outdoor Lectures Happen','Suspended From the Rigging','Hover over any photograph to steady the rope and inspect the lecture deck.')}
+    
+    <div class="hanging-rope-stage">
+      <div class="rigging-beam">
+        <div class="beam-iron-bolt"></div>
+        <div class="beam-iron-bolt"></div>
+        <div class="beam-iron-bolt"></div>
+        <div class="beam-iron-bolt"></div>
+      </div>
+      
+      <div class="hanging-rope-grid">
+        <!-- 1. Storm Sea - Outdoor Lecture -->
+        <div class="hanging-photo-item" style="--sway-dur:5.8s;--sway-delay:0s;--rot-from:-3.8deg;--rot-to:3.2deg;--rope-h:82px">
+          <div class="rope-cords">
+            <div class="rope-line"></div>
+            <div class="rope-line"></div>
+            <div class="rope-knot left"></div>
+            <div class="rope-knot right"></div>
+          </div>
+          <div class="hanging-frame">
+            <img class="hanging-img" src="img/storm-sea.jpg" alt="Where the outdoor lectures happen - Gale Navigation" loading="lazy">
+            <div class="hanging-caption">
+              Where the Outdoor Lectures Happen
+              <span>Dept. of Navigation · Gale Force III</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Storm Sea 2 - Maelstrom Drill -->
+        <div class="hanging-photo-item" style="--sway-dur:6.6s;--sway-delay:0.7s;--rot-from:4.2deg;--rot-to:-2.8deg;--rope-h:64px">
+          <div class="rope-cords">
+            <div class="rope-line"></div>
+            <div class="rope-line"></div>
+            <div class="rope-knot left"></div>
+            <div class="rope-knot right"></div>
+          </div>
+          <div class="hanging-frame">
+            <img class="hanging-img" src="img/storm-sea-2.jpg" alt="High-Tide Lecture Deck in Tempest" loading="lazy">
+            <div class="hanging-caption">
+              High-Tide Lecture Deck
+              <span>Astrolabe Drills in 40-Knot Squalls</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Ship Deck - Berth 2 Cannon Seminar -->
+        <div class="hanging-photo-item" style="--sway-dur:5.2s;--sway-delay:1.2s;--rot-from:-2.5deg;--rot-to:4.5deg;--rope-h:96px">
+          <div class="rope-cords">
+            <div class="rope-line"></div>
+            <div class="rope-line"></div>
+            <div class="rope-knot left"></div>
+            <div class="rope-knot right"></div>
+          </div>
+          <div class="hanging-frame">
+            <img class="hanging-img" src="img/ship-deck.jpg" alt="Lower Gun Deck Lecture Hall" loading="lazy">
+            <div class="hanging-caption">
+              The Gun Deck Classroom
+              <span>Berth 2: Artillery &amp; Broadside Ethics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Lighthouse Night - Astronomy & Signal Posts -->
+        <div class="hanging-photo-item" style="--sway-dur:6.2s;--sway-delay:0.3s;--rot-from:3.5deg;--rot-to:-3.8deg;--rope-h:74px">
+          <div class="rope-cords">
+            <div class="rope-line"></div>
+            <div class="rope-line"></div>
+            <div class="rope-knot left"></div>
+            <div class="rope-knot right"></div>
+          </div>
+          <div class="hanging-frame">
+            <img class="hanging-img" src="img/lighthouse-night.jpg" alt="Night Astronomy & Signal Tower" loading="lazy">
+            <div class="hanging-caption">
+              Lighthouse Signal Post
+              <span>Nocturnal Astronomy &amp; Beacon Physics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#0a1e33,#050f1e)">
   <div class="wrap">
     <div class="duo">
-      <figure class="frame reveal" data-tilt style="--rot:-1.8deg">
-        <img src="img/storm-sea.jpg" alt="Dark stormy sea beneath heavy clouds" loading="lazy">
-        <figcaption>Where the outdoor lectures happen</figcaption>
-      </figure>
-      <div class="parchment reveal d2">
+      <div class="parchment reveal" style="margin:0 auto;max-width:820px">
         <h3>Deck Hours (Office Hours)</h3>
         <p>All Quartermasters hold deck hours: Tuesday and Thursday tides, on whichever deck is least currently on fire.</p>
         <p>Professor Feather’s deck hours are whenever he lands. The Crew have learned to read his moods the way the weather is read: by the feathers.</p>
         <p>Appointment policy: the sea sets the appointment. If the sea cancels, the Quartermaster is delighted; you are rescheduled to "whenever the sea feels like it."</p>
-        <span class="sig">— Fleetmaster Crane, Dean</span>
+        <span class="sig">— Fleetmaster Aldric "Grimtide" Crane, Dean</span>
       </div>
     </div>
   </div>
@@ -549,13 +968,131 @@ ${pageHero('Students · 1,200 Aboard','The Crew','Not students. Students don’t
 <section>
   <div class="wrap">
     ${secHead('Class of the Year','2026\\u2019s Best Hauls','Voted by the evening meal, which is the only election the island has ever run.')}
-    <div class="grid-3">
-      <div class="person reveal" data-tilt style="--ptint:#2f5d63"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#101d20"/></svg></div>
-        <h3>Nadia "North" Okafor</h3><div class="role">Navigation · Class of 2026</div><p>Solo-crossed two bays for her capstone. Her parrot has a PhD (in seeds). First in the fleet.</p></div>
-      <div class="person reveal d1" data-tilt style="--ptint:#6e3a3a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#20100c"/></svg></div>
-        <h3>T. "Two-Fathoms" Marsh</h3><div class="role">Treasure Recovery · Class of 2025</div><p>Found an island that wasn’t on any map, then got it added to every map. The island is now a field trip.</p></div>
-      <div class="person reveal d2" data-tilt style="--ptint:#7a4a2a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#241408"/></svg></div>
-        <h3>Isla Reyes</h3><div class="role">Artillery · Class of 2024</div><p>Won three Regattas, one broadside ethics debate, and the Galley’s annual salt-beef eating contest. Unrelated, all three.</p></div>
+    <div class="crew-full-grid">
+      <!-- 1. Captain Maeve -->
+      <div class="crew-full-card reveal" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Captain Maeve Ironhook Vane" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Captain</span>
+          <span class="crew-bounty-badge">50,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Capt. Maeve "Ironhook" Vane</h3>
+          <div class="crew-full-title">Navigation &amp; Fleet Strategy · Class of 2026</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">⚔️ Hook Prosthetic</span>
+            <span class="crew-gear-chip">🗡️ Damascus Dagger</span>
+            <span class="crew-gear-chip">🦜 White Cockatoo</span>
+          </div>
+          <div class="crew-full-quote">"A fair wind is a gift, but a violent storm is a syllabus. We take the storm every single time."</div>
+          <p class="crew-full-bio">Solo-navigated the Maelstrom of Skulls and captured three merchant frigates before her morning tea. Renowned for ruthless tactical precision and absolute crew loyalty.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Naval Rating<b>98 / 100</b></div>
+            <div class="crew-stat-cell">Boarding Skill<b>Master</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Navigator Saki Chen -->
+      <div class="crew-full-card reveal d1" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Navigator Saki Starwatcher Chen" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Astrogator</span>
+          <span class="crew-bounty-badge">42,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Saki "Starwatcher" Chen</h3>
+          <div class="crew-full-title">Celestial Cartography · Class of 2025</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🧭 Brass Sextant</span>
+            <span class="crew-gear-chip">📜 Astral Chart</span>
+            <span class="crew-gear-chip">👁️ Eyepatch of Depths</span>
+          </div>
+          <div class="crew-full-quote">"The stars never lie, even when the sea tries to drown you. Follow the needle or sleep in Davy Jones's locker."</div>
+          <p class="crew-full-bio">Discovered four uncharted archipelagoes hidden beneath perpetual fog banks. Master of tidal anomalies, ocean currents, and reading constellations through hurricane clouds.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Navigation<b>100 / 100</b></div>
+            <div class="crew-stat-cell">Storm Lore<b>Legendary</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Gunner Jax Rivera -->
+      <div class="crew-full-card reveal d2" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Gunner Jax Quick-Cut Rivera" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Gunner</span>
+          <span class="crew-bounty-badge">38,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Jax "Quick-Cut" Rivera</h3>
+          <div class="crew-full-title">Artillery &amp; Infiltration · Class of 2026</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🔫 Twin Flintlocks</span>
+            <span class="crew-gear-chip">⚔️ Curved Cutlass</span>
+            <span class="crew-gear-chip">💣 Black Powder Bags</span>
+          </div>
+          <div class="crew-full-quote">"Aim low, light the fuse fast, and always swing into the enemy quarterdeck with a grin."</div>
+          <p class="crew-full-bio">Top marksman of the Collegium Artillery Department. Holds the record for double-barrel chain-shot hits at 300 fathoms while swinging from the topgallant halyard.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Cannon Shot<b>99 / 100</b></div>
+            <div class="crew-stat-cell">Demolitions<b>Expert</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Quartermaster Tariq -->
+      <div class="crew-full-card reveal d1" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Quartermaster Tariq The Hawk Al-Mansur" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Quartermaster</span>
+          <span class="crew-bounty-badge">65,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Tariq "The Hawk" Al-Mansur</h3>
+          <div class="crew-full-title">Treasure Appraisal &amp; Vaults · Class of 2024</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
+            <span class="crew-gear-chip">⚖️ Doubloon Scale</span>
+            <span class="crew-gear-chip">🧥 Crimson Coat</span>
+          </div>
+          <div class="crew-full-quote">"Every piece of eight tells a story. Some scream. It is my duty to count them all accurately."</div>
+          <p class="crew-full-bio">Handled over 1,500,000 gold doubloons in Collegium plunder distributions. Can appraise a cursed ruby at fifty paces and negotiate with sirens without losing his soul.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty Appraisal<b>99 / 100</b></div>
+            <div class="crew-stat-cell">Vault Defense<b>Supreme</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. First Mate Ren Kuroda -->
+      <div class="crew-full-card reveal d2" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="First Mate Ren Shadowblade Kuroda" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Duelist</span>
+          <span class="crew-bounty-badge">48,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Ren "Shadowblade" Kuroda</h3>
+          <div class="crew-full-title">Vanguard Boarding &amp; Tactics · Class of 2025</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">⚔️ Katana Cutlass</span>
+            <span class="crew-gear-chip">🥋 Boarding Garb</span>
+            <span class="crew-gear-chip">🌅 Sunset Cloak</span>
+          </div>
+          <div class="crew-full-quote">"Quiet steel cuts deepest. When the fog rolls in, our enemies only hear the ocean."</div>
+          <p class="crew-full-bio">Defeated thirty rival buccaneers in the annual Collegium Boarding Gauntlet without suffering a single scratch. Commands the vanguard assault line during night raids.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Swordsmanship<b>100 / 100</b></div>
+            <div class="crew-stat-cell">Silent Boarding<b>Flawless</b></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1044,18 +1581,160 @@ ${cta('The Doubloons Are Shiny. So Is the Sea.','Join before the tide turns (it 
 `;
 
 const LEGENDS = `
-${pageHero('Alumni','Legends of the Seven Seas','Every graduate becomes a legend. We’ve kept the receipts. The receipts are water-stained.','Legends')}
+${pageHero('Alumni &amp; Living Legends','Legends of the Seven Seas','Every graduate becomes a legend. We’ve kept the receipts. The receipts are written in gold and salt.','Legends')}
 <section>
   <div class="wrap">
-    <div class="grid-4">
-      <div class="legend reveal" data-tilt style="--ptint:#2f5d63"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#101d20"/></svg></div>
-        <h3>The Cartographer Who Mapped Nowhere</h3><div class="lclass">Class of 1671</div><p>Now runs Kraken Logistics. His maps still list places that don’t exist. They have since. He is not surprised. He is quietly furious.</p></div>
-      <div class="legend reveal d1" data-tilt style="--ptint:#7a4a2a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#241408"/></svg></div>
-        <h3>One-Leg Vance</h3><div class="lclass">Class of 1660</div><p>Chair of Navigation, still teaching after 366 years. His thesis is "in progress." The sea, his co-supervisor, has stopped replying.</p></div>
-      <div class="legend reveal d2" data-tilt style="--ptint:#6e3a3a"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#20100c"/></svg></div>
-        <h3>The Island Finder</h3><div class="lclass">Class of 1689</div><p>Graduated to find islands for a living, which is exactly what he does. Where he is now is a "promise" on every map he’s ever sold.</p></div>
-      <div class="legend reveal d3" data-tilt style="--ptint:#5a5230"><div class="portrait"><svg viewBox="0 0 200 220"><use href="#pirateSil" color="#15130a"/></svg></div>
-        <h3>Marigold Oat</h3><div class="lclass">Class of 1658</div><p>First Galley legend. The grog recipe has 372 holders and zero written copies. She is the only one who can say "no" to the parrot.</p></div>
+    <div class="crew-full-grid">
+      <!-- 1. Fleetmaster Crane -->
+      <div class="crew-full-card reveal" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">High Admiral</span>
+          <span class="crew-bounty-badge">100,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Fleetmaster Aldric Crane</h3>
+          <div class="crew-full-title">Living Legend &amp; Dean · Class of 1654</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">👑 Pirate Hat</span>
+            <span class="crew-gear-chip">🪝 Golden Hook</span>
+            <span class="crew-gear-chip">🦜 Scarlet Macaw</span>
+          </div>
+          <div class="crew-full-quote">"Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won."</div>
+          <p class="crew-full-bio">Founding father of the Ravenspire Blacktide Collegium. Still holds the fleet record for sailing through three simultaneous typhoons without spilling his tea.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty on Record<b>100,000 DBL</b></div>
+            <div class="crew-stat-cell">Status<b>Immortal Dean</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Captain Maeve -->
+      <div class="crew-full-card reveal d1" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Grand Captain Maeve Ironhook Vane" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Pirate Lord</span>
+          <span class="crew-bounty-badge">85,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Capt. Maeve "Ironhook" Vane</h3>
+          <div class="crew-full-title">Scourge of the Crimson Reach · Class of 1674</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">⚔️ Dual Boarding Blades</span>
+            <span class="crew-gear-chip">🗡️ Hook Prosthetic</span>
+            <span class="crew-gear-chip">🦜 War Bird</span>
+          </div>
+          <div class="crew-full-quote">"Captured twenty imperial fortresses in a single hurricane season. The sea bends to those who refuse to flinch."</div>
+          <p class="crew-full-bio">Founded the Tactical Boarding Guild. Her captured silver fleet bell now rings out the morning bell at the Great Hall.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty on Record<b>85,000 DBL</b></div>
+            <div class="crew-stat-cell">Flagship<b>The Crimson Tide</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Astrogator Saki Chen -->
+      <div class="crew-full-card reveal d2" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Elder Astrogator Saki Starwatcher Chen" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Grand Astrogator</span>
+          <span class="crew-bounty-badge">70,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Saki "Starwatcher" Chen</h3>
+          <div class="crew-full-title">Keeper of the Astral Meridian · Class of 1662</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🧭 Astral Sextant</span>
+            <span class="crew-gear-chip">📜 Uncharted Maps</span>
+            <span class="crew-gear-chip">👁️ Abyssal Sight</span>
+          </div>
+          <div class="crew-full-quote">"Crossed the Great Abyssal Trench with no compass, guided only by starlight and bioluminescent tides."</div>
+          <p class="crew-full-bio">Now runs the Cartographic Guild of Buried Alive. His maps still predict shifting volcanic islands three weeks before they breach the surface.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty on Record<b>70,000 DBL</b></div>
+            <div class="crew-stat-cell">Flagship<b>The Wandering Star</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Jax Rivera -->
+      <div class="crew-full-card reveal d1" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Commander Jax Quick-Cut Rivera" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Bombardier</span>
+          <span class="crew-bounty-badge">68,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Jax "Quick-Cut" Rivera</h3>
+          <div class="crew-full-title">Master Siegemaster · Class of 1681</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">💣 Cursed Cannonballs</span>
+            <span class="crew-gear-chip">🔫 Double-Barrels</span>
+            <span class="crew-gear-chip">⚔️ Storm Cutlass</span>
+          </div>
+          <div class="crew-full-quote">"Invented the explosive chain-shot technique that breached the Sunken Citadel in fifteen minutes flat."</div>
+          <p class="crew-full-bio">Holds thirty-six letters of marque from rival monarchs, framed as shooting targets in the galley. Master of naval artillery.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty on Record<b>68,000 DBL</b></div>
+            <div class="crew-stat-cell">Flagship<b>The Thunder's Echo</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Tariq Al-Mansur -->
+      <div class="crew-full-card reveal d2" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Lord Quartermaster Tariq Al-Mansur" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Lord Chancellor</span>
+          <span class="crew-bounty-badge">95,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Tariq "The Hawk" Al-Mansur</h3>
+          <div class="crew-full-title">Chancellor of the Iron Vault · Class of 1668</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
+            <span class="crew-gear-chip">🪙 Ancient Coins</span>
+            <span class="crew-gear-chip">🧥 Imperial Velvet</span>
+          </div>
+          <div class="crew-full-quote">"Established the Sovereign Doubloon Exchange that funded the Collegium for over three centuries."</div>
+          <p class="crew-full-bio">Built the secret underwater hoard caverns that safeguard the island's legendary treasury against armada sieges.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty on Record<b>95,000 DBL</b></div>
+            <div class="crew-stat-cell">Flagship<b>The Golden Argosy</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Ren Kuroda -->
+      <div class="crew-full-card reveal d3" data-tilt>
+        <div class="crew-full-img-wrap">
+          <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="Lord Ren Shadowblade Kuroda" loading="lazy">
+          <div class="crew-full-scrim"></div>
+          <span class="crew-full-role-tag">Grand Duelist</span>
+          <span class="crew-bounty-badge">75,000 DBL</span>
+        </div>
+        <div class="crew-full-info">
+          <h3>Ren "Shadowblade" Kuroda</h3>
+          <div class="crew-full-title">Master of the Midnight Waves · Class of 1679</div>
+          <div class="crew-full-gear">
+            <span class="crew-gear-chip">⚔️ Damascus Katana</span>
+            <span class="crew-gear-chip">🥋 Topknot Ribbons</span>
+            <span class="crew-gear-chip">🌅 Crimson Sunset</span>
+          </div>
+          <div class="crew-full-quote">"Legend holds he once held the outer harbor against an entire skeleton raid with only two swords and the setting sun."</div>
+          <p class="crew-full-bio">Now trains the elite vanguard duelists of the Collegium. Never drawn a blade without settling the conflict in three moves.</p>
+          <div class="crew-stats-bar">
+            <div class="crew-stat-cell">Bounty on Record<b>75,000 DBL</b></div>
+            <div class="crew-stat-cell">Flagship<b>The Sovereign Eclipse</b></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1086,15 +1765,17 @@ const WANTED = `
 ${pageHero('Notice Board','The Wanted Board','Everything the college says, pinned and slightly crooked. Claim rewards before Thursday.','The Wanted Board')}
 <section>
   <div class="wrap">
-    <div class="grid-posters">
-      <div class="poster reveal" data-tilt style="--rot:-2deg"><span class="ptype">Bounty</span><h3>Doubloons Found</h3><div class="reward">Reward: 2,400 doubloons</div><p>Found in the library, under a chart of "somewhere lovely". Claim before Thursday or forfeit to the college. They are not yours if they are not claimed.</p><div class="pdate"><span>The Board</span><span>every tide</span></div></div>
-      <div class="poster reveal d1" data-tilt style="--rot:1.6deg"><span class="ptype">Raid</span><h3>Storm Week Drills</h3><div class="reward">Bring a towel + fear of whales</div><p>Advanced Navigation practicum. We sail into the storm. The syllabus means it. Whales are for Whale-ology, and only from a distance.</p><div class="pdate"><span>Dept. of Navigation</span><span>Nov 20</span></div></div>
-      <div class="poster reveal d2" data-tilt style="--rot:-1.4deg"><span class="ptype">Notice</span><h3>New Bird on Faculty</h3><div class="reward">Reward: none. It’s a parrot.</div><p>Professor Feather III now grades. Do not feed him forms. Do not feed him anything but seeds. He is not a fan of feedback.</p><div class="pdate"><span>The Aviary</span><span>this tide</span></div></div>
-      <div class="poster reveal d3" data-tilt style="--rot:2deg"><span class="ptype">Feast</span><h3>Full Moon Cannon Gala</h3><div class="reward">Dress: whatever survived the last fire</div><p>Fireworks over the water, music from the deck, absolutely no fire (one fire). The one fire is decorative. Do not ask which fire.</p><div class="pdate"><span>The Broadside</span><span>Nov 12</span></div></div>
-      <div class="poster reveal d4" data-tilt style="--rot:-1.8deg"><span class="ptype">Wanted</span><h3>One (1) Lost Grog</h3><div class="reward">Reward: eternal gratitude (the Galley’s)</div><p>Last seen near the Galley, smelling of rum and ambition. Answer to "it’s not yours, it’s everyone’s." Return before the next bell.</p><div class="pdate"><span>The Galley</span><span>urgently</span></div></div>
-      <div class="poster reveal d5" data-tilt style="--rot:1.2deg"><span class="ptype">Raid</span><h3>The Great Regatta</h3><div class="reward">Bets prohibited. Bragging encouraged.</div><p>Three laps, one cannon of confetti, goggles mandatory. Last year’s winner will be in attendance and will bring the cup. Do not touch the cup.</p><div class="pdate"><span>All Fleet</span><span>Oct 21</span></div></div>
-      <div class="poster reveal" data-tilt style="--rot:-1.6deg"><span class="ptype">Feast</span><h3>Treasure Fair</h3><div class="reward">Bring finds. Leave with better ones.</div><p>The Crew sells, the Vault audits, the glowing stone returns. This is now a running joke with a buyer base.</p><div class="pdate"><span>Buried Alive</span><span>Nov 5</span></div></div>
-      <div class="poster reveal d1" data-tilt style="--rot:1.8deg"><span class="ptype">Notice</span><h3>Tide Tables Updated</h3><div class="reward">Reward: none. It’s the law.</div><p>The old tables are now art. They hang in the Great Hall and are framed in rope. The sea has been notified of the rebrand.</p><div class="pdate"><span>The Board</span><span>this tide</span></div></div>
+    <div class="wanted-board-wall reveal">
+      <div class="grid-posters">
+        <div class="poster reveal" data-tilt style="--rot:-2deg"><span class="ptype">Bounty</span><h3>Doubloons Found</h3><div class="reward">Reward: 2,400 doubloons</div><p>Found in the library, under a chart of "somewhere lovely". Claim before Thursday or forfeit to the college. They are not yours if they are not claimed.</p><div class="pdate"><span>The Board</span><span>every tide</span></div></div>
+        <div class="poster reveal d1" data-tilt style="--rot:1.6deg"><span class="ptype">Raid</span><h3>Storm Week Drills</h3><div class="reward">Bring a towel + fear of whales</div><p>Advanced Navigation practicum. We sail into the storm. The syllabus means it. Whales are for Whale-ology, and only from a distance.</p><div class="pdate"><span>Dept. of Navigation</span><span>Nov 20</span></div></div>
+        <div class="poster reveal d2" data-tilt style="--rot:-1.4deg"><span class="ptype">Notice</span><h3>New Bird on Faculty</h3><div class="reward">Reward: none. It’s a parrot.</div><p>Professor Feather III now grades. Do not feed him forms. Do not feed him anything but seeds. He is not a fan of feedback.</p><div class="pdate"><span>The Aviary</span><span>this tide</span></div></div>
+        <div class="poster reveal d3" data-tilt style="--rot:2deg"><span class="ptype">Feast</span><h3>Full Moon Cannon Gala</h3><div class="reward">Dress: whatever survived the last fire</div><p>Fireworks over the water, music from the deck, absolutely no fire (one fire). The one fire is decorative. Do not ask which fire.</p><div class="pdate"><span>The Broadside</span><span>Nov 12</span></div></div>
+        <div class="poster reveal d4" data-tilt style="--rot:-1.8deg"><span class="ptype">Wanted</span><h3>One (1) Lost Grog</h3><div class="reward">Reward: eternal gratitude (the Galley’s)</div><p>Last seen near the Galley, smelling of rum and ambition. Answer to "it’s not yours, it’s everyone’s." Return before the next bell.</p><div class="pdate"><span>The Galley</span><span>urgently</span></div></div>
+        <div class="poster reveal d5" data-tilt style="--rot:1.2deg"><span class="ptype">Raid</span><h3>The Great Regatta</h3><div class="reward">Bets prohibited. Bragging encouraged.</div><p>Three laps, one cannon of confetti, goggles mandatory. Last year’s winner will be in attendance and will bring the cup. Do not touch the cup.</p><div class="pdate"><span>All Fleet</span><span>Oct 21</span></div></div>
+        <div class="poster reveal" data-tilt style="--rot:-1.6deg"><span class="ptype">Feast</span><h3>Treasure Fair</h3><div class="reward">Bring finds. Leave with better ones.</div><p>The Crew sells, the Vault audits, the glowing stone returns. This is now a running joke with a buyer base.</p><div class="pdate"><span>Buried Alive</span><span>Nov 5</span></div></div>
+        <div class="poster reveal d1" data-tilt style="--rot:1.8deg"><span class="ptype">Notice</span><h3>Tide Tables Updated</h3><div class="reward">Reward: none. It’s the law.</div><p>The old tables are now art. They hang in the Great Hall and are framed in rope. The sea has been notified of the rebrand.</p><div class="pdate"><span>The Board</span><span>this tide</span></div></div>
+      </div>
     </div>
     <p class="center reveal" style="margin-top:34px;color:#8fa5b5;font-size:.95rem">Posting rules: faculty may pin. Crew may add stickers. Nobody may unpin. The pins are older than most of us.</p>
   </div>
