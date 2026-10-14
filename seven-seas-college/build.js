@@ -736,144 +736,162 @@ const INDEX = `
       
       <!-- Captain Maeve -->
       <div class="crew-full-card reveal" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Captain Maeve Ironhook Vane" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Captain</span>
-          <span class="crew-bounty-badge">50,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Capt. Maeve "Ironhook" Vane</h3>
-          <div class="crew-full-title">Fleet Strategist · Flagship H.M.S. Educate &amp; Plunder</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">⚔️ Hook Prosthetic</span>
-            <span class="crew-gear-chip">🗡️ Damascus Dagger</span>
-            <span class="crew-gear-chip">🦜 White Cockatoo</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-captain-red.jpg" alt="Captain Maeve Ironhook Vane" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Captain</span>
+            <span class="crew-bounty-badge">50,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"A fair wind is a gift, but a violent storm is a syllabus. We take the storm every single time."</div>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Naval Rating<b>98 / 100</b></div>
-            <div class="crew-stat-cell">Boarding Skill<b>Master</b></div>
+          <div class="crew-full-info">
+            <h3>Capt. Maeve "Ironhook" Vane</h3>
+            <div class="crew-full-title">Fleet Strategist · Flagship H.M.S. Educate &amp; Plunder</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">⚔️ Hook Prosthetic</span>
+              <span class="crew-gear-chip">🗡️ Damascus Dagger</span>
+              <span class="crew-gear-chip">🦜 White Cockatoo</span>
+            </div>
+            <div class="crew-full-quote">"A fair wind is a gift, but a violent storm is a syllabus. We take the storm every single time."</div>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Naval Rating<b>98 / 100</b></div>
+              <div class="crew-stat-cell">Boarding Skill<b>Master</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Navigator Saki Chen -->
       <div class="crew-full-card reveal d1" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Navigator Saki Starwatcher Chen" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Astrogator</span>
-          <span class="crew-bounty-badge">42,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Saki "Starwatcher" Chen</h3>
-          <div class="crew-full-title">Master Cartographer · Ship: Buried Alive</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🧭 Brass Sextant</span>
-            <span class="crew-gear-chip">📜 Astral Chart</span>
-            <span class="crew-gear-chip">👁️ Eyepatch of Depths</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-navigator-elder.jpg" alt="Navigator Saki Starwatcher Chen" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Astrogator</span>
+            <span class="crew-bounty-badge">42,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"The stars never lie, even when the sea tries to drown you. Follow the needle or sleep in Davy Jones's locker."</div>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Navigation<b>100 / 100</b></div>
-            <div class="crew-stat-cell">Storm Lore<b>Legendary</b></div>
+          <div class="crew-full-info">
+            <h3>Saki "Starwatcher" Chen</h3>
+            <div class="crew-full-title">Master Cartographer · Ship: Buried Alive</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🧭 Brass Sextant</span>
+              <span class="crew-gear-chip">📜 Astral Chart</span>
+              <span class="crew-gear-chip">👁️ Eyepatch of Depths</span>
+            </div>
+            <div class="crew-full-quote">"The stars never lie, even when the sea tries to drown you. Follow the needle or sleep in Davy Jones's locker."</div>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Navigation<b>100 / 100</b></div>
+              <div class="crew-stat-cell">Storm Lore<b>Legendary</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Gunner Jax Rivera -->
       <div class="crew-full-card reveal d2" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Gunner Jax Quick-Cut Rivera" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Gunner</span>
-          <span class="crew-bounty-badge">38,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Jax "Quick-Cut" Rivera</h3>
-          <div class="crew-full-title">Master Gunner · Ship: The Broadside</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🔫 Twin Flintlocks</span>
-            <span class="crew-gear-chip">⚔️ Curved Cutlass</span>
-            <span class="crew-gear-chip">💣 Black Powder Bags</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-gunner-beanie.jpg" alt="Gunner Jax Quick-Cut Rivera" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Gunner</span>
+            <span class="crew-bounty-badge">38,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Aim low, light the fuse fast, and always swing into the enemy quarterdeck with a grin."</div>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Cannon Shot<b>99 / 100</b></div>
-            <div class="crew-stat-cell">Demolitions<b>Expert</b></div>
+          <div class="crew-full-info">
+            <h3>Jax "Quick-Cut" Rivera</h3>
+            <div class="crew-full-title">Master Gunner · Ship: The Broadside</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🔫 Twin Flintlocks</span>
+              <span class="crew-gear-chip">⚔️ Curved Cutlass</span>
+              <span class="crew-gear-chip">💣 Black Powder Bags</span>
+            </div>
+            <div class="crew-full-quote">"Aim low, light the fuse fast, and always swing into the enemy quarterdeck with a grin."</div>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Cannon Shot<b>99 / 100</b></div>
+              <div class="crew-stat-cell">Demolitions<b>Expert</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Quartermaster Tariq -->
       <div class="crew-full-card reveal d1" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Quartermaster Tariq The Hawk Al-Mansur" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Quartermaster</span>
-          <span class="crew-bounty-badge">65,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Tariq "The Hawk" Al-Mansur</h3>
-          <div class="crew-full-title">Master of Accounts · Ship: The Tightrope</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
-            <span class="crew-gear-chip">⚖️ Doubloon Scale</span>
-            <span class="crew-gear-chip">🧥 Crimson Coat</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-corsair-spyglass.jpg" alt="Quartermaster Tariq The Hawk Al-Mansur" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Quartermaster</span>
+            <span class="crew-bounty-badge">65,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Every piece of eight tells a story. Some scream. It is my duty to count them all accurately."</div>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Bounty Appraisal<b>99 / 100</b></div>
-            <div class="crew-stat-cell">Vault Defense<b>Supreme</b></div>
+          <div class="crew-full-info">
+            <h3>Tariq "The Hawk" Al-Mansur</h3>
+            <div class="crew-full-title">Master of Accounts · Ship: The Tightrope</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">🔭 Gilded Spyglass</span>
+              <span class="crew-gear-chip">⚖️ Doubloon Scale</span>
+              <span class="crew-gear-chip">🧥 Crimson Coat</span>
+            </div>
+            <div class="crew-full-quote">"Every piece of eight tells a story. Some scream. It is my duty to count them all accurately."</div>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Bounty Appraisal<b>99 / 100</b></div>
+              <div class="crew-stat-cell">Vault Defense<b>Supreme</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- First Mate Ren Kuroda -->
       <div class="crew-full-card reveal d2" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="First Mate Ren Shadowblade Kuroda" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Duelist</span>
-          <span class="crew-bounty-badge">48,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Ren "Shadowblade" Kuroda</h3>
-          <div class="crew-full-title">Vanguard Duelist · Ship: The Black Wake</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">⚔️ Katana Cutlass</span>
-            <span class="crew-gear-chip">🥋 Boarding Garb</span>
-            <span class="crew-gear-chip">🌅 Sunset Cloak</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/crew-swordsman-bun.jpg" alt="First Mate Ren Shadowblade Kuroda" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Duelist</span>
+            <span class="crew-bounty-badge">48,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Quiet steel cuts deepest. When the fog rolls in, our enemies only hear the ocean."</div>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Swordsmanship<b>100 / 100</b></div>
-            <div class="crew-stat-cell">Silent Boarding<b>Flawless</b></div>
+          <div class="crew-full-info">
+            <h3>Ren "Shadowblade" Kuroda</h3>
+            <div class="crew-full-title">Vanguard Duelist · Ship: The Black Wake</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">⚔️ Katana Cutlass</span>
+              <span class="crew-gear-chip">🥋 Boarding Garb</span>
+              <span class="crew-gear-chip">🌅 Sunset Cloak</span>
+            </div>
+            <div class="crew-full-quote">"Quiet steel cuts deepest. When the fog rolls in, our enemies only hear the ocean."</div>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Swordsmanship<b>100 / 100</b></div>
+              <div class="crew-stat-cell">Silent Boarding<b>Flawless</b></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Fleetmaster Aldric Crane -->
       <div class="crew-full-card reveal d3" data-tilt>
-        <div class="crew-full-img-wrap">
-          <img class="crew-full-img" src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
-          <div class="crew-full-scrim"></div>
-          <span class="crew-full-role-tag">Fleetmaster</span>
-          <span class="crew-bounty-badge">100,000 DBL</span>
-        </div>
-        <div class="crew-full-info">
-          <h3>Fleetmaster Aldric "Grimtide" Crane</h3>
-          <div class="crew-full-title">Dean of the Fleet · Flagship Commander</div>
-          <div class="crew-full-gear">
-            <span class="crew-gear-chip">👑 Pirate Hat</span>
-            <span class="crew-gear-chip">🪝 Golden Hook</span>
-            <span class="crew-gear-chip">🦜 Scarlet Macaw</span>
+        <div class="crew-parchment-sheet">
+          <span class="nail-bl"></span><span class="nail-br"></span>
+          <div class="crew-full-img-wrap">
+            <img class="crew-full-img" src="img/captain-crane.jpg" alt="Fleetmaster Aldric Grimtide Crane" loading="lazy">
+            <div class="crew-full-scrim"></div>
+            <span class="crew-full-role-tag">Fleetmaster</span>
+            <span class="crew-bounty-badge">100,000 DBL</span>
           </div>
-          <div class="crew-full-quote">"Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won."</div>
-          <div class="crew-stats-bar">
-            <div class="crew-stat-cell">Fleet Command<b>Supreme</b></div>
-            <div class="crew-stat-cell">College Lore<b>Est. 1654</b></div>
+          <div class="crew-full-info">
+            <h3>Fleetmaster Aldric "Grimtide" Crane</h3>
+            <div class="crew-full-title">Dean of the Fleet · Flagship Commander</div>
+            <div class="crew-full-gear">
+              <span class="crew-gear-chip">👑 Pirate Hat</span>
+              <span class="crew-gear-chip">🪝 Golden Hook</span>
+              <span class="crew-gear-chip">🦜 Scarlet Macaw</span>
+            </div>
+            <div class="crew-full-quote">"Steers the college and, on Mondays, the entire fleet. Has never been lost. Once argued with a current and won."</div>
+            <div class="crew-stats-bar">
+              <div class="crew-stat-cell">Fleet Command<b>Supreme</b></div>
+              <div class="crew-stat-cell">College Lore<b>Est. 1654</b></div>
+            </div>
           </div>
         </div>
       </div>
@@ -2554,12 +2572,12 @@ ${pageHero('Built by Pirates','The Forge','No templates. No land. This website w
   <div class="wrap">
     ${secHead('The Crew of the Forge','Who Made This Thing','Every role, every nail, every knot. Names as recorded by the parrot, who is the only one who remembers.')}
     <div class="grid-3">
-      <div class="card-life reveal" data-tilt><h3>The Planksmiths</h3><p>Structure (the HTML). They nailed it. The nails are gone now; that's tradition. You can still hear them in the load times.</p></div>
-      <div class="card-life reveal d1" data-tilt><h3>The Knot Crew</h3><p>Styling (the CSS). Every rope is tied by hand. The drape is intentional. So is the crookedness. Especially the crookedness.</p></div>
-      <div class="card-life reveal d2" data-tilt><h3>The Fuse Gang</h3><p>Motion (the JavaScript). They light it and run. The runs are always fine. Probably. We trust them. We have to.</p></div>
-      <div class="card-life reveal d3" data-tilt><h3>The Cartographers</h3><p>Content &amp; charts. They wrote everything. The X marks the places still being written, and one place that is a promise.</p></div>
-      <div class="card-life reveal d4" data-tilt><h3>Professor Feather</h3><p>Quality assurance. He clapped 214 times during testing. Zero claps are reserved. This is the only grading system that matters.</p></div>
-      <div class="card-life reveal d5" data-tilt><h3>The Night Watch</h3><p>Deployment. They ship at dusk, when the sea is honest and the bugs are asleep. The lighthouse doubles as a progress bar.</p></div>
+      <div class="card-life reveal" data-tilt><h3>Nishant · Fleetmaster</h3><p>Fleetmaster &amp; Creator. Keel-laid the architecture, pure vanilla ES6, 3D WebGL parrot rigging, and SVG cartography with zero frameworks.</p></div>
+      <div class="card-life reveal d1" data-tilt><h3>Kartik · Master Navigator</h3><p>Master Navigator ⚓. Charted the Seven Seas routes, responsive parchment rosters, soundscapes, and navigational wayfinding.</p></div>
+      <div class="card-life reveal d2" data-tilt><h3>Gourvendra · Chief Gunner</h3><p>Chief Gunner 💣. Loaded the 32-pounder cannon blasts, interactive wanted bounties, and seabed sunken treasure mechanics.</p></div>
+      <div class="card-life reveal d3" data-tilt><h3>The Knot &amp; Fuse Crew</h3><p>Styling &amp; Motion. Every rope tied by hand in CSS3. The drape and nails are intentional. Deploy at dusk when the bugs sleep.</p></div>
+      <div class="card-life reveal d4" data-tilt><h3>Professor Feather III</h3><p>Chief QA Officer 🦜. Clapped 214 times during live trial runs. Demands sunflower seeds for passing grades.</p></div>
+      <div class="card-life reveal d5" data-tilt><h3>The Night Watch</h3><p>Deployment &amp; Git. Shipped to GitHub at dusk when the sea is honest. 100% renewable grog-powered builds.</p></div>
     </div>
   </div>
 </section>
