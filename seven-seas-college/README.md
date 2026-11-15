@@ -147,7 +147,7 @@ Every department head is immortalized in authentic 3:4 passport-sized pirate por
 ## 📜 Ancient Rolled Scrolls & Torn Pinned Notes
 
 - **The Ancient Unrolled Papyrus Scrolls**:
-  - Featured on **Skills of the Seven Seas** (`skills.html`) and the **Shipman's Quarters Login** (`quarters.html`).
+  - Featured on **Skills of the Seven Seas** (`skills.html`) and the fictional **Shipman's Quarters demo** (`quarters.html`).
   - Styled with carved rosewood scroll rods, gold finial knobs, wax-sealed ribbon ties, and aged curled parchment borders.
 - **Torn Notes Nailed to Barrels**:
   - Campus announcements and bulletin boards are presented as irregularly torn, weathered parchment scraps pinned directly onto curved oak barrel slats with heavy, crooked hand-forged black iron nails.
@@ -208,8 +208,8 @@ The centerpiece of `island.html` is a massive single-stage nautical chart render
 | `doubloons.html` | **Gold Doubloons** | Tuition & Financial Aid| 500 Doubloons/Term; 10% Discount per Parrot Clap |
 | `legends.html` | **Pirate Legends** | Alumni Hall of Fame | Blackbeard, Captain Kidd, Mary Read, Anne Bonny |
 | `wanted.html` | **The Wanted Board** | Noticeboard / News | Imperial Bounties, Curfew Warnings, Kraken Sightings |
-| `raven.html` | **Send a Raven** | Contact & Inquiries | Raven-carrier postal dispatch form with feather quill |
-| `quarters.html` | **Shipman's Quarters** | Student Portal (Login) | Secret Berth Access, Parrot Passphrase Authentication |
+| `raven.html` | **Send a Raven** | Contact-form demo | Fictional message form; nothing is sent or saved |
+| `quarters.html` | **Shipman's Quarters** | Interactive demo (not a login) | Pretend berth details and a local pirate Easter egg; no authentication or data handling |
 | `enlist.html` | **Join the Crew** | Admissions / Apply | 4-Question Buccaneer Aptitude Test & Blood Signature |
 | `forge.html` | **The Forge** | Engineering & Credits | Code Architecture, SVG Rigging, Built by Pirates |
 
@@ -236,7 +236,7 @@ Try these secret interactions directly in your browser:
 - **🦜 The Spicy Overdrive**: Drag the chili bowl directly over Professor Feather to trigger fiery burst animations and custom spicy dialogues.
 - **⛈️ Storm Mode Trigger**: Click the Weather Astrolabe (`#stormToggle`) in the navigation bar to summon real-time torrential rain, thunderclouds, and lightning strikes.
 - **🪝 Golden Hook Trail**: Move your mouse across the deck—your cursor is a pirate hook leaving shimmering golden sparks in its wake.
-- **🤫 The Raven Dispatch Easter Egg**: Type `"Blackbeard"` into the passphrase field in `quarters.html` to unlock an exclusive pirate secret!
+- **🤫 The Raven Dispatch Easter Egg**: Type `"Blackbeard"` into the demo phrase field in `quarters.html` for a local pirate joke. It is not authentication; no details are verified, sent, or saved.
 - **🎹 Soundboard Audio**: Click the ambient sound button (`#soundToggle`) in the video hero to activate open-ocean waves, gulls, and creaking timber audio.
 
 ---

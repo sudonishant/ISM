@@ -108,17 +108,6 @@ if(chest){
   chest.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openChest(); } });
 }
 
-/* ================= SIGNAL FORMS ================= */
-$$('form[data-signal]').forEach(function(form){
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var nameEl=form.querySelector('input[type=text]');
-    var name=nameEl&&nameEl.value.trim()?nameEl.value.trim():'matey';
-    toast('Message cast off, '+name+'! Expect a reply within one tide. ☠');
-    form.reset();
-  });
-});
-
 /* ================= NAV LOGO EASTER EGG ================= */
 var logo=$('#navLogo');
 if(logo){
@@ -296,17 +285,6 @@ if(reelBtn&&iv){
     toast(paused?'Voyage paused. The sea awaits.':'The voyage rolls on! Fair winds.');
   });
 }
-
-/* ================= SHIPMAN'S QUARTERS (login) ================= */
-$$('form[data-quarters]').forEach(function(f){
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var name=f.querySelector('#qName'), id=f.querySelector('#qId');
-    var who=(name&&name.value.trim())?name.value.trim():((id&&id.value.trim())?('berth '+id.value.trim()):'matey');
-    toast('Berth verified. Welcome aboard, '+who+'! Your parrot is proud.');
-    f.reset();
-  });
-});
 
 /* ================= ISLAND MAP (interactive) ================= */
 var MAPDATA={
@@ -640,7 +618,7 @@ if(spots.length){
     'doubloons.html': 'The Parrot Partnership pays 10% per clap. Clap loudly. The parrots are on payroll.',
     'legends.html': 'Legends never retire. They just change flags. And, occasionally, colleges.',
     'wanted.html': 'The Wanted Board updates at dusk. Pin your own notice before you forget to.',
-    'raven.html': 'Ravens reply within one tide. Parrots reply within one grog. We employ the parrots.',
+    'raven.html': 'This is a pretend dispatch: the form does not send or store messages. The parrots only answer in jokes.',
     'quarters.html': 'Bunk numbers are randomized nightly. Bunk 9 is haunted. On purpose. For character.',
     'enlist.html': 'The application has no address field. The island has no roads. You cannot miss it. That is the point.',
     'forge.html': 'Forge rule III is real: if the wind changes, the design changes. It was never a bug.'

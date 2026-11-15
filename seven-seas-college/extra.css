@@ -1417,6 +1417,27 @@ button,.btn{position:relative}
   outline: none;
   box-shadow: 0 0 10px rgba(125,38,22,0.3);
 }
+.demo-notice,
+.demo-feedback {
+  border: 1px solid rgba(185,138,63,0.55);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.demo-notice {
+  margin: 12px 0 16px;
+  background: rgba(185,138,63,0.1);
+}
+.demo-feedback {
+  min-height: 1.4em;
+  margin: 12px 0 0;
+  font-weight: 700;
+}
+.login-scroll-wrap .demo-notice,
+.login-scroll-wrap .demo-feedback { color: #4a2b10; }
+.form-plank .demo-notice,
+.form-plank .demo-feedback { color: #f5e9c9; }
 
 /* ================================================================
    OCEANIC PAGE BACKDROP: ANIMATED SEA CREATURES ACROSS WHOLE PAGE

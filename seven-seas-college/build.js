@@ -109,7 +109,7 @@ function nav(active){
     </div>
   </div>
   <button class="storm-btn" id="stormBtn" type="button" aria-pressed="false">⛈ Storm</button>
-  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (Student Portal)">⚓ Quarters</a>
+  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (fictional demo; no sign-in)">⚓ Quarters</a>
   <a class="btn" href="enlist.html">Join the Crew</a>
   </nav>`;
 }
@@ -2333,7 +2333,7 @@ ${cta('Saw Something? Say Something. Pin It.','The Board hears everything. The B
 `;
 
 const RAVEN = `
-${pageHero('Contact','Send a Raven','Four ways to reach us. Ravens preferred. Gulls accepted if it’s urgent.','Send a Raven')}
+${pageHero('Contact demo','Send a Raven','A fictional contact page; the form below does not send or store messages.','Send a Raven')}
 <section>
   <div class="wrap">
     <div class="contact-grid">
@@ -2347,13 +2347,14 @@ ${pageHero('Contact','Send a Raven','Four ways to reach us. Ravens preferred. Gu
           <li><span class="k">By Lantern</span> Three short flashes at dusk means "hello." Five means "the coffee is gone" and is urgent.</li>
         </ul>
       </div>
-      <form class="form-plank reveal d1" data-signal novalidate>
-        <h3>Cast Off a Message</h3>
-        <p class="sub">The Quartermaster replies within one tide, weather permitting.</p>
-        <div class="field"><label for="fName">Your name</label><input id="fName" type="text" placeholder="e.g. Will Turner, Jr."></div>
-        <div class="field"><label for="fParrot">Your raven’s (or parrot’s) name</label><input id="fParrot" type="text" placeholder="e.g. Professor Feather II"></div>
-        <div class="field"><label for="fMsg">Your message</label><textarea id="fMsg" placeholder="Dear crew, I would like to enroll and I have already buried a small treasure..."></textarea></div>
-        <button class="btn" type="submit" style="width:100%">Send the Raven ☠</button>
+      <form class="form-plank reveal d1" data-signal novalidate autocomplete="off">
+        <h3>Cast Off a Message (Demo)</h3>
+        <p class="sub">This fictional form does not send or store messages. Use no real contact details.</p>
+        <div class="field"><label for="fName">Your name (fictional)</label><input id="fName" type="text" placeholder="e.g. Captain Nightingale"></div>
+        <div class="field"><label for="fParrot">Your raven’s (or parrot’s) name (fictional)</label><input id="fParrot" type="text" placeholder="e.g. Professor Feather II"></div>
+        <div class="field"><label for="fMsg">Your pretend message</label><textarea id="fMsg" placeholder="A note for the fictional crew..."></textarea></div>
+        <button class="btn" type="submit" style="width:100%">Try the Raven (Demo) ☠</button>
+        <p class="demo-feedback" data-form-feedback role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -2441,7 +2442,7 @@ ${cta('Don’t Just Read the Chart. Set Sail.','The fleet is patient. Your doubl
 `;
 
 const QUARTERS = `
-${pageHero('Student Portal','Shipman’s Quarters','Fees, timetables, bunks, and the portal. One key. No, two. One key and a parrot’s name.','Quarters')}
+${pageHero('Interactive Demo','Shipman’s Quarters','A playful fictional berth demo; no account, identity check, or data storage.','Quarters')}
 <section>
   <div class="wrap login-scroll-wrap">
     <div class="ancient-scroll-container reveal">
@@ -2456,27 +2457,25 @@ ${pageHero('Student Portal','Shipman’s Quarters','Fees, timetables, bunks, and
         <div style="text-align:center;margin-bottom:20px">
           <svg viewBox="0 0 100 100" style="width:64px;margin:0 auto 8px" aria-hidden="true"><use href="#skullMark" color="#8e2f1e"/></svg>
           <div style="font-family:'Pirata One',cursive;font-size:1.1rem;letter-spacing:0.18em;color:#8a4212;text-transform:uppercase">
-            ⚓ Official Cadet Registry · Berth Access ⚓
+            ⚓ Fictional Quarters Demo · No Login ⚓
           </div>
           <h2 class="scroll-decree-title" style="font-size:2.2rem;margin:4px 0">Board the Quarters</h2>
           <p class="scroll-decree-sub" style="font-size:0.96rem">
-            Berth number in, parrot’s secret whisper up, in you go.
+            Try a pretend berth and a local pirate joke.
           </p>
         </div>
 
-        <form data-quarters novalidate>
-          <div class="field"><label for="qName">Cadet Name</label><input id="qName" type="text" placeholder="e.g. Nadia Okafor"></div>
-          <div class="field"><label for="qId">Berth Number (Student ID)</label><input id="qId" type="text" placeholder="e.g. 113"></div>
-          <div class="field"><label for="qPass">Passphrase (Your Parrot’s Name)</label><input id="qPass" type="password" placeholder="whisper it softly"></div>
-          <div class="field" style="display:flex;align-items:center;gap:10px">
-            <label for="qRem" style="margin:0;letter-spacing:.06em;color:#4a2b10">Remember me on this deck</label>
-            <input id="qRem" type="checkbox" style="width:auto">
-          </div>
-          <button class="btn" type="submit" style="width:100%;font-size:1.1rem;padding:14px 20px">Board the Quarters ⚓</button>
+        <p class="demo-notice" role="note">This is a fictional interactive demo, not an account service. Nothing you enter is verified, sent, or saved. Use fictional details; never enter a real password or student ID.</p>
+        <form data-quarters novalidate autocomplete="off">
+          <div class="field"><label for="qName">Cadet nickname (fictional)</label><input id="qName" type="text" placeholder="e.g. Captain Nightingale"></div>
+          <div class="field"><label for="qId">Pretend berth number</label><input id="qId" type="text" inputmode="numeric" placeholder="e.g. 113 (fictional)"></div>
+          <div class="field"><label for="qPass">Easter egg phrase (not a password)</label><input id="qPass" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="try Blackbeard"></div>
+          <button class="btn" type="submit" style="width:100%;font-size:1.1rem;padding:14px 20px">Try the Quarters Demo ⚓</button>
+          <p class="demo-feedback" data-form-feedback role="status" aria-live="polite"></p>
         </form>
 
         <div style="margin-top:20px;font-size:.9rem;color:#5a3716;text-align:center;border-top:1px dashed rgba(140,80,20,0.35);padding-top:14px">
-          Lost your passphrase? <a href="raven.html" style="color:#8e2f1e;font-weight:700">Send a raven</a> to the Quartermaster.<br>
+          “Blackbeard” reveals a local joke, not an account. <br>
           Not enrolled yet? <a href="enlist.html" style="color:#8e2f1e;font-weight:700">Join the Crew</a> first.
         </div>
 
@@ -2503,7 +2502,7 @@ ${pageHero('Student Portal','Shipman’s Quarters','Fees, timetables, bunks, and
   </div>
 </section>
 
-${cta('The Door Is Open. The Parrot Is Watching.','Log in, sort your tide, and get back to the sea.',
+${cta('The Door Is Open. The Parrot Is Watching.','Explore the fictional quarters demo; your tide can wait.',
   '<a class="btn" href="index.html">Back to The Harbor</a><a class="btn ghost" href="doubloons.html">Check Your Doubloons</a>')}
 `;
 
@@ -2514,7 +2513,7 @@ ${pageHero('Admissions','Join the Crew','Four steps. No forms longer than a rope
     <div class="enlist-grid">
       <div>
         <ol class="steps">
-          <li class="reveal"><h3>Fire the Signal</h3><p>Send a raven (or fill the form on the <a href="raven.html">Send a Raven</a> page). Tell us your name, your parrot’s name, and one thing you’d steal if you could.</p></li>
+          <li class="reveal"><h3>Fire the Signal</h3><p>For a pirate joke, try the demo form on the <a href="raven.html">Send a Raven</a> page. It does not send or save messages; keep every entry fictional.</p></li>
           <li class="reveal d1"><h3>Prove Your Nerve</h3><p>A short interview on the bowsprit, at dusk, in a moderate breeze. We’re looking for enthusiasm, not answers.</p></li>
           <li class="reveal d2"><h3>Pay Your Dues</h3><p>Tuition in doubloons, paid at the Quartermaster. <a href="doubloons.html">Bounties available</a> if your excellence is loud enough. It usually is.</p></li>
           <li class="reveal d3"><h3>Walk the Plank</h3><p>Ceremonial only. You step off the bowsprit, we catch you. Then you’re one of The Crew. There is no undo button at sea.</p></li>
@@ -2695,8 +2694,8 @@ const PAGES = {
   'doubloons.html': ['Gold Doubloons','Fees','Fees and bounties in gold.'],
   'legends.html': ['Legends','Alumni','Where the legends went.'],
   'wanted.html': ['The Wanted Board','Notices','The notice board, pinned and crooked.'],
-  'raven.html': ['Send a Raven','Contact','Reach the fleet by raven.'],
-  'quarters.html': ["Shipman’s Quarters",'Login','Student portal.'],
+  'raven.html': ['Send a Raven','Demo','Fictional message-form demo; nothing is sent or saved.'],
+  'quarters.html': ["Shipman’s Quarters",'Demo','Fictional quarters demo; no login or data handling.'],
   'enlist.html': ['Join the Crew','Admissions','How to join the crew.'],
   'forge.html': ['The Forge','Built by Pirates','Forged by the pirate web crew. Read the manifesto.'],
   '404.html': ['Map Route Not Available — Error 404', 'Error 404', 'Map route not available. Use your compass and binoculars to navigate.'],
@@ -2726,7 +2725,8 @@ for (const [file, [title, , desc]] of Object.entries(PAGES)) {
   const key = file.replace('.html','');
   const active = {'index':'home','scroll':'scroll','fleet':'fleet','quartermasters':'qm','island':'island','wanted':'wanted'}[key] || '';
   const tickerHtml = '';
-  const html = head(title, desc) + '\n' + nav(active) + '\n' + OCEAN_PAGE_BACKDROP + '\n' + BODIES[file] + '\n' + foot();
+  const formScript = ['raven.html', 'quarters.html'].includes(file) ? '<script src="forms.js"></script>\n' : '';
+  const html = head(title, desc) + '\n' + nav(active) + '\n' + OCEAN_PAGE_BACKDROP + '\n' + BODIES[file] + '\n' + formScript + foot();
   fs.writeFileSync(file, html);
   console.log('wrote', file, html.length);
 }
