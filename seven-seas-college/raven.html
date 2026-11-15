@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Send a Raven — Ravenspire Blacktide Collegium</title>
-<meta name="description" content="Reach the fleet by raven.">
+<meta name="description" content="Fictional message-form demo; nothing is sent or saved.">
 <link rel="icon" href="img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +95,7 @@
     </div>
   </div>
   <button class="storm-btn" id="stormBtn" type="button" aria-pressed="false">⛈ Storm</button>
-  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (Student Portal)">⚓ Quarters</a>
+  <a class="nav-qlink" href="quarters.html" title="Shipman’s Quarters (fictional demo; no sign-in)">⚓ Quarters</a>
   <a class="btn" href="enlist.html">Join the Crew</a>
   </nav>
 
@@ -440,9 +440,9 @@
   <div class="wave w-mid" data-speed="0.1"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#175a70"/></svg></div></div>
   <div class="wave w-near" data-speed="0.18"><div class="wave-track"><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg><svg viewBox="0 0 1200 130" preserveAspectRatio="none"><use href="#wavePath" fill="#0b2e4a"/></svg></div></div>
   <div class="ph-copy">
-    <div class="over">Contact</div>
+    <div class="over">Contact demo</div>
     <h1>Send a Raven</h1>
-    <p>Four ways to reach us. Ravens preferred. Gulls accepted if it’s urgent.</p>
+    <p>A fictional contact page; the form below does not send or store messages.</p>
     <div class="crumbs"><a href="index.html">The Harbor</a> ☠ Send a Raven</div>
   </div>
 </div>
@@ -459,13 +459,14 @@
           <li><span class="k">By Lantern</span> Three short flashes at dusk means "hello." Five means "the coffee is gone" and is urgent.</li>
         </ul>
       </div>
-      <form class="form-plank reveal d1" data-signal novalidate>
-        <h3>Cast Off a Message</h3>
-        <p class="sub">The Quartermaster replies within one tide, weather permitting.</p>
-        <div class="field"><label for="fName">Your name</label><input id="fName" type="text" placeholder="e.g. Will Turner, Jr."></div>
-        <div class="field"><label for="fParrot">Your raven’s (or parrot’s) name</label><input id="fParrot" type="text" placeholder="e.g. Professor Feather II"></div>
-        <div class="field"><label for="fMsg">Your message</label><textarea id="fMsg" placeholder="Dear crew, I would like to enroll and I have already buried a small treasure..."></textarea></div>
-        <button class="btn" type="submit" style="width:100%">Send the Raven ☠</button>
+      <form class="form-plank reveal d1" data-signal novalidate autocomplete="off">
+        <h3>Cast Off a Message (Demo)</h3>
+        <p class="sub">This fictional form does not send or store messages. Use no real contact details.</p>
+        <div class="field"><label for="fName">Your name (fictional)</label><input id="fName" type="text" placeholder="e.g. Captain Nightingale"></div>
+        <div class="field"><label for="fParrot">Your raven’s (or parrot’s) name (fictional)</label><input id="fParrot" type="text" placeholder="e.g. Professor Feather II"></div>
+        <div class="field"><label for="fMsg">Your pretend message</label><textarea id="fMsg" placeholder="A note for the fictional crew..."></textarea></div>
+        <button class="btn" type="submit" style="width:100%">Try the Raven (Demo) ☠</button>
+        <p class="demo-feedback" data-form-feedback role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -550,6 +551,7 @@
 
 <div class="cta-band"><div class="wrap reveal"><h2>Don’t Just Read the Chart. Set Sail.</h2><p>The fleet is patient. Your doubloons will not be. Enlist while the wind is good.</p><div class="hero-ctas"><a class="btn" href="enlist.html">Join the Crew</a><a class="btn ghost" href="scroll.html">Read The Scroll First</a></div></div></div>
 
+<script src="forms.js"></script>
 <footer>
   <div class="wrap">
     <img class="foot-medal" src="img/logo.jpg" alt="Ravenspire Blacktide Collegium crest">
